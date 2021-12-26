@@ -1,0 +1,16 @@
+#nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 100px;
+    margin-top: 20px;
+}
+
+.nav-link {
+    padding: 10px;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+    color: lightcoral;
+}
