@@ -11,9 +11,11 @@ const connectWalletButton = (setCurrentAccount) => {
 
 const mintNftButton = () => {
     return (
-        <button type="button" className="btn btn-outline-light btn-lg" id='mint' onClick={() => mintNftHandler()}>
-            Mint NFT
-        </button>
+        <div>
+            <button type="button" id='mint' onClick={() => mintNftHandler()}>
+                Mint NFT
+            </button>
+        </div>
     )
 }
 

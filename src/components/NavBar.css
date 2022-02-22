@@ -1,12 +1,15 @@
 .nav-link {
     padding: 10px;
     color: white;
+    transition: 0.3s ease;
+}
+a {
+    color: inherit !important;
 }
 
 .nav-link:hover {
     cursor: pointer;
-    color: black;
-    transition: 0.3s;
+    color: black !important;
     transform: scale(1.5);
 }
 
@@ -32,7 +35,7 @@ ul li a {
   background: #333;
   border-radius: 50%;
   font-size: 15px;
-  transition: .5s;
+  transition: .3s ease;
 }
 
 ul li a img {
@@ -51,10 +54,9 @@ ul li a img:hover::before {
 
   ul li a img:hover {
     color: #ffee10;
-    box-shadow: 0 0 5px #ffee10;
-    text-shadow: 0 0 5px #ffee10;
+    box-shadow: 0 0 20px #DF00FF;
+    text-shadow: 0 0 10px #ffee10;
     opacity: 0.4;
-    transition: .5s;
   }
 
 ul li a::before {
@@ -66,7 +68,7 @@ ul li a::before {
   height: 100%;
   border-radius: 50%;
   background: #ffee10;
-  transition: .5s;
+  transition: .3s ease;
   transform: scale(.9);
   z-index: -1;
 }
@@ -78,6 +80,6 @@ ul li a:hover::before {
 
 ul li a:hover {
   color: #ffee10;
-  box-shadow: 0 0 5px #ffee10;
-  text-shadow: 0 0 5px #ffee10;
+  box-shadow: 0 0 20px #DF00FF;
+  text-shadow: 0 0 10px #ffee10;
 }

@@ -1,13 +1,14 @@
 import './App.css'
 import { useEffect, useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
 // import contract from 'path'
 
-import Title from './Title'
-import NFTdisplay from './NFTdisplay'
-import MintButton from './MintButton'
 import NavBar from './NavBar'
+import Home from './Home'
+import FanFT from './FanFT'
+import FanContract from './FanContract'
 
-import { checkWalletIsConnected, connectWalletHandler, mintNftHandler,  } from './utils/web3Interactions.js'
+import { checkWalletIsConnected, connectWalletHandler, mintNftHandler, } from './utils/web3Interactions.js'
 
 // const contractAddress = 'ADDRESS'
 // const abi = contract
@@ -23,12 +24,22 @@ function App() {
     return (
         <div className="App">
             <NavBar />
-            <Title />
-            <NFTdisplay />
-            <MintButton 
-                currentAccount={currentAccount}
-                setCurrentAccount={setCurrentAccount}
-            />
+            <Routes>
+                <Route path="/fanFT" element={
+                    <FanFT 
+                        setCurrentAccount={setCurrentAccount}
+                        currentAccount={currentAccount}
+                    />}
+                />
+                <Route path="/" element={
+                    <Home />
+                }
+                />
+                <Route path='/contract' element={
+                    <FanContract />
+                }
+                />
+            </Routes>
         </div>
     )
 }
