@@ -1,46 +1,34 @@
 import { useEffect } from 'react'
 import Prism from 'prismjs';
 import "prismjs/themes/prism-tomorrow.css";
+import './FanContract.css'
 
-const code = `
-pragma solidity ^0.8.0;
+const code = `// SPDX-License-Identifier: MIT
+pragma solidity 0.8.10;
 
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/ERC1155.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol";
-// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Counters.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
-contract FANFFT is ERC1155, Ownable {
-    using SafeMath for uint256;
 
-    constructor() ERC1155("https://ipfs.io/ipfs/QmVNSXTGRhpqKm2sqAeGAtxbu8HMNQ6cebsp6sJeCmkJfD/{id}.json") {
-        for(uint256 i = 1; i < 25; i++){
-            _mint(msg.sender, i, 1, "");
-        }
+contract FaNFT is ERC721URIStorage, Ownable {
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenIds;
+
+    constructor() ERC721("FaNFT", "FAN") {}
+
+    function mintNFT(address recipient, string memory tokenURI) public onlyOwner returns (uint256)
+    {
+        _tokenIds.increment();
+
+        uint256 newItemId = _tokenIds.current();
+        _mint(recipient, newItemId);
+        _setTokenURI(newItemId, tokenURI);
+
+        return newItemId;
     }
 
-    function mint(
-        address to,
-        uint256 id,
-        uint256 amount,
-        bytes memory data
-    ) public onlyOwner {
-        require(to != address(0), "ERC1155: mint to the zero address");
-
-        address operator = _msgSender();
-        uint256[] memory ids = _asSingletonArray(id);
-        uint256[] memory amounts = _asSingletonArray(amount);
-
-        _beforeTokenTransfer(operator, address(0), to, ids, amounts, data);
-
-        _balances[id][to] += amount;
-        emit TransferSingle(operator, address(0), to, id, amount);
-
-        _doSafeTransferAcceptanceCheck(operator, address(0), to, id, amount, data);
-
-        _afterTokenTransfer(operator, address(0), to, ids, amounts, data);
-    }
 }
 `
 
@@ -53,7 +41,7 @@ const FanContract = () => {
             <h1>fanFT Contract Code</h1>
             <a>Link to etherscan</a>
             <pre>
-                <code id='code' className={`language-solidity`}>{code}</code>
+                <code id='code' className='language-sol'>{code}</code>
             </pre>
         </div>
     )
