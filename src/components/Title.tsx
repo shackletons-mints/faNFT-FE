@@ -1,8 +1,8 @@
 
 const Title = () => {
     return (
-        <h1>
-            FANft
+        <h1 className="display-1">
+            fanFT
         </h1>
     )
 }

@@ -1,5 +1,5 @@
 import './NFTdisplay.css'
-import gif from '../../assets/Legendary_leaf_Rare_handle.gif'
+import gif from '../assets/TEST.gif'
 
 const NFTdisplay = () => {
     return (
