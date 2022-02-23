@@ -1,9 +1,10 @@
 import gif from '../../../assets/TEST.gif'
 import './NFTdisplay.css'
 
-const NFTSquare = () => {
+const NFTSquare = ({ nftMetadata }) => {
+    console.log('metadata: ', nftMetadata)
     return (
-        <img className='nft' src={gif} alt="gif" />
+        <img className='nft' src={nftMetadata.image} alt="gif" />
     )
 }
 
