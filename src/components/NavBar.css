@@ -3,6 +3,7 @@
     color: white;
     transition: 0.3s ease;
 }
+
 a {
     color: inherit !important;
 }
@@ -19,6 +20,7 @@ ul {
     justify-content: flex-end;
     margin-right: 100px;
     margin-top: 20px;
+    padding: 15px;
 }
 
 ul li {

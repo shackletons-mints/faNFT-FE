@@ -4,11 +4,11 @@ import { Route, Routes } from 'react-router-dom'
 // import contract from 'path'
 
 import NavBar from './NavBar'
-import Home from './Home'
-import FanFT from './FanFT'
-import FanContract from './FanContract'
+import Home from './routes/Home'
+import FanFT from './routes/FanFT'
+import FanContract from './routes/FanContract'
 
-import { checkWalletIsConnected, connectWalletHandler, mintNftHandler, } from './utils/web3Interactions.js'
+import { checkWalletIsConnected, connectWalletHandler, mintNftHandler, } from './js-utils/web3Interactions.js'
 
 // const contractAddress = 'ADDRESS'
 // const abi = contract

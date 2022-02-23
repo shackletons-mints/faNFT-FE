@@ -1,0 +1,24 @@
+.nft {
+    height: 360px;
+    width: 360px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+#nft-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 80%;
+    flex-wrap: wrap;
+    gap: 30px 40px;
+    padding: 30px;
+}
+
+.nft-card {
+    margin: auto;
+    padding: 20px;
+    height: 508px;
+    width: 412px;
+}

@@ -1,10 +1,12 @@
 .App {
   text-align: center;
   color: azure;
+  font-family: 'Audiowide', cursive;
 }
 
 body {
   background-color: black;
+
 }
 
 .App-logo {
