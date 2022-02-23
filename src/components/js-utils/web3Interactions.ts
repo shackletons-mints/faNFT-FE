@@ -1,8 +1,10 @@
 import { ethers } from 'ethers'
 
+declare var window: any // removes annoying ts error
+
 const { ethereum } = window
 
-export const checkWalletIsConnected = async (setCurrentAccount) => {
+export const checkWalletIsConnected = async (setCurrentAccount: Function) => {
     if (!ethereum) {
         console.log('Make sure you have Metamask installed!')
         return
@@ -21,7 +23,7 @@ export const checkWalletIsConnected = async (setCurrentAccount) => {
     }
 }
 
-export const connectWalletHandler = async (setCurrentAccount) => {
+export const connectWalletHandler = async (setCurrentAccount: Function) => {
     if (!ethereum) {
         alert("Please install Metamask!")
     }
@@ -56,3 +58,10 @@ export const mintNftHandler = async () => {
         console.error(error)
     }
 }
+
+
+declare module web3Interactions {
+    export function mintNftHandler(): Function
+    export function connectWalletHandler(): Function
+    export function checkWalletIsConnected(): Function
+} 

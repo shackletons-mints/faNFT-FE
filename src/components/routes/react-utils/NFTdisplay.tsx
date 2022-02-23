@@ -43,14 +43,14 @@ const NFTdisplay: React.FC<NFTdisplayProps> = ({ currentAccount, setCurrentAccou
         setShowMore(showMore + 6)
     }
 
-    const renderShowMore = (showing) => {
+    const renderShowMore = (showing: number) => {
         if (showing >= NFT_DATA.length) {
             return false
         }
         return true
     }
 
-    const handleNFTDisplay = (showMe) => 
+    const handleNFTDisplay = (showMe: number) => 
         NFT_DATA.map((nft, idx) => {
             if (idx > showMe) return
             return (

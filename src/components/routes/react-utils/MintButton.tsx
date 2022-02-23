@@ -1,5 +1,5 @@
 import React from 'react'
-import { connectWalletHandler, mintNftHandler, } from '../../js-utils/web3Interactions.js'
+import { connectWalletHandler, mintNftHandler, } from '../../js-utils/web3Interactions'
 import './MintButton.css'
 
 interface MintButtonProps {

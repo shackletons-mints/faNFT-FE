@@ -8,14 +8,14 @@ import Home from './routes/Home'
 import FanFT from './routes/FanFT'
 import FanContract from './routes/FanContract'
 
-import { checkWalletIsConnected, connectWalletHandler, mintNftHandler, } from './js-utils/web3Interactions.js'
+import { checkWalletIsConnected, connectWalletHandler, mintNftHandler, } from './js-utils/web3Interactions'
 
 // const contractAddress = 'ADDRESS'
 // const abi = contract
 
 
 function App() {
-    const [currentAccount, setCurrentAccount] = useState(null)
+    const [currentAccount, setCurrentAccount] = useState('0x0')
 
     useEffect(() => {
         checkWalletIsConnected(setCurrentAccount)
