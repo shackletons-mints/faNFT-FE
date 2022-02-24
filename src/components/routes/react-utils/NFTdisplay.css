@@ -1,5 +1,5 @@
 .nft {
-    height: 360px;
+    height: 400px;
     width: 360px;
     margin: auto;
     margin-bottom: 30px;
@@ -19,6 +19,52 @@
 .nft-card {
     margin: auto;
     padding: 20px;
-    height: 508px;
+    height: 680px;
     width: 412px;
+}
+
+.hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+#loading {
+    display: flex;
+    width: inherit;
+    height: inherit;
+    justify-content: center;
+    align-items: center;
+}
+
+.prop-table {
+    width: inherit;
+    margin: auto;
+    padding: 10px;
+}
+
+.prop-header {
+    display: flex;
+    padding: 5px;
+}
+
+.last-value {
+    display: flex;
+    justify-content: end;
+    padding: 5px;
+}
+
+.header {
+    padding: 5px;
+}
+
+.header:last-child {
+    display: flex;
+    justify-content: end;
 }

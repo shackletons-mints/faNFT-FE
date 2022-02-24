@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import './NFTdisplay.css'
-import { Watch } from 'react-loader-spinner'
 
 import NFTSquare from './NFTSquare'
 import MintButton from './MintButton'
@@ -24,66 +23,25 @@ interface Properties {
 }
 
 interface NFTmetadata {
-    image?: string
+    image?: string // URL
     name?: string
     description?: string
     properties?: Properties
 }
 
 const NFTdisplay: React.FC<NFTdisplayProps> = ({ currentAccount, setCurrentAccount }) => {
-    const [nftCollection, setNftCollection] = useState([])
-    const [displayedGifs, setDisplayedGifs] = useState([1, 15, 25])
+    const [nftCollection, setNftCollection] = useState<NFTmetadata[]>([])
+    const [displayedGifs, setDisplayedGifs] = useState<number[]>([1, 15, 25])
 
     useEffect(() => {
-        const getMetadata = async (gifsWeWant: number[]) => {
-            const nftCollector = []
-    
-            for (let i = 0; i < gifsWeWant.length; i++) {
-                const config = {
-                    headers: {
-                        // 'Access-Control-Allow-Origin': '*',
-                        'Content-Type': 'application/json',
-                        // 'Access-Control-Allow-Credentials': true,
-                    }
-                }
-                const paddedHex = ("0000000000000000000000000000000000000000000000000000000000000000" + gifsWeWant[i].toString(10)).substr(-64)
-                const nftMetadata = await axios.get(`https://gateway.pinata.cloud/ipfs/QmVF3uM9BnffDMfPoeADuYfvXcjvW8wHr8eHRxphpV9C7J/${paddedHex}.json`, config)
-                nftCollector.push(nftMetadata.data)
-            }
-            setNftCollection(nftCollector)
-        }
-    
         getMetadata(displayedGifs)
+
     }, [])
 
     useEffect(() => {
-
-        const getMetadata = async (gifsWeWant: number[]) => {
-            const nftCollector = []
-    
-            for (let i = 0; i < gifsWeWant.length; i++) {
-                const config = {
-                    headers: {
-                        // 'Access-Control-Allow-Origin': '*',
-                        'Content-Type': 'application/json',
-                        // 'Access-Control-Allow-Credentials': true,
-                    }
-                }
-                const paddedHex = ("0000000000000000000000000000000000000000000000000000000000000000" + gifsWeWant[i].toString(10)).substr(-64)
-                const nftMetadata = await axios.get(`https://gateway.pinata.cloud/ipfs/QmVF3uM9BnffDMfPoeADuYfvXcjvW8wHr8eHRxphpV9C7J/${paddedHex}.json`, config)
-                nftCollector.push(nftMetadata.data)
-            }
-            setNftCollection(nftCollector)
-        }
-
-
         getMetadata(displayedGifs)
     }, [displayedGifs])
 
-    const handleShowDiffNFTs = () => {
-        const newGifs = getThreeRandomGifs()
-        setDisplayedGifs(newGifs)
-    }
 
     const getThreeRandomGifs = () => {
         const theChosenThree = []
@@ -93,7 +51,7 @@ const NFTdisplay: React.FC<NFTdisplayProps> = ({ currentAccount, setCurrentAccou
 
         for (let i = 0; i < 3; i++) {
             let newIdx = randomNumGeneration()
-            while (theChosenThree.indexOf(newIdx) > -1) {
+            while (theChosenThree.indexOf(newIdx) > -1 && displayedGifs.indexOf(newIdx) > -1) {
                 newIdx = randomNumGeneration()
             }
             theChosenThree.push(newIdx)
@@ -102,7 +60,30 @@ const NFTdisplay: React.FC<NFTdisplayProps> = ({ currentAccount, setCurrentAccou
         return theChosenThree
     }
 
-    
+    // TODO: verify that we have gif before tryign to render it
+    const getMetadata = async (gifsWeWant: number[]) => {
+        const nftCollector = []
+
+        for (let i = 0; i < gifsWeWant.length; i++) {
+            const config = {
+                headers: {
+                    // 'Access-Control-Allow-Origin': '*',
+                    'Content-Type': 'application/json',
+                    // 'Access-Control-Allow-Credentials': true,
+                }
+            }
+            const paddedHex = ("0000000000000000000000000000000000000000000000000000000000000000" + gifsWeWant[i].toString(10)).substr(-64)
+            const nftMetadata = await axios.get(`https://gateway.pinata.cloud/ipfs/QmVF3uM9BnffDMfPoeADuYfvXcjvW8wHr8eHRxphpV9C7J/${paddedHex}.json`, config)
+            
+            nftCollector.push(nftMetadata.data)
+        }
+        setNftCollection(nftCollector)
+    }
+
+    const handleShowMore = () => {
+        const newGifs = getThreeRandomGifs()
+        setDisplayedGifs([...displayedGifs, ...newGifs])
+    }
 
     const handleNFTDisplay = (collection: any[]) =>
         collection.map((nft, idx) => {
@@ -110,8 +91,6 @@ const NFTdisplay: React.FC<NFTdisplayProps> = ({ currentAccount, setCurrentAccou
                 <div key={idx} className='nft-card'>
                     <NFTSquare
                         nftMetadata={nft}
-                    />
-                    <MintButton
                         currentAccount={currentAccount}
                         setCurrentAccount={setCurrentAccount}
                     />
@@ -125,12 +104,11 @@ const NFTdisplay: React.FC<NFTdisplayProps> = ({ currentAccount, setCurrentAccou
             <div id='nft-container'>
                 {nftCollection.length > 0 && handleNFTDisplay(nftCollection)}
 
-                <button id='show-more' className='hover-effect' onClick={handleShowDiffNFTs}>
-                    Show Different NFTs
+                <button id='show-more' className='hover-effect' onClick={handleShowMore}>
+                    Show More
                 </button>
 
             </div>
-            <div><Watch /></div>
         </div>
     )
 }
