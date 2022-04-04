@@ -37,8 +37,8 @@ const FanContract = () => {
         Prism.highlightAll();
     }, []);
     return (
-        <div className="Code">
-            <h1>fanFT Contract Code</h1>
+        <div className='Code'>
+            <h1 className='display-1'>fanFT Contract Code</h1>
             <a>Link to etherscan</a>
             <pre>
                 <code id='code' className='language-sol'>{code}</code>

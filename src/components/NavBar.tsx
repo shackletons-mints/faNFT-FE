@@ -3,14 +3,22 @@ import './NavBar.css'
 import logo from '../assets/fanft_logo.svg'
 import contract from '../assets/contract.svg'
 import home from '../assets/home.svg'
+import money from '../assets/money.svg'
 
 const NavBar = () => {
     return (
         <ul id='nav-bar'>
+            <span id='nav-title'>Some Catchy Name</span>
             <li>
                 <Link to='/' className='nav-link'>
                     <img src={home}/>
                     <span>Home</span>
+                </Link>
+            </li>
+            <li>
+                <Link to='/lottery' className='nav-link'>
+                    <img src={money}/>
+                    <span>Lottery</span>
                 </Link>
             </li>
             <li>

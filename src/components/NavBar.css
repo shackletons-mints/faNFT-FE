@@ -4,6 +4,10 @@
     transition: 0.3s ease;
 }
 
+#nav-title {
+    padding-right: 20px;
+}
+
 a {
     color: inherit !important;
 }
@@ -20,12 +24,13 @@ ul {
     justify-content: flex-end;
     margin-right: 100px;
     margin-top: 20px;
+    margin-bottom: 50px;
     padding: 15px;
 }
 
 ul li {
   list-style: none;
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 ul li a {

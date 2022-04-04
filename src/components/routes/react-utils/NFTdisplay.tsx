@@ -3,7 +3,6 @@ import axios from 'axios'
 import './NFTdisplay.css'
 
 import NFTSquare from './NFTSquare'
-import MintButton from './MintButton'
 
 interface NFTdisplayProps {
     currentAccount?: string;
@@ -50,6 +49,7 @@ const NFTdisplay: React.FC<NFTdisplayProps> = ({ currentAccount, setCurrentAccou
         }
 
         for (let i = 0; i < 3; i++) {
+            // TODO CHECK FOR AMOUNT OF GIFS HERE
             let newIdx = randomNumGeneration()
             while (theChosenThree.indexOf(newIdx) > -1 && displayedGifs.indexOf(newIdx) > -1) {
                 newIdx = randomNumGeneration()

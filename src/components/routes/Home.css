@@ -1,0 +1,21 @@
+.about-us-container {
+    padding: 20px;
+    margin: 20px;
+}
+
+.answers {
+    margin: auto;
+    width: 50%;
+    text-align: start;
+}
+
+.questions {
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+
+.about-us {
+    margin: auto;
+    width: 50%;
+    text-align: start;
+}

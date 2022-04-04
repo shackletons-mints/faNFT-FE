@@ -7,6 +7,7 @@ import NavBar from './NavBar'
 import Home from './routes/Home'
 import FanFT from './routes/FanFT'
 import FanContract from './routes/FanContract'
+import Lottery from './routes/Lottery'
 
 import { checkWalletIsConnected, connectWalletHandler, mintNftHandler, } from './js-utils/web3Interactions'
 
@@ -37,6 +38,10 @@ function App() {
                 />
                 <Route path='/contract' element={
                     <FanContract />
+                }
+                />
+                <Route path='/lottery' element={
+                    <Lottery />
                 }
                 />
             </Routes>
