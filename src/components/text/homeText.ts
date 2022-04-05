@@ -24,10 +24,15 @@ const TEST_SUBTITLE = `
 Bodacious subtitle
 `
 
+const ROADMAP = `
+Roadmap stuff that will impress some idiot on the internet.
+`
+
 const ABOUT_US_TITLE = 'About Us'
 const WHAT_IS_NFT_TITLE = 'What\'s an NFT?'
 const WHAT_IS_METAMASK_TITLE = 'What is Metamask?'
 const HOW_CAN_I_BUY_TITLE = 'How can you buy our shit?'
+const ROADMAP_TITLE = 'Roadmap'
 
 const homeText = {
     aboutUs: ABOUT_US_TEXT,
@@ -41,6 +46,9 @@ const homeText = {
     howCanIBuyTitle: HOW_CAN_I_BUY_TITLE,
     titleCaption: TITLE_CAPTION,
     testSubtitle: TEST_SUBTITLE,
+    roadmap: ROADMAP,
+    roadmapTitle: ROADMAP_TITLE,
+
 }
 
 export default homeText

@@ -13,7 +13,7 @@
 }
 
 body {
-  background-color: var(--black);
+  background-image: linear-gradient(to right, var(--lessBlack) 0%, var(--black) 100%);
   box-sizing: border-box;
 }
 
