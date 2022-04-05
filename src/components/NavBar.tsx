@@ -12,25 +12,25 @@ const NavBar = () => {
             <li>
                 <Link to='/' className='nav-link'>
                     <img src={home}/>
-                    <span>Home</span>
+                    <span className='nav-text'>Home</span>
                 </Link>
             </li>
             <li>
                 <Link to='/lottery' className='nav-link'>
                     <img src={money}/>
-                    <span>Lottery</span>
+                    <span className='nav-text'>Lottery</span>
                 </Link>
             </li>
             <li>
                 <Link to='/fanFT' className='nav-link'>
                     <img src={logo}/>
-                    <span>fanFT</span>
+                    <span className='nav-text'>fanFT</span>
                 </Link>
             </li>
             <li>
                 <Link to='/contract' className='nav-link'>
                     <img src={contract}/>
-                    <span>Contract</span>
+                    <span className='nav-text'>Contract</span>
                 </Link>
             </li>
         </ul>

@@ -34,7 +34,7 @@ const Home = () => {
                     title={homeText.whatIsMetamaskTitle}
                     text={homeText.whatIsMetamask}
                     linkText={homeText.metamaskLinkText}
-                    href={'https://metamask.io/'}
+                    href='https://metamask.io/'
                 />
                 <FlipCard
                     title={homeText.howCanIBuyTitle}

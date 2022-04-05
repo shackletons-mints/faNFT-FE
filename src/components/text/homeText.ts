@@ -8,8 +8,11 @@ A non-fungible token (NFT) is a unit of data stored on a digital ledger, called 
 NFTs can be used to represent items such as photos, videos, audio, and other types of
 `
 const WHAT_IS_METAMASK = `
-Metamask is a crypto wallet that can store your Ethereum and is needed to purchase and mint a Basic Bored Ape. Learn more about Metamask here!
+Metamask is a crypto wallet that can store your Ethereum and is needed to purchase and mint a Basic Bored Ape.
 It's so easy and user-friendly crypto wallet.You need Metamask to buy an Ape.
+`
+const METAMASK_LINK_TEXT = `
+Learn more about Metamask here!
 `
 const HOW_CAN_I_BUY_THESE_AMAZING_FANS = `
 You need Ethereum and Metamask wallet to buy one of these amazing fans. The initial sell is available from our website. Then secondary sell would be possible by Opensea.
@@ -31,6 +34,7 @@ const homeText = {
     aboutUsTitle: ABOUT_US_TITLE,
     whatIsMetamask: WHAT_IS_METAMASK,
     whatIsMetamaskTitle: WHAT_IS_METAMASK_TITLE,
+    metamaskLinkText: METAMASK_LINK_TEXT,
     whatIsNft: WHAT_IS_NFT,
     whatIsNftTitle: WHAT_IS_NFT_TITLE,
     howCanIBuy: HOW_CAN_I_BUY_THESE_AMAZING_FANS,

@@ -14,13 +14,15 @@ const FlipCard: React.FC<FlipCardProps> = ({ title, text, linkText, href }) => {
             <div className='container'>
                 <div className='inside'>
                     <div className='front'>
-                        <h2 className='display-2'>{title}</h2>
+                        <h2 className='display-3'>{title}</h2>
                     </div>
                     <div className='back'>
-                        <p className="lead text">{text}</p>
+                        <p className="lead text">{text}
+                        {href !== undefined && 
+                            <a href={href} target='_blank'> {linkText}</a>
+                        }
+                        </p>
                     </div>
-                    {/* why the fuck isn't this working like I want it to? */}
-                    {href && <a href={href}>{ linkText }</a>}
                 </div>
             </div>
         </div>
