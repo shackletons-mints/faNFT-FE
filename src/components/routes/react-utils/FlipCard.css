@@ -51,3 +51,7 @@
     color: white;
     transform: rotateY(180deg);
 }
+
+a {
+    margin: auto;
+}

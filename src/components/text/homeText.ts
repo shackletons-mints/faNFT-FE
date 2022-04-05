@@ -26,7 +26,7 @@ const WHAT_IS_NFT_TITLE = 'What\'s an NFT?'
 const WHAT_IS_METAMASK_TITLE = 'What is Metamask?'
 const HOW_CAN_I_BUY_TITLE = 'How can you buy our shit?'
 
-const textValues = {
+const homeText = {
     aboutUs: ABOUT_US_TEXT,
     aboutUsTitle: ABOUT_US_TITLE,
     whatIsMetamask: WHAT_IS_METAMASK,
@@ -39,4 +39,4 @@ const textValues = {
     testSubtitle: TEST_SUBTITLE,
 }
 
-export default textValues
+export default homeText

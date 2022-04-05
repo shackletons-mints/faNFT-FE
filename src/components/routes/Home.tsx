@@ -1,5 +1,5 @@
 import react from 'react'
-import textValues from './textVariables.js'
+import homeText from '../text/homeText.js'
 
 import FlipCard from './react-utils/FlipCard'
 import Title from './react-utils/Title'
@@ -12,12 +12,12 @@ const Home = () => {
             <Title 
                 title='Double Dragon Crypto'
                 border={true}
-                details={textValues.titleCaption}
+                details={homeText.titleCaption}
             />
 
             <FlipCard
-                title={textValues.aboutUsTitle}
-                text={textValues.aboutUs}
+                title={homeText.aboutUsTitle}
+                text={homeText.aboutUs}
             />
 
             <div className='faq-container'>
@@ -27,16 +27,18 @@ const Home = () => {
                 />
 
                 <FlipCard
-                    title={textValues.whatIsNftTitle}
-                    text={textValues.whatIsNft}
+                    title={homeText.whatIsNftTitle}
+                    text={homeText.whatIsNft}
                 />
                 <FlipCard
-                    title={textValues.whatIsMetamaskTitle}
-                    text={textValues.whatIsMetamask}
+                    title={homeText.whatIsMetamaskTitle}
+                    text={homeText.whatIsMetamask}
+                    linkText={homeText.metamaskLinkText}
+                    href={'https://metamask.io/'}
                 />
                 <FlipCard
-                    title={textValues.howCanIBuyTitle}
-                    text={textValues.howCanIBuy}
+                    title={homeText.howCanIBuyTitle}
+                    text={homeText.howCanIBuy}
                 />
 
             </div>
