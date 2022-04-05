@@ -1,0 +1,62 @@
+
+.title-container {
+    color: white;
+    background: radial-gradient(circle, rgba(224,210,26,1) 3%, rgba(255,16,16,1) 74%);
+    margin: 50px 0;
+}
+
+.display-1 {
+    padding: 30px;
+}
+
+.details {
+    padding: 15px;
+}
+
+.top-border {
+    height: 50px;
+    width: 100%;
+    background-image: url('../../../assets/dragonFA.svg');
+    background-size: 5%;
+    background-repeat: repeat-x;
+    animation: animatedBackgroundMoveRight 8s linear infinite;
+    overflow:hidden;
+}
+
+.bottom-border {
+    height: 50px;
+    width: 100%;
+    background-image: url('../../../assets/dragonFA.svg');
+    background-size: 5%;
+    background-repeat: repeat-x;
+    animation: animatedBackgroundMoveRight 8s linear infinite;
+    overflow:hidden;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.detail-box {
+    border: 1px solid black;
+    background-color: red;
+}
+
+@keyframes animatedBackgroundMoveRight {
+    0% {
+        background-position: 0% 0%
+    }
+    100% {
+        background-position: 100% 0%
+    }
+}
+@keyframes animatedBackgroundMoveLeft {
+    0% {
+        background-position: 100% 0%
+    }
+    100% {
+        background-position: 0% 0%
+    }
+}

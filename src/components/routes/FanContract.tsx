@@ -1,7 +1,9 @@
 import { useEffect } from 'react'
-import Prism from 'prismjs';
-import "prismjs/themes/prism-tomorrow.css";
+import Prism from 'prismjs'
+import "prismjs/themes/prism-tomorrow.css"
 import './FanContract.css'
+
+import Title from './react-utils/Title'
 
 const code = `// SPDX-License-Identifier: MIT
 pragma solidity 0.8.10;
@@ -34,11 +36,16 @@ contract FaNFT is ERC721URIStorage, Ownable {
 
 const FanContract = () => {
     useEffect(() => {
-        Prism.highlightAll();
-    }, []);
+        Prism.highlightAll()
+    }, [])
+
     return (
         <div className='Code'>
-            <h1 className='display-1'>fanFT Contract Code</h1>
+            <Title 
+                title='fanFT Contract Code'
+                border={true}
+            />
+
             <a>Link to etherscan</a>
             <pre>
                 <code id='code' className='language-sol'>{code}</code>

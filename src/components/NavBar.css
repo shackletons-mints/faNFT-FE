@@ -8,6 +8,10 @@
     padding-right: 20px;
 }
 
+#nav-bar {
+    width: 100%;
+}
+
 a {
     color: inherit !important;
 }

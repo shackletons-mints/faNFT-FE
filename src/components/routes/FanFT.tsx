@@ -13,7 +13,10 @@ interface FanFTProps {
 const FanFT: React.FC<FanFTProps> = ({ currentAccount, setCurrentAccount }) => {
     return (
         <div>
-            <Title />
+            <Title 
+                title='faNFT'
+                border={true}
+            />
             <NFTdisplay 
                 currentAccount={currentAccount}
                 setCurrentAccount={setCurrentAccount}

@@ -8,7 +8,7 @@ import money from '../assets/money.svg'
 const NavBar = () => {
     return (
         <ul id='nav-bar'>
-            <span id='nav-title'>Some Catchy Name</span>
+            <span id='nav-title'>Double Dragon Crypto</span>
             <li>
                 <Link to='/' className='nav-link'>
                     <img src={home}/>

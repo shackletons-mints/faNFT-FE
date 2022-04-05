@@ -1,0 +1,53 @@
+.display-2 {
+    border: 1px solid white;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+}
+
+.container {
+    background-color: transparent;
+    margin: auto;
+    padding: 50px 0;
+    width: 60%;
+    height: 350px;
+    perspective: 1500px;
+    overflow: auto;
+}
+
+.inside {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.text {
+    background: rgb(224, 210, 26);
+    background: linear-gradient(180deg, rgba(224, 210, 26, 1) 3%, rgba(255, 16, 16, 1) 74%);
+    padding: 30px;
+}
+
+.container:hover .inside {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.front {
+    color: white;
+}
+
+.back {
+    color: white;
+    transform: rotateY(180deg);
+}
