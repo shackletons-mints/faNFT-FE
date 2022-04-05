@@ -3,7 +3,7 @@
     --secondary: rgba(255,16,16,1);
     --white: rgb(255,250,240);
     --black: rgb(8,8,8);
-    --blackSiena: rgb(21,21,21);
+    --lessBlack: rgb(21,21,21);
 }
 
 .nav-link {
@@ -55,8 +55,7 @@ ul li a {
   width: 100%;
   height: 60px;
   line-height: 63px;
-  background: var(--blackSiena);
-  /* border-radius: 50%; */
+  background: var(--lessBlack);
   font-size: 15px;
   transition: .3s ease;
 }
@@ -70,8 +69,6 @@ ul li a img {
     position: absolute;
     width: 100%;
     height: 100%;
-    /* border-radius: 50%; */
-    /* transform: translate(-10px, -10px); */
 }
 
 ul li a img:hover::before {
@@ -93,7 +90,6 @@ ul li a::before {
   left: 0;
   width: 100%;
   height: 100%;
-  /* border-radius: 50%; */
   background: var(--primary);
   transition: .3s ease;
   transform: scale(.9);

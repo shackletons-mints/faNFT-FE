@@ -1,7 +1,14 @@
+:root {
+    --primary: rgba(224,210,26,1);
+    --secondary: rgba(255,16,16,1);
+    --white: rgb(255,250,240);
+    --black: rgb(8,8,8);
+    --lessBlack: rgb(21,21,21);
+}
 
 .title-container {
-    color: white;
-    background: radial-gradient(circle, rgba(224,210,26,1) 3%, rgba(255,16,16,1) 74%);
+    color: var(--white);
+    background: radial-gradient(circle, var(--primary) 3%, var(--secondary) 74%);
     margin: 50px auto;
     width: 90%;
 }

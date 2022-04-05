@@ -3,6 +3,7 @@
     --secondary: rgba(255,16,16,1);
     --white: rgb(255,250,240);
     --black: rgb(8,8,8);
+    --lessBlack: rgb(21,21,21);
 }
 
 .App {
