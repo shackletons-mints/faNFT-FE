@@ -1,75 +1,81 @@
 import react from 'react'
+import { render } from 'react-dom'
 import homeText from '../text/homeText.js'
 
 import FlipCard from './react-utils/FlipCard'
 import Title from './react-utils/Title'
 
-import aboutUs from '../../assets/about-us.svg'
-import nft from '../../assets/nft.svg'
-import metamask from '../../assets/metamask.svg'
-import ether from '../../assets/ether.svg'
-import map from '../../assets/map.svg'
+interface Text {
+    title?: string
+    text?: string
+    linkText?: string
+    href?: string
+    src?: string
+}
 
 const Home = () => {
+    const mainTitle = {
+        title: 'Double Dragon Crypto',
+        caption: 'Awesome tagline about us here',
+        subtitle: 'Bodacious subtitle',
+    }
+
+    const renderText = (textFile: Text[]) => {
+
+        const [ aboutUs ] = textFile.filter(obj => obj.title === 'About Us')
+
+        return (
+            <>
+                <FlipCard
+                    title={aboutUs.title}
+                    text={aboutUs.text}
+                    src={aboutUs.src}
+                />
+
+                <div className='faq-container' style={{ height: '1000px' }}>
+
+                    <Title
+                        title='FAQ'
+                    />
+
+                    <div className='card-container'
+                        style={{
+                            display: 'flex',
+                            flexFlow: 'row',
+                            flexBasis: 'auto',
+                            flexWrap: 'wrap',
+                            gap: '20px 20px'
+                        }}
+                    >
+
+                        {textFile.filter(obj => obj.title !== 'About Us').map((card, idx) => (
+                            < FlipCard
+                                key={idx}
+                                title={card?.title}
+                                text={card?.text}
+                                src={card?.src}
+                                linkText={card?.linkText}
+                                href={card?.href}
+                            />
+                        ))}
+
+                    </div>
+
+                </div>
+            </>
+        )
+    }
 
     return (
         <div>
 
             <Title
-                title='Double Dragon Crypto'
+                title={mainTitle.title}
                 border={true}
-                details={homeText.titleCaption}
+                details={mainTitle.caption}
             />
 
-            <FlipCard
-                title={homeText.aboutUsTitle}
-                text={homeText.aboutUs}
-                src={aboutUs}
-            />
-
-            <div className='faq-container' style={{ height: '1000px' }}>
-
-                <Title
-                    title='FAQ'
-                />
-
-                <div className='card-container'
-                    style={{
-                        display: 'flex',
-                        flexFlow: 'row',
-                        flexBasis: 'auto',
-                        flexWrap: 'wrap',
-                        gap: '20px 20px'
-                    }}
-                >
-
-                    <FlipCard
-                        title={homeText.whatIsNftTitle}
-                        text={homeText.whatIsNft}
-                        src={nft}
-                    />
-                    <FlipCard
-                        title={homeText.whatIsMetamaskTitle}
-                        text={homeText.whatIsMetamask}
-                        linkText={homeText.metamaskLinkText}
-                        src={metamask}
-                        href='https://metamask.io/'
-                    />
-                    <FlipCard
-                        title={homeText.howCanIBuyTitle}
-                        text={homeText.howCanIBuy}
-                        src={ether}
-                    />
-                    <FlipCard
-                        title={homeText.roadmapTitle}
-                        text={homeText.roadmap}
-                        src={map}
-                    />
-
-                </div>
-
-            </div>
-
+            {renderText(homeText)}
         </div>
     )
 }
