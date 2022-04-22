@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 import './Countdown.css'
 
-
 const Countdown = () => {
 
     const calculateTimeLeft = () => {
@@ -16,51 +15,44 @@ const Countdown = () => {
         // this example it's set to end on may 31st
         const difference = +new Date(`${year}-5-31`) - +new Date()
         let timeLeft: any = {}
-    
+
         if (difference > 0) {
-          timeLeft = {
-            days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-            hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-            minutes: Math.floor((difference / 1000 / 60) % 60),
-            seconds: Math.floor((difference / 1000) % 60),
-          }
+            timeLeft = {
+                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+                minutes: Math.floor((difference / 1000 / 60) % 60),
+                seconds: Math.floor((difference / 1000) % 60),
+            }
         }
-    
+
         return timeLeft
-      }
-    
-      const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
-      const [year] = useState(new Date().getFullYear())
-    
-      useEffect(() => {
+    }
+
+    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
+    const [year] = useState(new Date().getFullYear())
+
+    useEffect(() => {
         setTimeout(() => {
-          setTimeLeft(calculateTimeLeft())
+            setTimeLeft(calculateTimeLeft())
         }, 1000)
-      })
-    
-      const timerComponents: any = []
-    
-      Object.keys(timeLeft).forEach((interval) => {
-        if (!timeLeft[interval]) {
-          return
-        }
-    
+    })
+
+    const timerComponents: any = []
+
+    Object.keys(timeLeft).forEach((interval) => {
         timerComponents.push(
-          <span>
-            {timeLeft[interval]} {interval}{" "}
-          </span>
-        );
-      });
+            <span>
+                {timeLeft[interval]} {interval}{" "}
+            </span>
+        )
+    })
 
-      return (
-          <div className='countdown'>
-              <h1>Lottery closes in</h1>
+    return (
+        <div className='countdown'>
+            <h1>Lottery closes in</h1>
             {timerComponents.length ? timerComponents : <span>Time's up!</span>}
-          </div>
-      )
-
-
+        </div>
+    )
 }
 
-  export default Countdown
-  
+export default Countdown
