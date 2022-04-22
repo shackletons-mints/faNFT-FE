@@ -21,7 +21,7 @@ const FlipCard: React.FC<FlipCardProps> = ({ title, text, linkText, href, src })
                     <div className='back'>
                         <p className="lead text">{text}
                             {href !== undefined &&
-                                <a href={href} target='_blank'> {linkText}</a>
+                                <a className='link' href={href} target='_blank'> {linkText}</a>
                             }
                         </p>
                     </div>

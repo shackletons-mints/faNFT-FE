@@ -41,7 +41,10 @@ function App() {
                 }
                 />
                 <Route path='/lottery' element={
-                    <Lottery />
+                    <Lottery 
+                        setCurrentAccount={setCurrentAccount}
+                        currentAccount={currentAccount}
+                    />
                 }
                 />
             </Routes>

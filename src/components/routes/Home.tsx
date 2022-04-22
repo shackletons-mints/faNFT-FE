@@ -1,5 +1,4 @@
-import react from 'react'
-import { render } from 'react-dom'
+import React, { useState } from 'react'
 import homeText from '../text/homeText.js'
 
 import FlipCard from './react-utils/FlipCard'
@@ -14,6 +13,7 @@ interface Text {
 }
 
 const Home = () => {
+
     const mainTitle = {
         title: 'Double Dragon Crypto',
         caption: 'Awesome tagline about us here',

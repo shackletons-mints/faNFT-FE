@@ -1,27 +1,40 @@
 import Title from './react-utils/Title'
-import StaticCard from './react-utils/StaticCard'
+import LotteryAgreement from './react-utils/LotteryAgreement'
 import MintButton from './react-utils/MintButton'
+import Countdown from './react-utils/Countdown'
 
 import lotteryText from '../text/lotteryText'
 
-const Lottery = () => {
+const Lottery = ({currentAccount, setCurrentAccount}) => {
 
     return (
-        <>
-            <Title
-                title='COMING SOON'
+        <div className='lottery-page'>
+        <Title
+                title='Lottery_v1'
+                border={true}
             />
-            <StaticCard
-                title={lotteryText.title}
-                text={lotteryText.specs}
+
+            <Countdown />
+
+            <LotteryAgreement
+                title={lotteryText?.importantInfo?.title}
+                text={lotteryText?.importantInfo?.text}
+                list={lotteryText?.importantInfo?.list}
+                subtext={lotteryText?.importantInfo?.subtext}
+                subList={lotteryText?.importantInfo?.subList}
+                href={lotteryText?.importantInfo?.href}
+                linkText={lotteryText?.importantInfo?.linkText}
             />
+
             <div className='buttons-container'>
-                <button>Buy into Lottery</button> 
+                <MintButton 
+                    currentAccount={currentAccount}
+                    setCurrentAccount={setCurrentAccount}
+                    buttonText='Enter Lottery'
+                />
             </div>
-            <div className='lottery-timer'>
-                <div>HERE WE WILL SHOW YOU A BEAUTIFUL COUNTDOWN UNTIL THE LOTTERY IS OVER</div>
-            </div>
-        </>
+
+        </div>
 
     )
 }

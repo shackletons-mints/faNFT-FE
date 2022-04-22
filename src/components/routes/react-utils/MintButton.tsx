@@ -4,29 +4,31 @@ import { connectWalletHandler, mintNftHandler, } from '../../js-utils/web3Intera
 import './MintButton.css'
 
 interface MintButtonProps {
-    currentAccount?: string;
-    setCurrentAccount?: Function;
+    currentAccount?: string
+    setCurrentAccount?: Function
+    buttonText: string
 }
 
-const connectWalletButton = (setCurrentAccount: Function) => {
-    return (
-        <button className='btn' id='connect' onClick={() => connectWalletHandler(setCurrentAccount)}>
-            Connect Wallet
-        </button>
-    )
-}
 
-const mintNftButton = () => {
-    return (
-        <div>
-            <button type="button" id='mint' className='hover-effect' onClick={() => mintNftHandler()}>
-                Mint NFT
+const MintButton: React.FC<MintButtonProps> = ({ currentAccount, setCurrentAccount, buttonText }) => {
+
+    const connectWalletButton = (setCurrentAccount: Function) => {
+        return (
+            <button className='btn' id='connect' onClick={() => connectWalletHandler(setCurrentAccount)}>
+                Connect Wallet
             </button>
-        </div>
-    )
-}
-
-const MintButton: React.FC<MintButtonProps> = ({ currentAccount, setCurrentAccount }) => {
+        )
+    }
+    
+    const mintNftButton = () => {
+        return (
+            <div>
+                <button type="button" id='mint' className='hover-effect' onClick={() => mintNftHandler()}>
+                    {buttonText}
+                </button>
+            </div>
+        )
+    }
 
     return (
         <div>
