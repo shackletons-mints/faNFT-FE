@@ -16,18 +16,25 @@ const LotteryAgreement: React.FC<LotteryAgreementProps> = ({ title, text, list, 
     console.log(list)
     return (
         <div className='lotAgree-card-container'>
-            <h2 className='lotAgree-card-display-3'>{title}</h2>
+            <h1 className='lotAgree-card-display-3'>{title}</h1>
             <p className="lotAgree-card-text">{text}</p>
             { list?.length > 0
                 &&
                 <ul className='list'>
                     {list?.map((item, idx) => (
                         <li className='agreement' key={idx}>
+                            {(idx === list?.length - 1 && href) 
+                                &&
+                                <>
+                                {item}
+                                    <a className='link' href={href} target='_blank'>{linkText}</a>
+                                </>
+                            }
                             {(listIndentions?.includes(idx)) && <>&emsp; &emsp; </>}
-                            {item}
+                            {(idx !== list?.length - 1) && item}
                         </li>
                     ))}
-                    {href !== undefined && <a className='link' href={href} target='_blank'> {linkText}</a>}
+                    {/* {href !== undefined && } */}
                 </ul>
             }
             <p className="lotAgree-card-text">{subtext}</p>
