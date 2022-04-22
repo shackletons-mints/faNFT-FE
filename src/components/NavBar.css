@@ -33,6 +33,12 @@ a {
     transform: scale(1.5);
 }
 
+.sub-nav-link:hover {
+    cursor: pointer;
+    color: var(--black) !important;
+    transform: scale(1.5);
+}
+
 ul {
     display: flex;
     align-items: center;

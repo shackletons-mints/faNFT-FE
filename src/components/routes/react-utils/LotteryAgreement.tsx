@@ -20,7 +20,7 @@ const LotteryAgreement: React.FC<LotteryAgreementProps> = ({ title, text, list, 
             <p className="lotAgree-card-text">{text}</p>
             { list?.length > 0
                 &&
-                <ul className='list'>
+                <ul id="agreement" className='list'>
                     {list?.map((item, idx) => (
                         <li className='agreement' key={idx}>
                             {(idx === list?.length - 1 && href) 

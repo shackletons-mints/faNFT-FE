@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 import './NavBar.css'
 import logo from '../assets/fanft_logo.svg'
 import contract from '../assets/contract.svg'
@@ -6,6 +6,7 @@ import home from '../assets/home.svg'
 import money from '../assets/money.svg'
 
 const NavBar = () => {
+
     return (
         <ul id='nav-bar'>
             <span id='nav-title'>Double Dragon Crypto</span>
