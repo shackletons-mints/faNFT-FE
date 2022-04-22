@@ -26,6 +26,8 @@ const Lottery = ({currentAccount, setCurrentAccount}) => {
                 />
             </div>
 
+            {/* TODO: Add in the Lottery Structure */}
+
             <LotteryAgreement
                 title={importantInfo?.title}
                 text={importantInfo?.text}

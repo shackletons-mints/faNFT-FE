@@ -49,7 +49,10 @@ const LotteryAgreement: React.FC<LotteryAgreementProps> = ({ title, text, list, 
                 </ul>
             }
             <h2 className='disclaimer-title'>--Disclaimer--</h2>
-            <p className='disclaimer-text'>Please only use money that you can afford to lose!</p>
+            <p className='disclaimer-text'>
+                We wish you the best of luck, but there can only be a few winners <br/>
+                Please only use money that you can afford to lose!
+            </p>
         </div>
     )
 }
