@@ -33,12 +33,6 @@ a {
     transform: scale(1.5);
 }
 
-.sub-nav-link:hover {
-    cursor: pointer;
-    color: var(--black) !important;
-    transform: scale(1.5);
-}
-
 ul {
     display: flex;
     align-items: center;
@@ -82,13 +76,6 @@ ul li a img:hover::before {
     box-shadow: 0 0 15px var(--primary);
   }
 
-  ul li a img:hover {
-    color: var(--primary);
-    box-shadow: 0 0 20px var(--secondary);
-    text-shadow: 0 0 10px var(--primary);
-    opacity: 0.4;
-  }
-
 ul li a::before {
   content: '';
   position: absolute;
@@ -111,4 +98,9 @@ ul li a:hover {
   color: var(--primary);
   box-shadow: 0 0 20px var(--secondary);
   text-shadow: 0 0 10px var(--primary);
+}
+
+.image {
+    width: 75%;
+    opacity: 0.1;
 }
