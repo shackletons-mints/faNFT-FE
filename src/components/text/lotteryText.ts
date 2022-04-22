@@ -1,4 +1,8 @@
-const importantInfo = {
+import fee from '../../assets/fees.svg'
+import clock from '../../assets/clock.svg'
+import prize from '../../assets/prize.svg'
+
+const agreementText = {
     title: 'Lottery Agreement',
     text: 'By clicking the \'Enter Lottery\' button be aware that:',
     list: [
@@ -22,8 +26,51 @@ const importantInfo = {
     listIndentions: [ 1,2,4,5,6 ],
 }
 
+const fees = {
+    title:'Entry Fees',
+    text: [
+        'Entry Fee: 100 USD/xxx ETH',
+        'Usage Fee: 10 USD/xxx ETH',
+        'Estimated Transaction Fee: 0.22USD/xxx ETH',
+        'Total Cost: 110.22 USD/xxx ETH',
+    ],
+    src: fee,
+}
+
+const purse = {
+    title: 'Prizes',
+    text: [
+        'Grand Prize: 50% of the total pot',
+        '2nd Prize: 25% of the total pot',
+        '3rd Prize: 12.5% of the total pot',
+        '4th Prize: 6.25% of the total pot',
+        '5th Prize: 3.125% of the total pot',
+        '6th Prize: 3.125% of the total pot',
+    ],
+    src: prize,
+}
+
+const flow = {
+    title: 'Time Frame',
+    text: [
+        'Lottery will run for one month, when the month is over...',
+        'Anyone can call the determineWinners function to calculate <xxx amount> random winners',
+        'After this function is called, anyone can invoke payoutWinners to distrubute the funds'
+    ],
+    src: clock,
+}
+
+const lotteryTitleText = {
+    title: 'Lottery_v1',
+    details: 'Enter for your chance to win Life Changeing Money!',
+}
+
+const lotteryFlipCardsTexts = [ fees, purse, flow ]
+
 const lotteryText = {
-    importantInfo,
+    agreementText,
+    lotteryFlipCardsTexts,
+    lotteryTitleText,
 }
 
 export default lotteryText

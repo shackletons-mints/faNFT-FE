@@ -1,0 +1,7 @@
+.lottery-card-container {
+    display: flex;
+    flex-flow: row;
+    flex-basis: auto;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+}

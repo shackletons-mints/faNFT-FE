@@ -1,12 +1,3 @@
-:root {
-    --primary: rgba(224,210,26,1);
-    --secondary: rgba(255,16,16,1);
-    --ternary: rgba(65,222,222,1);
-    --white: rgb(255,250,240);
-    --black: rgb(8,8,8);
-    --lessBlack: rgb(21,21,21);
-}
-
 .countdown {
     color: var(--black);
     width: 500px;
@@ -14,4 +5,9 @@
     padding: 10px;
     background: var(--primary);
     background: linear-gradient(180deg, var(--primary) 3%, var(--secondary) 74%);
+    animation: colorChange 2s infinite alternate;
+}
+
+@keyframes colorChange {
+    to { color: var(--white); }
 }

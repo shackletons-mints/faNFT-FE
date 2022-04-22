@@ -1,16 +1,8 @@
-:root {
-    --primary: rgba(224,210,26,1);
-    --secondary: rgba(255,16,16,1);
-    --ternary: rgba(65,222,222,1);
-    --white: rgb(255,250,240);
-    --black: rgb(8,8,8);
-    --lessBlack: rgb(21,21,21);
-}
-
 .lotAgree-card-display-3 {
     width: 100%;
     background: transparent;
     border: none;
+    color: var(--black);
 }
 
 .lotAgree-card-container {
@@ -47,11 +39,9 @@
     padding: 3px 0;
 }
 
-.link {
-    margin: 0 !important;
-    color:  var(--ternary) !important;
-    background: transparent;
-    font-size: medium;
+.agreement a.link:hover {
+    background-color: transparent;
+    box-shadow: none;
 }
 
 .disclaimer-text {
@@ -61,14 +51,9 @@
 .disclaimer-title {
     margin-top: 5px;
     padding: 10px;
-    animation: colorChange 2s infinite alternate;
+    animation: colorChangeDisclaimer 2s infinite alternate;
 }
 
-a:hover {
-    color: #0d6efd !important;
-}
-
-@keyframes colorChange {
-    from { color: var(--black); }
-    to { color: var(--white); }
+@keyframes colorChangeDisclaimer {
+    to { color: var(--black); }
 }

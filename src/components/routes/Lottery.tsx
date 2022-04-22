@@ -2,18 +2,22 @@ import Title from './react-utils/Title'
 import LotteryAgreement from './react-utils/LotteryAgreement'
 import MintButton from './react-utils/MintButton'
 import Countdown from './react-utils/Countdown'
+import LotteryFlipCard from './react-utils/LotteryFlipCard'
 
 import lotteryText from '../text/lotteryText'
 
 const Lottery = ({currentAccount, setCurrentAccount}) => {
 
-    const { importantInfo } = lotteryText
+    const { agreementText, lotteryFlipCardsTexts, lotteryTitleText } = lotteryText
+
+    console.log(lotteryFlipCardsTexts[1].text)
 
     return (
         <div className='lottery-page'>
         <Title
-                title='Lottery_v1'
-                border={true}
+                title={lotteryTitleText.title}
+                staticBorder={true}
+                details={lotteryTitleText.details}
             />
 
             <Countdown />
@@ -27,16 +31,47 @@ const Lottery = ({currentAccount, setCurrentAccount}) => {
             </div>
 
             {/* TODO: Add in the Lottery Structure */}
+            {/* <FlipCard 
+                key={idx}
+                title={card?.title}
+                text={card?.text}
+                src={card?.src}
+                linkText={card?.linkText}
+                href={card?.href}
+            /> */}
+
+            <div className='lottery-card-container'
+                style={{
+                    display: 'flex',
+                    flexFlow: 'row',
+                    flexBasis: 'auto',
+                    flexWrap: 'wrap',
+                    gap: '20px 20px'
+                }}
+            >
+                {lotteryFlipCardsTexts.map((card, idx) => {
+
+                    return (
+                        <LotteryFlipCard 
+                            key={idx}
+                            title={card.title}
+                            text={card.text}
+                            src={card?.src}
+                        />
+                    )
+                })}
+
+            </div>
 
             <LotteryAgreement
-                title={importantInfo?.title}
-                text={importantInfo?.text}
-                list={importantInfo?.list}
-                subtext={importantInfo?.subtext}
-                subList={importantInfo?.subList}
-                href={importantInfo?.href}
-                linkText={importantInfo?.linkText}
-                listIndentions={importantInfo?.listIndentions}
+                title={agreementText.title}
+                text={agreementText.text}
+                list={agreementText.list}
+                subtext={agreementText.subtext}
+                subList={agreementText.subList}
+                href={agreementText.href}
+                linkText={agreementText.linkText}
+                listIndentions={agreementText.listIndentions}
             />
 
         </div>
