@@ -54,6 +54,21 @@
     font-size: medium;
 }
 
+.disclaimer-text {
+    color: var(--black);
+}
+
+.disclaimer-title {
+    margin-top: 5px;
+    padding: 10px;
+    animation: colorChange 2s infinite alternate;
+}
+
 a:hover {
     color: #0d6efd !important;
+}
+
+@keyframes colorChange {
+    from { color: var(--black); }
+    to { color: var(--white); }
 }
