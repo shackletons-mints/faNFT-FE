@@ -9,9 +9,11 @@ interface LotteryAgreementProps {
     subList?: string[]
     href?: string
     linkText?: string
+    listIndentions?: number[]
 }
 
-const LotteryAgreement: React.FC<LotteryAgreementProps> = ({ title, text, list, subtext, subList, href, linkText }) => {
+const LotteryAgreement: React.FC<LotteryAgreementProps> = ({ title, text, list, subtext, subList, href, linkText, listIndentions }) => {
+    console.log(list)
     return (
         <div className='lotAgree-card-container'>
             <h2 className='lotAgree-card-display-3'>{title}</h2>
@@ -21,6 +23,7 @@ const LotteryAgreement: React.FC<LotteryAgreementProps> = ({ title, text, list, 
                 <ul className='list'>
                     {list?.map((item, idx) => (
                         <li className='agreement' key={idx}>
+                            {(listIndentions?.includes(idx)) && <>&emsp; &emsp; </>}
                             {item}
                         </li>
                     ))}

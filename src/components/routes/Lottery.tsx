@@ -7,6 +7,8 @@ import lotteryText from '../text/lotteryText'
 
 const Lottery = ({currentAccount, setCurrentAccount}) => {
 
+    const { importantInfo } = lotteryText
+
     return (
         <div className='lottery-page'>
         <Title
@@ -16,16 +18,6 @@ const Lottery = ({currentAccount, setCurrentAccount}) => {
 
             <Countdown />
 
-            <LotteryAgreement
-                title={lotteryText?.importantInfo?.title}
-                text={lotteryText?.importantInfo?.text}
-                list={lotteryText?.importantInfo?.list}
-                subtext={lotteryText?.importantInfo?.subtext}
-                subList={lotteryText?.importantInfo?.subList}
-                href={lotteryText?.importantInfo?.href}
-                linkText={lotteryText?.importantInfo?.linkText}
-            />
-
             <div className='buttons-container'>
                 <MintButton 
                     currentAccount={currentAccount}
@@ -33,6 +25,17 @@ const Lottery = ({currentAccount, setCurrentAccount}) => {
                     buttonText='Enter Lottery'
                 />
             </div>
+
+            <LotteryAgreement
+                title={importantInfo?.title}
+                text={importantInfo?.text}
+                list={importantInfo?.list}
+                subtext={importantInfo?.subtext}
+                subList={importantInfo?.subList}
+                href={importantInfo?.href}
+                linkText={importantInfo?.linkText}
+                listIndentions={importantInfo?.listIndentions}
+            />
 
         </div>
 
