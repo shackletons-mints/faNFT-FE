@@ -49,8 +49,12 @@ const Countdown = () => {
 
     return (
         <div className='countdown'>
+            <div className='wrapper wrapper-animated'>
             <h1>Lottery closes in</h1>
-            {timerComponents.length ? timerComponents : <span>Time's up!</span>}
+            <p id='timer'>
+                {timerComponents.length ? timerComponents : <span>Time's up!</span>}
+            </p>
+            </div>
         </div>
     )
 }

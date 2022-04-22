@@ -2,7 +2,7 @@ import Title from './react-utils/Title'
 import LotteryAgreement from './react-utils/LotteryAgreement'
 import MintButton from './react-utils/MintButton'
 import Countdown from './react-utils/Countdown'
-import LotteryFlipCard from './react-utils/LotteryFlipCard'
+import SectionCard from './react-utils/SectionCard'
 
 import lotteryText from '../text/lotteryText'
 
@@ -16,7 +16,6 @@ const Lottery = ({currentAccount, setCurrentAccount}) => {
         <div className='lottery-page'>
         <Title
                 title={lotteryTitleText.title}
-                staticBorder={true}
                 details={lotteryTitleText.details}
             />
 
@@ -40,7 +39,9 @@ const Lottery = ({currentAccount, setCurrentAccount}) => {
                 href={card?.href}
             /> */}
 
-            <div className='lottery-card-container'
+            <SectionCard />
+
+            {/* <div className='lottery-card-container'
                 style={{
                     display: 'flex',
                     flexFlow: 'row',
@@ -61,7 +62,7 @@ const Lottery = ({currentAccount, setCurrentAccount}) => {
                     )
                 })}
 
-            </div>
+            </div> */}
 
             <LotteryAgreement
                 title={agreementText.title}

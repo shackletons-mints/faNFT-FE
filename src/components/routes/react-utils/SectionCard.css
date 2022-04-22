@@ -1,0 +1,131 @@
+.section-container-1 {
+    width: 75%;
+    height: 350px;
+    margin: 20px 10%;
+    padding: 20px;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+    background-color: var(--secondary);
+    border-radius: 5px;
+    /* border: 10px groove var(--lessBlack); */
+    /* border-radius-top-left: 5px; */
+}
+
+.section-container-2 {
+    width: 75%;
+    height: 350px;
+    margin: 20px 20%;
+    padding: 20px;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+    background-color: var(--secondary);
+    border-radius: 5px;
+    /* border: 10px groove var(--lessBlack); */
+    /* border-radius-top-left: 5px; */
+}
+
+.left-container {
+    flex-basis: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 20px 0 20px;
+}
+
+.right-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-container-2 {
+    flex-basis: 20%;
+    display: flex;
+    padding: 20px 20px 0 20px;
+}
+
+.right-container-2 {
+    flex-basis: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.section-title {
+    flex-basis: 100%;
+    text-align: start;
+    margin: auto;
+    z-index: 1;
+}
+
+.section-title-2 {
+    flex-basis: 100%;
+    text-align: start;
+    margin: auto;
+    z-index: 1;
+}
+
+.section-divider {
+    z-index: 0;
+    width: 20%;
+    flex-basis: 34%;
+    height: 3px;
+    margin-top: -20px;
+    margin-bottom: 0.69em;
+    border-radius: 200px;
+    padding: 0 15px 0 0;
+    background-image: -webkit-gradient(linear,left top,right top,from(var(--secondary)),to(var(--primary)));
+    background-image: linear-gradient(90deg,var(--secondary),var(--primary));
+}
+
+ol {
+    flex-basis: 100%;
+}
+
+.section-text li {
+    display: flex;
+    flex-direction: row;
+    padding: 0 0 4px 0;
+    font-weight: 600;
+    font-size: larger;
+    color: var(--black);
+}
+
+.section-image {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    display: flex;
+    background-color: var(--primary);
+}
+
+.section-image-2 {
+    width: 102%;
+    height: 60%;
+    border-radius: 50%;
+    /* display: flex; */
+    background-color: var(--primary);
+    animation: changeClockColor 3s infinite alternate;
+}
+
+@keyframes changeClockColor {
+    from {
+        background-color: #6666ff;
+      }
+      10% {
+        background-color: #0099ff;
+      }
+      50% {
+        background-color: #00ff00;
+      }
+      75% {
+        background-color: #ff3399;
+      }
+      100% {
+        background-color: #6666ff;
+      }
+}

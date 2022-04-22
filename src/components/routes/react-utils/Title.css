@@ -2,11 +2,12 @@
     color: var(--white);
     background: radial-gradient(circle, var(--primary) 3%, var(--secondary) 74%);
     margin: 50px auto;
-    width: 91%;
+    width: 101%;
 }
 
 .display-1 {
     padding: 30px;
+    font-weight: 700;
 }
 
 .details {

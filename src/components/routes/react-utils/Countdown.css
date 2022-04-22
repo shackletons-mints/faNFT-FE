@@ -1,13 +1,36 @@
 .countdown {
-    color: var(--black);
-    width: 500px;
+    color: var(--white);
+    width: fit-content;
     margin: 0 auto 20px auto;
     padding: 10px;
-    background: var(--primary);
-    background: linear-gradient(180deg, var(--primary) 3%, var(--secondary) 74%);
-    animation: colorChange 2s infinite alternate;
+    background-color: rgb(3, 28, 16);
+    background-color: rgba(3, 28, 16, 0.2);
+}
+
+#timer {
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.wrapper-animated {
+    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 6s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
 }
 
 @keyframes colorChange {
-    to { color: var(--white); }
+    to { color: var(--primary); }
 }
