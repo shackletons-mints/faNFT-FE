@@ -16,10 +16,10 @@
     font-size: 1rem;
     transition: 0.3s ease;
     margin-top: 75px;
-    -webkit-animation: bounce 0.75s infinite alternate;
-    -moz-animation: bounce 0.75s infinite alternate;
-    animation: bounce 0.75s infinite alternate;
     font-size: x-large;
+    /* -webkit-animation: bounce 0.75s infinite alternate;
+    -moz-animation: bounce 0.75s infinite alternate;
+    animation: bounce 0.75s infinite alternate; */
 }
 
 @-webkit-keyframes bounce {

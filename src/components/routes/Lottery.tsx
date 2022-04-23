@@ -2,7 +2,7 @@ import Title from './react-utils/Title'
 import LotteryAgreement from './react-utils/LotteryAgreement'
 import MintButton from './react-utils/MintButton'
 import Countdown from './react-utils/Countdown'
-import SectionCard from './react-utils/SectionCard'
+import LotterySpecs from './react-utils/LotterySpecs'
 
 import lotteryText from '../text/lotteryText'
 
@@ -21,48 +21,15 @@ const Lottery = ({currentAccount, setCurrentAccount}) => {
 
             <Countdown />
 
-            <div className='buttons-container'>
+            {/* <div className='buttons-container'>
                 <MintButton 
                     currentAccount={currentAccount}
                     setCurrentAccount={setCurrentAccount}
                     buttonText='Enter Lottery'
                 />
-            </div>
-
-            {/* TODO: Add in the Lottery Structure */}
-            {/* <FlipCard 
-                key={idx}
-                title={card?.title}
-                text={card?.text}
-                src={card?.src}
-                linkText={card?.linkText}
-                href={card?.href}
-            /> */}
-
-            <SectionCard />
-
-            {/* <div className='lottery-card-container'
-                style={{
-                    display: 'flex',
-                    flexFlow: 'row',
-                    flexBasis: 'auto',
-                    flexWrap: 'wrap',
-                    gap: '20px 20px'
-                }}
-            >
-                {lotteryFlipCardsTexts.map((card, idx) => {
-
-                    return (
-                        <LotteryFlipCard 
-                            key={idx}
-                            title={card.title}
-                            text={card.text}
-                            src={card?.src}
-                        />
-                    )
-                })}
-
             </div> */}
+
+            <LotterySpecs />
 
             <LotteryAgreement
                 title={agreementText.title}

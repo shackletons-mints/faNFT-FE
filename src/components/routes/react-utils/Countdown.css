@@ -7,8 +7,9 @@
     background-color: rgba(3, 28, 16, 0.2);
 }
 
-#timer {
-    font-size: x-large;
+#timer span,
+#timer h1 {
+    font-size: x-large !important;
     font-weight: 600;
 }
 
@@ -29,8 +30,4 @@
     50% {
         background-position: 100% 0;
     }
-}
-
-@keyframes colorChange {
-    to { color: var(--primary); }
 }
