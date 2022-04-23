@@ -1,0 +1,5 @@
+#footer {
+    width: 100%;
+    background-color: var(--ternary);
+    bottom: 0;
+}

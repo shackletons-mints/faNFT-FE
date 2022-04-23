@@ -4,8 +4,9 @@ import lotteryText from '../../text/lotteryText'
 
 import fee from '../../../assets/fees.svg'
 import timeframe from '../../../assets/clock.svg'
-import dice from '../../../assets/dice.svg'
+import prize from '../../../assets/prize.svg'
 import logo from '../../../assets/logo.png'
+import dice from '../../../assets/dice.svg'
 
 import './LotterySpecs.css'
 
@@ -18,43 +19,65 @@ const LotterySpecs = () => {
                     <img className='section-image-2' src={timeframe} />
                 </div>
                 <div className='right-container-2'>
-                    <h1 className='section-title-2'>Time Frame</h1>
+                    <h1 className='section-title-2'>The Process</h1>
                     <span className='section-divider-2'></span>
                     <div className='section-text-2'>
                         <p>
-                            Anyone is eligible to enter into the lottery....
-                            Anyone can call the determineWinners function to calculate xxx amount random winners
-                            After this function is called, anyone can invoke payoutWinners to distrubute the funds
+                            Anyone is eligible to enter into the lottery.
+                            The lottery will close after a month.
+                            Then anyone can call the function <strong>determineWinners</strong>
+                            which uses a ChainLink oracle to create truly random numbers to
+                            pick winners out of our smart contract. After winners are chosen, anyone
+                            can call the function <strong>payoutWinners</strong> to release the winnings.
                         </p>
                     </div>
                 </div>
             </div>
 
-            <div className='section-container-1'>
-                <div className='left-container'>
-                    <h1 className='section-title'>Entry Fees
-                    </h1>
-                    <span className='section-divider'></span>
-                    <ol className='section-text'>
-                        <li>Entry Fee: 100 USD/xxx ETH</li>
-                        <li>Usage Fee: 10 USD/xxx ETH</li>
-                        <li>Estimated Transaction Fee: 0.22USD/xxx ETH</li>
-                        <li>Total Cost: 110.22 USD/xxx ETH</li>
-                    </ol>
+            <div className='payments-container' >
+
+                <div className='section-container-payment'>
+                    <div className='one-container'>
+                        <h1 className='section-title'>Entry Fees</h1>
+                        <span className='section-divider'></span>
+                        <ol className='section-text'>
+                            <li>Entry Fee: 100 USD/xxx ETH</li>
+                            <li>Usage Fee: 10 USD/xxx ETH</li>
+                            <li>Estimated Transaction Fee: 0.22USD/xxx ETH</li>
+                            <li>Total Cost: 110.22 USD/xxx ETH</li>
+                        </ol>
+                    </div>
+
                 </div>
-                <div className='right-container'>
-                    <img className='section-image' src={fee} />
+
+                <div className='section-container-payment'>
+                    <div className='one-container'>
+                        <span className='inline-logo'>
+                            <img className='section-image-inline' src={prize} />
+                            <h1 className='section-title'>Prizes</h1>
+                        </span>
+                        {/* <span className='section-divider'></span> */}
+                        <ol className='section-text'>
+                            <li><b>Grand Prize –&nbsp;</b>50% of the total pot</li>
+                            <li><b>2nd Prize –&nbsp;</b>25% of the total pot</li>
+                            <li><b>3rd Prize –&nbsp;</b>12.5% of the total pot</li>
+                            <li><b>4th Prize –&nbsp;</b>6.25% of the total pot</li>
+                            <li><b>5th Prize –&nbsp;</b>3.125% of the total pot</li>
+                            <li><b>6th Prize –&nbsp;</b>3.125% of the total pot</li>
+                        </ol>
+                    </div>
+
                 </div>
 
             </div>
 
-            <Title 
+            <Title
                 title='Lottery Agreement'
             />
 
             <div className='section-container-3'>
                 <div className='left-container'>
-                    <h1>By clicking Enter Lottery be aware that:</h1>
+                    <h1 className='section-title'>By clicking Enter Lottery be aware that:</h1>
                     <span className='section-divider-3'></span>
                     <ol className='section-text'>
                         <li>You will be signing two transactions.</li>
@@ -67,7 +90,23 @@ const LotterySpecs = () => {
                     </ol>
                 </div>
                 <div className='right-container'>
-                    {/* <img className='section-image-3' src={dragon} /> */}
+                    <img className='section-image-3' src={dice} />
+                </div>
+
+            </div>
+
+            <div className='section-container-5'>
+                <div className='left-container'>
+                    <h1 className='section-title'>Double Dragon Crypto promises to:</h1>
+                    <span className='section-divider-5'></span>
+                    <ol className='section-text'>
+                        <li>provide a fair lottery contract for all parties</li>
+                        <li>provide a bug-free/hacker-resistent smart contract</li>
+                        <li>give you a chance to win life changing money</li>
+                    </ol>
+                </div>
+                <div className='right-container'>
+                    <img className='section-image-5' src={logo} />
                 </div>
 
             </div>
@@ -90,33 +129,6 @@ const LotterySpecs = () => {
                 </div>
             </div>
 
-            <div className='section-container-1'>
-                <div className='left-container'>
-                    <h1 className='section-title'>Double Dragon Crypto promises to:</h1>
-                    <span className='section-divider'></span>
-                    <ol className='section-text'>
-                        <li>provide a fair lottery contract for all parties</li>
-                        <li>provide a bug-free/hacker-resistent smart contract</li>
-                        <li>give you a chance to win life changing money</li>
-                    </ol>
-                </div>
-                <div className='right-container'>
-                    <img className='section-image-5' src={logo} />
-                </div>
-
-            </div>
-
-            {/* 
-                        subtext: 'Addtionally, Double Dragon Crypto promises to:',
-                        subList: [
-                            '1. provide a fair lottery contract for all parties',
-                            '2. provide a bug-free/hacker-resistent smart contract',
-                            '3. give you a chance to win life changing money',
-                        ],
-                        href: 'https://coinmarketcap.com/alexandria/article/what-is-arbitrum',
-                        linkText: 'You can read more about Arbitrum here',
-                        listIndentions: [ 1,2,4,5,6 ],
-            */}
         </>
     )
 }
