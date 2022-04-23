@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Title from './react-utils/Title'
 import NFTdisplay from './react-utils/NFTdisplay'
 
@@ -11,6 +11,11 @@ interface FanFTProps {
     // CONTRACT ADDRESS LINK TO ETHERSCAN
     // SOCIAL LINKS
 const FanFT: React.FC<FanFTProps> = ({ currentAccount, setCurrentAccount }) => {
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [])
+
     return (
         <div>
             <Title 

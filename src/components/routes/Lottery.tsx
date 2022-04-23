@@ -1,3 +1,5 @@
+import React, { useEffect } from 'react'
+
 import Title from './react-utils/Title'
 import LotteryAgreement from './react-utils/LotteryAgreement'
 import MintButton from './react-utils/MintButton'
@@ -6,7 +8,13 @@ import LotterySpecs from './react-utils/LotterySpecs'
 
 import lotteryText from '../text/lotteryText'
 
+import './Lottery.css'
+
 const Lottery = ({currentAccount, setCurrentAccount}) => {
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [])
 
     const { agreementText, lotteryFlipCardsTexts, lotteryTitleText } = lotteryText
 
@@ -15,32 +23,15 @@ const Lottery = ({currentAccount, setCurrentAccount}) => {
     return (
         <div className='lottery-page'>
         <Title
-                title={lotteryTitleText.title}
+                title='DoubleDragonCrypto Lottery'
                 details={lotteryTitleText.details}
             />
 
-            <Countdown />
-
-            {/* <div className='buttons-container'>
-                <MintButton 
-                    currentAccount={currentAccount}
-                    setCurrentAccount={setCurrentAccount}
-                    buttonText='Enter Lottery'
-                />
-            </div> */}
-
-            <LotterySpecs />
-
-            <LotteryAgreement
-                title={agreementText.title}
-                text={agreementText.text}
-                list={agreementText.list}
-                subtext={agreementText.subtext}
-                subList={agreementText.subList}
-                href={agreementText.href}
-                linkText={agreementText.linkText}
-                listIndentions={agreementText.listIndentions}
+            <Countdown 
+                currentAccount={currentAccount}
+                setCurrentAccount={setCurrentAccount}
             />
+            <LotterySpecs />
 
         </div>
 

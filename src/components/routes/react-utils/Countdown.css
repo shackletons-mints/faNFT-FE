@@ -1,15 +1,23 @@
 .countdown {
     color: var(--white);
     width: fit-content;
-    margin: 0 auto 20px auto;
+    margin: auto;
     padding: 10px;
     background-color: rgb(3, 28, 16);
     background-color: rgba(3, 28, 16, 0.2);
+    position: sticky;
+    top: 22px;
+    display: flex;
+    flex-flow: row;
+    gap: 20px 20px;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #timer span,
 #timer h1 {
-    font-size: x-large !important;
+    font-size: large !important;
     font-weight: 600;
 }
 
@@ -20,6 +28,8 @@
     color: transparent;
     animation: rainbow_animation 6s ease-in-out infinite;
     background-size: 400% 100%;
+    text-align: left;
+    margin-left: 75px;
 }
 
 @keyframes rainbow_animation {
@@ -30,4 +40,10 @@
     50% {
         background-position: 100% 0;
     }
+}
+
+.buttons-container {
+    position: sticky;
+    top: 50px;
+    margin-right: 75px;
 }

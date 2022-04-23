@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import homeText from '../text/homeText.js'
 
 import FlipCard from './react-utils/FlipCard'
@@ -13,6 +13,10 @@ interface Text {
 }
 
 const Home = () => {
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [])
 
     const mainTitle = {
         title: 'Double Dragon Crypto',

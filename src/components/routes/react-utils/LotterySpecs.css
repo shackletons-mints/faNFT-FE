@@ -1,5 +1,5 @@
 .section-container-1 {
-    width: 75%;
+    width: 55%;
     height: 400px;
     margin: 75px 10%;
     padding: 20px;
@@ -16,6 +16,36 @@
 .section-container-2 {
     width: 75%;
     height: 400px;
+    margin: 150px 20%;
+    padding: 20px;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+    background-color: var(--ternary);
+    border-radius: 5px;
+    /* border: 10px groove var(--lessBlack); */
+    /* border-radius-top-left: 5px; */
+}
+
+.section-container-3 {
+    width: 75%;
+    height: 400px;
+    margin: 75px 10%;
+    padding: 20px;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+    background-color: var(--secondary);
+    border-radius: 5px;
+    /* border: 10px groove var(--lessBlack); */
+    /* border-radius-top-left: 5px; */
+}
+
+.section-container-4 {
+    width: 50%;
+    height: 300px;
     margin: 150px 20%;
     padding: 20px;
     display: flex;
@@ -48,6 +78,22 @@
     padding: 20px 20px 0 20px;
     justify-content: center;
     height: inherit;
+}
+
+.right-container-2 {
+    flex-basis: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 45px 0 0 0;
+}
+
+.left-container-4 {
+    flex-basis: 40%;
+    display: flex;
+    padding: 20px 20px 0 20px;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .right-container-2 {
@@ -98,6 +144,19 @@
     background-image: linear-gradient(90deg,var(--ternary),var(--primary));
 }
 
+.section-divider-3 {
+    z-index: 0;
+    width: 20%;
+    flex-basis: 34%;
+    height: 3px;
+    margin-top: -25px;
+    margin-bottom: 0.69em;
+    border-radius: 200px;
+    padding: 0 230px 0 0;
+    background-image: -webkit-gradient(linear,left top,right top,from(var(--ternary)),to(var(--primary)));
+    background-image: linear-gradient(90deg,var(--ternary),var(--primary));
+}
+
 ol {
     flex-basis: 100%;
 }
@@ -127,7 +186,22 @@ ol {
     background-color: var(--primary);
 }
 
+.section-image-3 {
+    width: 120%;
+    display: flex;
+    /* background-color: var(--primary); */
+}
+
 .section-image-2 {
     max-width: 100%;
     max-height: 80%;
+}
+
+.section-image-5 {
+    max-width: 100%;
+    max-height: 80%;
+}
+
+.arbitrum {
+    width: 55%;
 }

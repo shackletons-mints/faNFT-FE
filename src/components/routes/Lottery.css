@@ -1,3 +1,7 @@
+.lottery-page {
+    height: inherit;
+}
+
 .lottery-card-container {
     display: flex;
     flex-flow: row;

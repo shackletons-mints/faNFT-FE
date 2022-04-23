@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
+import MintButton from './MintButton'
 import './Countdown.css'
 
-const Countdown = () => {
+const Countdown = ({ currentAccount, setCurrentAccount }) => {
 
     const calculateTimeLeft = () => {
         let year = new Date().getFullYear()
@@ -54,6 +55,14 @@ const Countdown = () => {
             <p id='timer'>
                 {timerComponents.length ? timerComponents : <span>Time's up!</span>}
             </p>
+            </div>
+
+            <div className='buttons-container'>
+                <MintButton 
+                    currentAccount={currentAccount}
+                    setCurrentAccount={setCurrentAccount}
+                    buttonText='Enter Lottery'
+                />
             </div>
         </div>
     )
