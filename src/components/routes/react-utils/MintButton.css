@@ -3,7 +3,6 @@
     color: var(--black);
     text-align: center;
     text-decoration: none;
-    vertical-align: middle;
     cursor: pointer;
     background-color: var(--secondary);
     border: 2px solid var(--black);
@@ -11,27 +10,14 @@
     transition: 0.3s ease;
     font-size: x-large;
     width: 350px;
-    /* -webkit-animation: bounce 0.75s infinite alternate;
-    -moz-animation: bounce 0.75s infinite alternate;
-    animation: bounce 0.75s infinite alternate; */
+    transform: translateY(-1.75vh);
 }
-
-@-webkit-keyframes bounce {
-    to { -webkit-transform: scale(1.25); }
-  }
-  @-moz-keyframes bounce {
-    to { -moz-transform: scale(1.25); }
-  }
-  @keyframes bounce {
-    to { transform: scale(1.25); }
-  }
 
 #mint:hover {
     color: var(--black);
     cursor: pointer;
     background: var(--primary);
     box-shadow: 0 0 20px var(--secondary);
-    transform: scale(1.5);
 }
 
 #show-more {

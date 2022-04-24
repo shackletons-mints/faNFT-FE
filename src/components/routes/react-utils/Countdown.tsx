@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react'
 
 import MintButton from './MintButton'
 import './Countdown.css'
+import PreparationModal from './PreparationModal'
 
-const Countdown = ({ currentAccount, setCurrentAccount }) => {
+const Countdown = ({ currentAccount, setCurrentAccount, showModal }) => {
 
     const calculateTimeLeft = () => {
         let year = new Date().getFullYear()
@@ -62,6 +63,7 @@ const Countdown = ({ currentAccount, setCurrentAccount }) => {
                     currentAccount={currentAccount}
                     setCurrentAccount={setCurrentAccount}
                     buttonText='Enter Lottery'
+                    showModal={showModal}
                 />
             </div>
         </div>

@@ -13,6 +13,7 @@
     width: 90%;
     justify-content: space-between;
     align-items: center;
+    z-index: 4;
 }
 
 #timer span,
@@ -30,6 +31,7 @@
     background-size: 400% 100%;
     text-align: left;
     margin-left: 75px;
+    transform: translateY(-1vh);
 }
 
 @keyframes rainbow_animation {

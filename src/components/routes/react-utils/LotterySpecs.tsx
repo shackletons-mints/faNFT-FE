@@ -2,9 +2,12 @@ import Title from './Title'
 
 import lotteryText from '../../text/lotteryText'
 
-import fee from '../../../assets/fees.svg'
+import fees from '../../../assets/fees.svg'
 import timeframe from '../../../assets/clock.svg'
 import prize from '../../../assets/prize.svg'
+import prize2 from '../../../assets/prize2.svg'
+import prize3 from '../../../assets/prize3.svg'
+import trophy from '../../../assets/trophy.svg'
 import logo from '../../../assets/logo.png'
 import dice from '../../../assets/dice.svg'
 
@@ -19,7 +22,7 @@ const LotterySpecs = () => {
                     <img className='section-image-2' src={timeframe} />
                 </div>
                 <div className='right-container-2'>
-                    <h1 className='section-title-2'>The Process</h1>
+                    <h1 className='section-title-2'>Lottery Protocol</h1>
                     <span className='section-divider-2'></span>
                     <div className='section-text-2'>
                         <p>
@@ -36,37 +39,46 @@ const LotterySpecs = () => {
 
             <div className='payments-container' >
 
-                <div className='section-container-payment'>
-                    <div className='one-container'>
-                        <h1 className='section-title'>Entry Fees</h1>
-                        <span className='section-divider'></span>
-                        <ol className='section-text'>
+                <div className='container-payment'>
+                    <div className='inside'>
+                        <div className='front'>
+                            <img src={fees} />
+                            <h2 className='display-3'>Entry Fees</h2>
+                        </div>
+                        <div className='back'>
+                            <p className="lead text">
+                            <ol className='section-text'>
                             <li>Entry Fee: 100 USD/xxx ETH</li>
                             <li>Usage Fee: 10 USD/xxx ETH</li>
-                            <li>Estimated Transaction Fee: 0.22USD/xxx ETH</li>
-                            <li>Total Cost: 110.22 USD/xxx ETH</li>
+                            <li>Approx Transaction Fee: 0.22USD/xxx ETH</li>
+                            <li id='total-cost'><b>Total Cost: 110.22 USD/xxx ETH</b></li>
                         </ol>
+                            </p>
+                        </div>
                     </div>
-
                 </div>
 
-                <div className='section-container-payment'>
-                    <div className='one-container'>
-                        <span className='inline-logo'>
-                            <img className='section-image-inline' src={prize} />
-                            <h1 className='section-title'>Prizes</h1>
-                        </span>
-                        {/* <span className='section-divider'></span> */}
-                        <ol className='section-text'>
-                            <li><b>Grand Prize –&nbsp;</b>50% of the total pot</li>
-                            <li><b>2nd Prize –&nbsp;</b>25% of the total pot</li>
-                            <li><b>3rd Prize –&nbsp;</b>12.5% of the total pot</li>
-                            <li><b>4th Prize –&nbsp;</b>6.25% of the total pot</li>
-                            <li><b>5th Prize –&nbsp;</b>3.125% of the total pot</li>
-                            <li><b>6th Prize –&nbsp;</b>3.125% of the total pot</li>
-                        </ol>
-                    </div>
 
+                <div className='container-payment'>
+                    <div className='inside'>
+                        <div className='front'>
+                            <img src={trophy} />
+                            <h2 className='display-3'>Prizes</h2>
+                        </div>
+                        <div className='back'>
+                            <p className="lead text">
+                            <ol className='section-text-ol'>
+                            <li><img className='section-image-inline' src={prize} /><b>Grand Prize -&nbsp;</b>50% of the pot</li>
+                            <li><img className='section-image-inline' src={prize2} /><b>2nd Prize -&nbsp;</b>25% of the pot</li>
+                            <li><img className='section-image-inline' src={prize3} /><b>3rd Prize -&nbsp;</b>12.5% of the pot</li>
+                            <br></br>
+                            <li className='moar-pad-left'><b>4th Prize -&nbsp;</b>6.25% of the pot</li>
+                            <li className='moar-pad-left'><b>5th Prize -&nbsp;</b>3.125% of the pot</li>
+                            <li className='moar-pad-left'><b>6th Prize -&nbsp;</b>3.125% of the pot</li>
+                        </ol>
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -111,13 +123,12 @@ const LotterySpecs = () => {
 
             </div>
 
-            <div className='section-container-4'>
-                <div className='left-container-4'>
+            <div className='external-deps-container' >
+
+            <div className='section-container-4a'>
+                <div className='single-container'>
+                    {/* <h1 className='section-title-2'>Arbitrum</h1> */}
                     <img src="https://offchainlabs.com/wp-content/themes/offchain/images/home/arbitrum/arbirtum_logo.svg" className="arbitrum" />
-                </div>
-                <div className='right-container-2'>
-                    <h1 className='section-title-2'>Arbitrum</h1>
-                    <span className='section-divider-2'></span>
                     <div className='section-text-2'>
                         <p>
                             We use Arbitrum in this contract to lower Ethereum Network transaction fees! <br></br>
@@ -127,6 +138,27 @@ const LotterySpecs = () => {
                         </p>
                     </div>
                 </div>
+            </div>
+
+            <div className='section-container-4b'>
+                <div className='left-container-4'>
+                    <img src="https://assets-global.website-files.com/5f6b7190899f41fb70882d08/5f760a499b56c47b8fa74fbb_chainlink-logo.svg" className="chain-link" />
+                </div>
+                <div className='right-container-4b'>
+                    <div className='section-text-2'>
+                        <p>
+                            We use Chainlink in this contract to calculate true randomness<br></br>
+                            <a href='https://docs.chain.link/docs/get-a-random-number/'>
+                                Read more about the Chainlink oracle we use here
+                            </a> <br></br>
+                            <a href='https://coinmarketcap.com/alexandria/article/what-is-arbitrum'>
+                                Test out our randomness function here
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             </div>
 
         </>

@@ -30,8 +30,8 @@
 
 .text,
 .flip-list {
-    background: var(--primary);
-    background: linear-gradient(180deg, var(--primary) 3%, var(--secondary) 74%);
+    background: var(--secondary);
+    /* background: linear-gradient(180deg, var(--primary) 3%, var(--secondary) 74%); */
     padding: 30px;
     height: 100%;
 }
@@ -67,6 +67,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
+    opacity: 0.25;
 }
 
 .back {

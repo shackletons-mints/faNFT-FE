@@ -1,5 +1,6 @@
 import React from 'react'
 
+import PreparationModal from './PreparationModal'
 import { connectWalletHandler, mintNftHandler, } from '../../js-utils/web3Interactions'
 import './MintButton.css'
 
@@ -10,8 +11,10 @@ interface MintButtonProps {
 }
 
 
-const MintButton: React.FC<MintButtonProps> = ({ currentAccount, setCurrentAccount, buttonText }) => {
+const MintButton: React.FC<MintButtonProps> = ({ currentAccount, setCurrentAccount, buttonText, showModal }) => {
+    
 
+// onClick={() => mintNftHandler()}
     const connectWalletButton = (setCurrentAccount: Function) => {
         return (
             <button className='btn' id='connect' onClick={() => connectWalletHandler(setCurrentAccount)}>
@@ -23,7 +26,7 @@ const MintButton: React.FC<MintButtonProps> = ({ currentAccount, setCurrentAccou
     const mintNftButton = () => {
         return (
             <div>
-                <button type="button" id='mint' className='hover-effect' onClick={() => mintNftHandler()}>
+                <button type="button" id='mint' onClick={showModal}>
                     {buttonText}
                 </button>
             </div>

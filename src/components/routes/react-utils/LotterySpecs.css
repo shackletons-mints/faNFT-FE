@@ -1,5 +1,5 @@
 .section-container-payment {
-    background-color: var(--ternary);
+    background-color: var(--secondary);
     padding: 50px 0;
     margin: 0 40px;
     border-radius: 5px;
@@ -13,7 +13,7 @@
 .section-container-2 {
     width: 85%;
     height: 400px;
-    margin: 150px auto;
+    margin: 100px auto;
     padding: 20px;
     display: flex;
     flex-flow: row;
@@ -32,7 +32,6 @@
     padding: 20px;
     display: flex;
     flex-flow: row;
-    flex-wrap: wrap;
     gap: 20px 20px;
     background-color: var(--secondary);
     border-radius: 5px;
@@ -40,8 +39,8 @@
     /* border-radius-top-left: 5px; */
 }
 
-.section-container-4 {
-    width: 50%;
+.section-container-4a {
+    width: 40%;
     height: 300px;
     margin: 20px auto;
     padding: 20px;
@@ -50,6 +49,21 @@
     flex-wrap: wrap;
     gap: 20px 20px;
     background-color: var(--ternary);
+    border-radius: 5px;
+    /* border: 10px groove var(--lessBlack); */
+    /* border-radius-top-left: 5px; */
+}
+
+.section-container-4b {
+    width: 40%;
+    height: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+    background-color: var(--secondary);
     border-radius: 5px;
     /* border: 10px groove var(--lessBlack); */
     /* border-radius-top-left: 5px; */
@@ -72,11 +86,19 @@
 
 .payments-container {
     width: 100%;
-    margin: 80px auto;
-    padding: 20px;
+    margin: 20px auto 60px auto;
     display: flex;
     flex-flow: row;
-    gap: 20px 20px;
+    gap: 20px 75px;
+    justify-content: center;
+}
+
+.external-deps-container {
+    width: 100%;
+    margin: 20px auto 60px auto;
+    display: flex;
+    flex-flow: row;
+    gap: 20px 55px;
     justify-content: center;
 }
 
@@ -94,6 +116,13 @@
     justify-content: center;
 }
 
+.left-container {
+    flex-basis: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 45px 0 0 0;
+}
 .left-container-2 {
     flex-basis: 40%;
     display: flex;
@@ -113,9 +142,15 @@
 .left-container-4 {
     flex-basis: 40%;
     display: flex;
-    padding: 20px 20px 0 20px;
+    /* padding: 20px 20px 0 20px; */
     justify-content: center;
     align-items: flex-start;
+}
+
+.chain-link {
+    width: 150%;
+    padding-left: 0;
+    padding-top: 25px;
 }
 
 .right-container-2 {
@@ -124,6 +159,12 @@
     flex-wrap: wrap;
     align-content: flex-start;
     padding: 45px 0 0 0;
+}
+
+.single-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .section-title {
@@ -171,20 +212,33 @@
     width: 20%;
     flex-basis: 34%;
     height: 3px;
-    margin-top: -10px;
+    margin-top: -2px;
     margin-bottom: 0.69em;
     border-radius: 200px;
     padding: 0 750px 0 0;
-    background-image: -webkit-gradient(linear,left top,right top,from(var(--ternary)),to(var(--primary)));
-    background-image: linear-gradient(90deg,var(--ternary),var(--primary));
+    background-image: -webkit-gradient(linear,left top,right top,from(var(--secondary)),to(var(--primary)));
+    background-image: linear-gradient(90deg,var(--secondary),var(--primary));
 }
 
 ol {
     flex-basis: 100%;
-    padding-left: 45px;
+    padding-left: 1px;
 }
 
 .section-text-ol {
+    list-style: none;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+.section-text-ol li {
+    display: flex;
+    flex-direction: row;
+    /* padding: 0 0 4px 0; */
+    font-weight: 600;
+    font-size: larger;
+    color: var(--black);
 }
 
 .section-text li {
@@ -240,4 +294,33 @@ ol {
 
 .arbitrum {
     width: 55%;
+}
+
+
+.container-payment {
+    background-color: transparent;
+    padding: 50px 0;
+    width: 40%;
+    height: 45vh;
+    perspective: 1500px;
+}
+
+.container-payment:hover .inside {
+    transform: rotateY(180deg);
+}
+
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+#total-cost {
+    color: var(--primary);
+}
+
+.moar-pad-left {
+    padding-left: 2.75vw;
 }
