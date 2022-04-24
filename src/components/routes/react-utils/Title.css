@@ -1,7 +1,8 @@
 .title-container {
     color: var(--white);
-    background: radial-gradient(circle, var(--primary) 3%, var(--secondary) 74%);
-    margin: 50px auto;
+    /* background: radial-gradient(circle, var(--primary) 3%, var(--secondary) 74%); */
+    background-color: var(--secondary);
+    margin: 100px auto;
     width: 101%;
 }
 
@@ -12,6 +13,9 @@
 
 .details {
     padding: 15px;
+    font-weight: 500;
+    font-size: large;
+    color: var(--black);
 }
 
 .top-border {

@@ -8,9 +8,8 @@
     border: 2px solid var(--black);
     padding: 0.375rem 0.75rem;
     transition: 0.3s ease;
+    width: 15vw;
     font-size: x-large;
-    width: 350px;
-    transform: translateY(-1.75vh);
 }
 
 #mint:hover {
