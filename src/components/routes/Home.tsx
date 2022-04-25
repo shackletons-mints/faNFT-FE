@@ -8,7 +8,9 @@ import Title from './react-utils/Title'
 
 import logo from './../../assets/logo.png'
 import fanft from './../../assets/dragon-2.svg'
-import fan_img from './../../assets/fan_test_img.png'
+import fan_mp4_one from './../../assets/ONE.mp4'
+import fan_mp4_two from './../../assets/display_mp4_two.mp4'
+import fan_mp4_three from './../../assets/THREE.mp4'
 
 import './Home.css'
 
@@ -62,14 +64,16 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
 
                 <div className='fan-display-container'>
                     <div className='fan-card-container'>
-                        <img className='fan-img' src={fan_img} />
-                        <p className='test-hello'>hello</p>
+                        <video className='fan-img' src={fan_mp4_one} autoPlay muted loop></video>
+                        {/* <p className='test-hello'>hello</p> */}
                     </div>
                     <div className='fan-card-container'>
-                        <p className='test-hello'>hello</p>
+                        <video className='fan-img' src={fan_mp4_two} autoPlay muted loop></video>
+                        {/* <p className='test-hello'>hello</p> */}
                     </div>
                     <div className='fan-card-container'>
-                        <p className='test-hello'>hello</p>
+                        <video className='fan-img' src={fan_mp4_three} autoPlay muted loop></video>
+                        {/* <p className='test-hello'>hello</p> */}
                     </div>
 
                 </div>
