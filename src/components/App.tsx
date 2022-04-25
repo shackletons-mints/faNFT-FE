@@ -11,6 +11,7 @@ import Lottery from './routes/Lottery'
 import Footer from './Footer'
 
 import { checkWalletIsConnected, connectWalletHandler, mintNftHandler, } from './js-utils/web3Interactions'
+import reveal from './js-utils/reveal'
 
 // const contractAddress = 'ADDRESS'
 // const abi = contract
@@ -21,6 +22,11 @@ function App() {
 
     useEffect(() => {
         checkWalletIsConnected(setCurrentAccount)
+    }, [])
+
+    useEffect(() => {
+        window.addEventListener('scroll', reveal)
+        reveal()
     }, [])
 
     return (

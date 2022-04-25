@@ -1,5 +1,6 @@
 .lottery-page {
     height: inherit;
+    padding-top: 0;
 }
 
 .lottery-card-container {

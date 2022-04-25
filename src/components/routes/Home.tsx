@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import homeText from '../text/homeText.js'
 
+import reveal from '../js-utils/reveal.js'
+
 import FlipCard from './react-utils/FlipCard'
 import Title from './react-utils/Title'
+
+import logo from './../../assets/logo.png'
+
+import './Home.css'
 
 interface Text {
     title?: string
@@ -15,7 +21,7 @@ interface Text {
 const Home = () => {
 
     useEffect(() => {
-        window.scrollTo(0,0)
+        window.scrollTo(0, 0)
     }, [])
 
     const mainTitle = {
@@ -26,15 +32,30 @@ const Home = () => {
 
     const renderText = (textFile: Text[]) => {
 
-        const [ aboutUs ] = textFile.filter(obj => obj.title === 'About Us')
+        const [aboutUs] = textFile.filter(obj => obj.title === 'About Us')
 
         return (
             <>
-                <FlipCard
-                    title={aboutUs.title}
-                    text={aboutUs.text}
-                    src={aboutUs.src}
-                />
+                <div className='about-us-container'>
+                    <div className='about-us-left'>
+                        <h1 className='about-us-title'>{aboutUs.title}</h1>
+                        <img className='about-us-logo reveal' src={logo} />
+                    </div>
+                    <div className='about-us-right'>
+                        <div className='about-us-text'>{aboutUs.text}</div>
+                    </div>
+                </div>
+
+                <div className='about-us-container'>
+                    <div className='about-us-left'>
+                        <h1 className='about-us-title'>{aboutUs.title}</h1>
+                        <img className='about-us-logo' src={logo} />
+                    </div>
+                    <div className='about-us-right'>
+                        <div className='about-us-text'>{aboutUs.text}</div>
+                    </div>
+                </div>
+
 
                 <div className='faq-container' style={{ height: '1000px' }}>
 

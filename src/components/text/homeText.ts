@@ -12,7 +12,7 @@ const aboutUs = {
     text: `
         Lorem, ipsum dolor sit amet consectetur adipisicing elit.
         Consectetur, ipsam eius illo dolorum magni deleniti doloremque dignissimos placeat mollitia quia accusantium, architecto necessitatibus alias exercitationem nam aperiam?
-        Ab, quidem autem deleniti molestias nostrum aut inventore atque, doloremque quaerat consectetur alias. Illum ea eos iusto ipsum blanditiis. Ullam iste earum excepturi.
+        Ab, quidem autem deleniti molestias nostrum aut inventore atque, doloremque quaerat consectetur alias.
     `,
     title: 'About Us',
     src: _aboutus,

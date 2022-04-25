@@ -10,12 +10,13 @@
 .App {
   text-align: center;
   color: var(--white);
-  font-family: 'Mulish', sans-serif;
+  font-family: 'Orbitron', sans-serif;
   height: fit-content;
 }
 
 body {
-  background-image: linear-gradient(to right, var(--lessBlack) 0%, var(--black) 100%);
+  /* background-image: linear-gradient(to right, var(--lessBlack) 0%, var(--black) 100%); */
+  background-color: var(--white);
   box-sizing: border-box;
 }
 

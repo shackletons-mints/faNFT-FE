@@ -1,11 +1,14 @@
 .nav-link {
-    padding: 10px;
-    color: var(--white);
-    transition: 0.3s ease;
+    width: 100%;
+    margin: auto;
     display: flex;
-    align-items: center;
     justify-content: center;
-    border: 2px solid var(--secondary);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--white);
+    padding-bottom: 0;
+    
 }
 
 .no-right {
@@ -17,9 +20,9 @@
 }
 
 a.nav-link {
-    background: var(--black);
-    max-width: 5vw;
-    width: 5vw;
+    background: var(--white);
+    max-width: 10vw;
+    width: 7vw;
     z-index: 10;
 }
 
@@ -29,16 +32,18 @@ a.nav-link {
 
 .nav-text {
     font-weight: 800;
+    color: var(--black);
 }
 
 #nav-bar {
-    width: 30vw;
+    width: 100%;
     margin: auto;
     display: flex;
     justify-content: center;
     position: sticky;
     top: 0;
     z-index: 10;
+    background-color: var(--white);
 }
 
 a {
@@ -56,11 +61,9 @@ a {
 }
 
 .logo-nav {
-    max-width: 5vw;
-    max-height: 6.2vh;
-    border: 2px solid var(--secondary);
-    background-color: var(--secondary);
-    /* border-radius: 50%; */
+    max-width: 7vw;
+    /* max-height: 6.2vh; */
+    z-index: 25;
 }
 
 ul {
@@ -107,16 +110,16 @@ ul li a img:hover::before {
   }
 
 ul li a::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--secondary);
-  transition: .3s ease;
-  transform: scale(.9);
-  z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    transition: .3s ease;
+    transform: scale(.9);
+    z-index: -1;
 }
 
 ul li a:hover::before {

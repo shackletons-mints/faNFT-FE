@@ -52,9 +52,9 @@ const Countdown = ({ currentAccount, setCurrentAccount, showModal }) => {
     return (
         <div className='countdown'>
             <div className='wrapper wrapper-animated'>
-            <h1>Lottery closes in</h1>
+            {/* <h1>Lottery closes in</h1> */}
             <p id='timer'>
-                {timerComponents.length ? timerComponents : <span>Time's up!</span>}
+                Lottery closes in {timerComponents.length ? timerComponents : <span>Time's up!</span>}
             </p>
             </div>
 

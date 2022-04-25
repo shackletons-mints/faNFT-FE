@@ -32,7 +32,7 @@ const Lottery = ({ currentAccount, setCurrentAccount }) => {
 
             <Title
                 title='DoubleDragonCrypto Lottery'
-                details={lotteryTitleText.details}
+                border={true}
             />
 
             <Countdown
