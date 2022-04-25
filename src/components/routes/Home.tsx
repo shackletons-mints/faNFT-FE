@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import homeText from '../text/homeText.js'
-
-import reveal from '../js-utils/reveal.js'
 
 import FlipCard from './react-utils/FlipCard'
 import Title from './react-utils/Title'
 
+
 import logo from './../../assets/logo.png'
+import fanft from './../../assets/dragon-2.svg'
+import fan_img from './../../assets/fan_test_img.png'
 
 import './Home.css'
 
@@ -18,7 +20,9 @@ interface Text {
     src?: string
 }
 
-const Home = () => {
+const Home = ({ setCurrentAccount, currentAccount }) => {
+
+    let nftMetadata = {}
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -46,14 +50,28 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className='about-us-container'>
-                    <div className='about-us-left'>
-                        <h1 className='about-us-title'>{aboutUs.title}</h1>
-                        <img className='about-us-logo' src={logo} />
+                <div className='about-fanft-container'>
+                    <div className='about-fanft-left'>
+                        <div className='about-fanft-text'>{aboutUs.text}</div>
                     </div>
-                    <div className='about-us-right'>
-                        <div className='about-us-text'>{aboutUs.text}</div>
+                    <div className='about-fanft-right'>
+                        <h1 className='about-fanft-title'>faNFT</h1>
+                        <img className='about-fanft-logo reveal-right' src={fanft} />
                     </div>
+                </div>
+
+                <div className='fan-display-container'>
+                    <div className='fan-card-container'>
+                        <img className='fan-img' src={fan_img} />
+                        <p className='test-hello'>hello</p>
+                    </div>
+                    <div className='fan-card-container'>
+                        <p className='test-hello'>hello</p>
+                    </div>
+                    <div className='fan-card-container'>
+                        <p className='test-hello'>hello</p>
+                    </div>
+
                 </div>
 
 

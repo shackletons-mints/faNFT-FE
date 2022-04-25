@@ -22,7 +22,7 @@
 
 .about-us-title {
     font-size: 80px;
-    padding-left: 80px;
+    padding-left: 100px;
 }
 
 .about-us-text {
@@ -37,15 +37,90 @@
     left: 50px;
     z-index: -1;
 }
+.about-fanft-container {
+    color: var(--black);
+    height: 1000px;
+    display: flex;
+    flex-flow: row;
+    flex-basis: auto;
+    /* flex-wrap: wrap; */
+    gap: 20px 20px;
+}
 
-.reveal{
-    position: absolute;
-    transform: translateX(-750px);
-    opacity: 0;
-    transition: 2s all ease;
-  }
-  .reveal.active{
-    transform: translateX(-25px);
+.about-fanft-left {
+    flex-basis: 70%;
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.about-fanft-right {
+    display: flex;
+    align-items: center;
+}
+
+.about-fanft-title {
+    font-size: 80px;
+    padding-right: 100px;
+}
+
+.about-fanft-text {
+    padding: 0 100px;
+    line-height: 40px;
+}
+
+.about-fanft-logo {
+    width: 28vw;
     opacity: 0.25;
-    left: 50px;
-  }
+    position: absolute;
+    right: 50px;
+    z-index: -1;
+}
+
+.reveal {
+    position: absolute;
+    transform: translateX(-65vw);
+    opacity: 0;
+    transition: 1.5s all ease;
+}
+
+.reveal.active {
+    transform: translateX(-2vw);
+    opacity: 0.25;
+    /* left: 70px; */
+}
+
+.reveal-right {
+    position: absolute;
+    transform: translateX(120vw);
+    opacity: 0;
+    transition: 1.5s all ease;
+}
+
+.reveal-right.active {
+    transform: translateX(66vw);
+    opacity: 0.15;
+    left: 4vw;
+}
+
+.test-hello {
+    color: var(--black);
+}
+
+.fan-card-container {
+    /* border: 2px solid var(--black); */
+    width: 28vw;
+    height: 40vh;
+}
+
+.fan-display-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15vh 0;
+}
+
+.fan-img {
+    width: 25vw;
+    border: 4px ridge var(--primary);
+}
