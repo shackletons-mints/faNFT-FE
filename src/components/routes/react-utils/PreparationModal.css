@@ -3,6 +3,10 @@
     font-size: medium;
 }
 
+.modal-content {
+    background: transparent;
+}
+
 .modal-footer {
     display: flex;
     align-items: center;
@@ -62,4 +66,71 @@
 
 .modal-content {
     width: 120%;
+}
+
+.transaction-modal {
+    margin: 50px auto;
+    background-color: white;
+    /* width: 50vw; */
+}
+
+.progress-bar {
+    margin: 50px auto;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.circle {
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 2vw;
+    height: 4vh;
+    background-color: grey;
+    opacity: 0.1;
+}
+
+.line {
+    border: 1px solid black;
+    border-left: none;
+    border-right: none;
+    width: 10vw;
+    height: 0.75vh;
+    margin-top: 1.5vh;
+    opacity: 0.1;
+    background-color: grey;
+}
+
+.filled-line {
+    border: 1px solid black;
+    border-left: none;
+    border-right: none;
+    width: 10vw;
+    height: 0.75vh;
+    margin-top: 1.5vh;
+    background-color: black;
+}
+
+.check-mark {
+    position: absolute;
+    width: 2vw;
+    height: 3vh;
+    padding-right: 3px;
+    top: 4px;
+    z-index: 10px;
+}
+
+.filled-circle {
+    position: inherit;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 2vw;
+    height: 4vh;
+    background-color: black;
+}
+
+.fake-transaction {
+    margin-top: 50px auto;
+    /* padding: 10px; */
 }

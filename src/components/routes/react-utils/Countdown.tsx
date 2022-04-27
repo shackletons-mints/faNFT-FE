@@ -4,7 +4,13 @@ import MintButton from './MintButton'
 import './Countdown.css'
 import PreparationModal from './PreparationModal'
 
-const Countdown = ({ currentAccount, setCurrentAccount, showModal }) => {
+interface CountdownProps {
+    currentAccount: string
+    setCurrentAccount: Function
+    showModal: Function
+}
+
+const Countdown: React.FC<CountdownProps> = ({ currentAccount, setCurrentAccount, showModal }) => {
 
     const calculateTimeLeft = () => {
         let year = new Date().getFullYear()

@@ -37,6 +37,7 @@
     left: 50px;
     z-index: -1;
 }
+
 .about-fanft-container {
     color: var(--black);
     height: 1000px;
@@ -92,7 +93,7 @@
 
 .reveal-right {
     position: absolute;
-    transform: translateX(120vw);
+    transform: translateX(80vw);
     opacity: 0;
     transition: 1.5s all ease;
 }
@@ -123,4 +124,68 @@
 .fan-img {
     width: 25vw;
     border: 4px ridge var(--primary);
+}
+
+.main-title {
+    font-size: 8rem;
+    margin-top: 10vh;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.title-container {
+    margin-top: 20vh;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: inherit;
+}
+
+.title-logo {
+    opacity: 0.25;
+    position: absolute;
+    top: 16vh;
+    margin: auto;
+    width: 450px;
+}
+
+.about-lottery-container {
+    color: var(--black);
+    height: 1000px;
+    display: flex;
+    flex-flow: row;
+    flex-basis: auto;
+    /* flex-wrap: wrap; */
+    gap: 20px 20px;
+}
+
+.about-lottery-left {
+    flex-basis: 70%;
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.about-lottery-right {
+    display: flex;
+    align-items: center;
+}
+
+.about-lottery-title {
+    font-size: 80px;
+    padding-left: 100px;
+}
+
+.about-lottery-text {
+    padding: 0 100px;
+    line-height: 40px;
+}
+
+.about-lottery-logo {
+    width: 28vw;
+    opacity: 0.25;
+    position: absolute;
+    left: 50px;
+    z-index: -1;
 }

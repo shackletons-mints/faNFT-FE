@@ -5,9 +5,10 @@ import { connectWalletHandler, mintNftHandler, } from '../../js-utils/web3Intera
 import './MintButton.css'
 
 interface MintButtonProps {
-    currentAccount?: string
-    setCurrentAccount?: Function
+    currentAccount: string
+    setCurrentAccount: Function
     buttonText: string
+    showModal: Function
 }
 
 

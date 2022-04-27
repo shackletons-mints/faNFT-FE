@@ -12,26 +12,26 @@ const NavBar = () => {
         <ul id='nav-bar'>
             <li>
                 <Link to='/' className='nav-link no-right'>
-                    <img className='image' src={ether}/>
+                    {/* <img className='image' src={ether}/> */}
                     <span className='nav-text'>Home</span>
                 </Link>
             </li>
             <li>
                 <Link to='/lottery' className='nav-link no-right'>
-                    <img className='image' src={ether}/>
+                    {/* <img className='image' src={ether}/> */}
                     <span className='nav-text'>Lottery</span>
                 </Link>
             </li>
             {/* <img className='logo-nav' src={logo} /> */}
             <li>
                 <Link to='/fanFT' className='nav-link no-right no-left'>
-                    <img className='image' src={ether}/>
+                    {/* <img className='image' src={ether}/> */}
                     <span className='nav-text'>fanFT</span>
                 </Link>
             </li>
             <li>
                 <Link to='/contract' className='nav-link'>
-                    <img className='image' src={ether}/>
+                    {/* <img className='image' src={ether}/> */}
                     <span className='nav-text'>Contract</span>
                 </Link>
             </li>

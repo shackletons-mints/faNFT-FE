@@ -8,6 +8,8 @@ import LotterySpecs from './react-utils/LotterySpecs'
 
 import lotteryText from '../text/lotteryText'
 
+import logo from '../../assets/logo.png'
+
 import './Lottery.css'
 
 const Lottery = ({ currentAccount, setCurrentAccount }) => {
@@ -30,10 +32,12 @@ const Lottery = ({ currentAccount, setCurrentAccount }) => {
     return (
         <div className='lottery-page'>
 
-            <Title
-                title='DoubleDragonCrypto Lottery'
-                border={true}
-            />
+
+
+            <div className='title-container'>
+                <h1 className='lottery-title'>DoubleDragonCrypto <br></br> Lottery</h1>
+                <img className='lottery-title-logo' src={logo} />
+            </div>
 
             <Countdown
                 currentAccount={currentAccount}

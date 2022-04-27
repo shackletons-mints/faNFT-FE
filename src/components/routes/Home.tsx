@@ -8,6 +8,7 @@ import Title from './react-utils/Title'
 
 import logo from './../../assets/logo.png'
 import fanft from './../../assets/dragon-2.svg'
+import ether from './../../assets/ether.svg'
 import fan_mp4_one from './../../assets/ONE.mp4'
 import fan_mp4_two from './../../assets/display_mp4_two.mp4'
 import fan_mp4_three from './../../assets/THREE.mp4'
@@ -42,7 +43,7 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
 
         return (
             <>
-                <div className='about-us-container'>
+                <div id='aboutUs' className='about-us-container'>
                     <div className='about-us-left'>
                         <h1 className='about-us-title'>{aboutUs.title}</h1>
                         <img className='about-us-logo reveal' src={logo} />
@@ -54,7 +55,12 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
 
                 <div className='about-fanft-container'>
                     <div className='about-fanft-left'>
-                        <div className='about-fanft-text'>{aboutUs.text}</div>
+                        <div className='about-fanft-text'>
+                            A set of 100 three-dimensional fans featuring classic asian art pieces.
+                            Fans were generated using threeJS and javascript. <br></br>
+                            Owners of faNFTs will receive numerous perks from dApps released by Double Dragon Crypt and <br></br>
+                            will be whitelisted for any future nft releases by the DDC team.
+                        </div>
                     </div>
                     <div className='about-fanft-right'>
                         <h1 className='about-fanft-title'>faNFT</h1>
@@ -65,19 +71,30 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
                 <div className='fan-display-container'>
                     <div className='fan-card-container'>
                         <video className='fan-img' src={fan_mp4_one} autoPlay muted loop></video>
-                        {/* <p className='test-hello'>hello</p> */}
+                        <p className='test-hello'>faNFT#001</p>
                     </div>
                     <div className='fan-card-container'>
                         <video className='fan-img' src={fan_mp4_two} autoPlay muted loop></video>
-                        {/* <p className='test-hello'>hello</p> */}
+                        <p className='test-hello'>hello</p>
                     </div>
                     <div className='fan-card-container'>
                         <video className='fan-img' src={fan_mp4_three} autoPlay muted loop></video>
-                        {/* <p className='test-hello'>hello</p> */}
+                        <p className='test-hello'>hello</p>
                     </div>
 
                 </div>
 
+                <div id='aboutUs' className='about-lottery-container'>
+                    <div className='about-lottery-left'>
+                        <h1 className='about-lottery-title'>Lottery</h1>
+                        <img className='about-lottery-logo reveal' src={logo} />
+                    </div>
+                    <div className='about-lottery-right'>
+                        <div className='about-lottery-text'>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus cumque tempora neque optio molestiae, rem eveniet vel ut ad explicabo reprehenderit culpa delectus perspiciatis laborum iusto esse adipisci? Eligendi officiis corrupti animi, alias ipsam, praesentium magni tenetur voluptas, consequatur enim porro magnam aut quas id repudiandae delectus! Soluta, libero odit.
+                        </div>
+                    </div>
+                </div>
 
                 <div className='faq-container' style={{ height: '1000px' }}>
 
@@ -115,12 +132,16 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
 
     return (
         <div>
+            <div className='title-container'>
+                <h1 className='main-title'>Double Dragon <br></br>Crypto</h1>
+                <img className='title-logo' src={ether} />
+            </div>
 
-            <Title
+            {/* <Title
                 title={mainTitle.title}
                 border={true}
                 details={mainTitle.caption}
-            />
+            /> */}
 
             {renderText(homeText)}
         </div>
