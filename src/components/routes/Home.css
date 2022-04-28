@@ -13,6 +13,7 @@
     display: flex;
     align-items: center;
     width: 50%;
+    position: relative;
 }
 
 .about-us-right {
@@ -21,13 +22,15 @@
 }
 
 .about-us-title {
-    font-size: 80px;
-    padding-left: 100px;
+    font-size: 5em;
+    padding-left: 6.8vw;
+    opacity: 1 !important;
 }
 
 .about-us-text {
     padding: 0 100px;
     line-height: 40px;
+    width: 1vw;
 }
 
 .about-us-logo {
@@ -36,11 +39,12 @@
     position: absolute;
     left: 50px;
     z-index: -1;
+    top: 35vh;
 }
 
 .about-fanft-container {
     color: var(--black);
-    height: 1000px;
+    height: 800px;
     display: flex;
     flex-flow: row;
     flex-basis: auto;
@@ -61,8 +65,8 @@
 }
 
 .about-fanft-title {
-    font-size: 80px;
-    padding-right: 100px;
+    font-size: 5em !important;
+    padding-right: 10rem !important;
 }
 
 .about-fanft-text {
@@ -81,13 +85,12 @@
 .reveal {
     position: absolute;
     transform: translateX(-65vw);
-    opacity: 0;
     transition: 1.5s all ease;
 }
 
 .reveal.active {
     transform: translateX(-2vw);
-    opacity: 0.25;
+    /* opacity: 0.25; */
     /* left: 70px; */
 }
 
@@ -102,6 +105,22 @@
     transform: translateX(66vw);
     opacity: 0.15;
     left: 4vw;
+}
+
+.reveal-text {
+    position: absolute;
+    transform: translateX(80vw);
+    transition: 1.5s all ease;
+    width: 65%;
+    opacity: 0;
+}
+
+.reveal-text.active {
+    transform: translateX(8vw);
+    color: var(--black);
+    opacity: 1;
+    right: 13vw;
+    width: 65%;
 }
 
 .test-hello {
@@ -188,4 +207,19 @@
     position: absolute;
     left: 50px;
     z-index: -1;
+}
+
+.faq-container {
+    height: 800px;
+}
+
+.faq-title {
+    width: 100%;
+    font-size: 3rem;
+    padding: 2em;
+    background-color: var(--secondary);
+    color: var(--black);
+    margin-bottom: 20vh;
+    border-top: 5px groove var(--black);
+    border-bottom: 5px groove var(--black);
 }

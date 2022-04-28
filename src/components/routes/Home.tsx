@@ -6,7 +6,7 @@ import FlipCard from './react-utils/FlipCard'
 import Title from './react-utils/Title'
 
 
-import logo from './../../assets/logo.png'
+import logo from './../../assets/ddragonLogo.svg'
 import fanft from './../../assets/dragon-2.svg'
 import ether from './../../assets/ether.svg'
 import fan_mp4_one from './../../assets/ONE.mp4'
@@ -45,11 +45,11 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
             <>
                 <div id='aboutUs' className='about-us-container'>
                     <div className='about-us-left'>
-                        <h1 className='about-us-title'>{aboutUs.title}</h1>
+                        <h1 className='about-us-title reveal'>{aboutUs.title}</h1>
                         <img className='about-us-logo reveal' src={logo} />
                     </div>
                     <div className='about-us-right'>
-                        <div className='about-us-text'>{aboutUs.text}</div>
+                        <div className='about-us-text reveal-text'>{aboutUs.text}</div>
                     </div>
                 </div>
 
@@ -91,16 +91,19 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
                     </div>
                     <div className='about-lottery-right'>
                         <div className='about-lottery-text'>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus cumque tempora neque optio molestiae, rem eveniet vel ut ad explicabo reprehenderit culpa delectus perspiciatis laborum iusto esse adipisci? Eligendi officiis corrupti animi, alias ipsam, praesentium magni tenetur voluptas, consequatur enim porro magnam aut quas id repudiandae delectus! Soluta, libero odit.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus cumque tempora neque optio molestiae, rem eveniet vel ut ad explicabo reprehenderit culpa delectus perspiciatis laborum iusto esse adipisci?
+                             Eligendi officiis corrupti animi, alias ipsam, praesentium magni tenetur voluptas, consequatur enim porro magnam aut quas id repudiandae delectus! Soluta, libero odit.
                         </div>
                     </div>
                 </div>
 
                 <div className='faq-container' style={{ height: '1000px' }}>
 
-                    <Title
-                        title='FAQ'
-                    />
+                    <div>
+                        <h1 className='faq-title'>
+                            Frequently Asked Questions
+                        </h1>
+                    </div>
 
                     <div className='card-container'
                         style={{

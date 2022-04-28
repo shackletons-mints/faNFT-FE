@@ -1,10 +1,10 @@
 .title-container {
-    color: var(--white);
+    /* color: var(--white);
     /* background: radial-gradient(circle, var(--primary) 3%, var(--secondary) 74%); */
-    background-color: var(--secondary);
-    margin: 18vh auto 200px auto;
+    /* background-color: var(--secondary); */
+    /* margin: 18vh auto 200px auto;
     width: 101%;
-    height: 40vh;
+    height: 40vh; */
 }
 
 .display-1 {

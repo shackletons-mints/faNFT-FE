@@ -24,7 +24,6 @@ const whatIsNft = {
         NFTs can be used to represent items such as photos, videos, audio, and other types of media.    
     `,
     title: 'What\'s an NFT?',
-    src: _nft,
 }
 
 const whatIsMetamask = {
@@ -43,7 +42,6 @@ const howCanIBuyNft = {
         You need Ethereum and Metamask wallet to buy one of these amazing fans. The initial sell is available from our website. Then secondary sell would be possible by Opensea.    
     `,
     title: 'How can you buy our shit?',
-    src: _ether,
 }
 
 const roadMap = {
@@ -51,7 +49,6 @@ const roadMap = {
         Roadmap stuff that will impress some idiot on the internet.
     `,
     title: 'Roadmap',
-    src: _map,
 }
 
 const homeText = [

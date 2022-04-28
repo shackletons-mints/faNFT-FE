@@ -13,6 +13,7 @@ import Footer from './Footer'
 import { checkWalletIsConnected, connectWalletHandler, mintNftHandler, } from './js-utils/web3Interactions'
 import reveal from './js-utils/reveal'
 import revealRight from './js-utils/reveal-right'
+import revealText from './js-utils/reveal-text'
 
 // const contractAddress = 'ADDRESS'
 // const abi = contract
@@ -28,9 +29,11 @@ function App() {
     useEffect(() => {
         window.addEventListener('scroll', reveal)
         window.addEventListener('scroll', revealRight)
+        window.addEventListener('scroll', revealText)
 
         reveal()
         revealRight()
+        revealText()
     }, [])
 
     return (
