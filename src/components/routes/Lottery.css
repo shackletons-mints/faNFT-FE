@@ -1,6 +1,16 @@
 .lottery-page {
-    height: inherit;
+    /* height: inherit; */
     padding-top: 0;
+}
+
+.lottery-title-container {
+    margin-top: 20vh;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: inherit;
+    /* height: 10vh; */
 }
 
 .lottery-card-container {

@@ -1,8 +1,8 @@
 .countdown {
-    margin: 10px auto;
+    margin: 8% auto;
     padding: 10px;
     position: sticky;
-    top: 130px;
+    top: 90px;
     display: flex;
     flex-flow: row;
     width: 105%;

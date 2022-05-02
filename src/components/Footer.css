@@ -1,6 +1,33 @@
 #footer {
     width: 100%;
-    background-color: var(--ternary);
-    bottom: 0;
+    background-color: var(--black);
     position: absolute;
+    bottom: 0;
+    display: flex; 
+    justify-content: space-between;
+    /* border: 5px solid var(--black); */
+}
+
+.follow-us {
+    font-weight: 800;
+
+}
+
+.twitter {
+    width: 70px;
+}
+
+.social-container {
+    width: 20%;
+    position: relative; 
+    margin-top: 1.5%;
+    margin-left: -4%;
+}
+
+.logo-container {
+    width: 20%;
+}
+
+.logo-footer {
+    width: 100%;
 }

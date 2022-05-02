@@ -32,9 +32,7 @@ const Lottery = ({ currentAccount, setCurrentAccount }) => {
     return (
         <div className='lottery-page'>
 
-
-
-            <div className='title-container'>
+            <div className='lottery-title-container'>
                 <h1 className='lottery-title'>DoubleDragonCrypto <br></br> Lottery</h1>
                 <img className='lottery-title-logo' src={logo} />
             </div>
