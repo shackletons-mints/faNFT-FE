@@ -5,14 +5,6 @@ import homeText from '../text/homeText.js'
 import FlipCard from './react-utils/FlipCard'
 import Title from './react-utils/Title'
 
-interface Text {
-    title?: string
-    text?: string
-    linkText?: string
-    href?: string
-    src?: string
-}
-
 const Home = () => {
     const mainTitle = {
         title: 'Double Dragon Crypto',
@@ -20,7 +12,7 @@ const Home = () => {
         subtitle: 'Bodacious subtitle',
     }
 
-    const renderText = (textFile: Text[]) => {
+    const renderText = (textFile) => {
 
         const [ aboutUs ] = textFile.filter(obj => obj.title === 'About Us')
 

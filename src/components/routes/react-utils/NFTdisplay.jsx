@@ -4,33 +4,9 @@ import './NFTdisplay.css'
 
 import NFTSquare from './NFTSquare'
 
-interface NFTdisplayProps {
-    currentAccount?: string;
-    setCurrentAccount?: Function;
-}
-
-interface Property {
-    name?: string
-    value?: string
-    display_type?: string
-}
-
-interface Properties {
-    Leaf?: Property
-    Handle?: Property
-    Particle?: Property
-}
-
-interface NFTmetadata {
-    image?: string // URL
-    name?: string
-    description?: string
-    properties?: Properties
-}
-
-const NFTdisplay: React.FC<NFTdisplayProps> = ({ currentAccount, setCurrentAccount }) => {
-    const [nftCollection, setNftCollection] = useState<NFTmetadata[]>([])
-    const [displayedGifs, setDisplayedGifs] = useState<number[]>([1, 15, 25])
+const NFTdisplay = ({ currentAccount, setCurrentAccount }) => {
+    const [nftCollection, setNftCollection] = useState([])
+    const [displayedGifs, setDisplayedGifs] = useState([1, 15, 25])
 
     useEffect(() => {
         getMetadata(displayedGifs)
@@ -61,7 +37,7 @@ const NFTdisplay: React.FC<NFTdisplayProps> = ({ currentAccount, setCurrentAccou
     }
 
     // TODO: verify that we have gif before tryign to render it
-    const getMetadata = async (gifsWeWant: number[]) => {
+    const getMetadata = async (gifsWeWant) => {
         const nftCollector = []
 
         for (let i = 0; i < gifsWeWant.length; i++) {
@@ -85,7 +61,7 @@ const NFTdisplay: React.FC<NFTdisplayProps> = ({ currentAccount, setCurrentAccou
         setDisplayedGifs([...displayedGifs, ...newGifs])
     }
 
-    const handleNFTDisplay = (collection: any[]) =>
+    const handleNFTDisplay = (collection) =>
         collection.map((nft, idx) => {
             return (
                 <div key={idx} className='nft-card'>
