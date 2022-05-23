@@ -2,14 +2,7 @@ import react from 'react'
 
 import './Title.css'
 
-interface TitleProps {
-    title: string
-    subtitle?: string
-    details?: string
-    border?: boolean
-}
-
-const Title: React.FC<TitleProps> = ({ title, subtitle, details, border }) => {
+const Title = ({ title, subtitle, details, border }) => {
 
         return (
             <div className='title-container'>
