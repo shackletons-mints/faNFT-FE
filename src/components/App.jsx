@@ -8,6 +8,7 @@ import Home from './routes/Home'
 import FanFT from './routes/FanFT'
 import FanContract from './routes/FanContract'
 import Lottery from './routes/Lottery'
+import FunctionalMint from './routes/FunctionalMint'
 
 import { checkWalletIsConnected, connectWalletHandler, mintNftHandler, } from './js-utils/web3Interactions'
 
@@ -42,6 +43,13 @@ function App() {
                 />
                 <Route path='/lottery' element={
                     <Lottery />
+                }
+                />
+                <Route path='/test_mint' element={
+                    <FunctionalMint 
+                        setCurrentAccount={setCurrentAccount}
+                        currentAccount={currentAccount}
+                    />
                 }
                 />
             </Routes>

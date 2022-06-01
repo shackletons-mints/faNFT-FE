@@ -1,0 +1,25 @@
+{
+    "image": "https://ipfs.io/ipfs/QmTWGbmHRNgeAoX8T6mCh3N4v43ABnE1cL7ksH2d8qCFUY",
+    "name": "CommonFan8096",
+    "description": "1 of 1,000 unique fans generated using THREE.js",
+    "properties": {
+        "Leaf": {
+            "name": "Fan",
+            "value": "Kanagawa",
+            "display_type": "Common"
+        },
+        "Handle": {
+            "name": "Handle Material",
+            "value": "Cooper",
+            "display_type": "Common2"
+        },
+        "Particle": {
+            "name": "Particle Effect",
+            "value": "Hearts",
+            "display_type": "Epic"
+        },
+        "Element": {
+            "name": "User Element"
+        }
+    }
+}

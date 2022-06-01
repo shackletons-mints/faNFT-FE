@@ -4,6 +4,7 @@ import homeText from '../text/homeText.js'
 
 import FlipCard from './react-utils/FlipCard'
 import Title from './react-utils/Title'
+import MintButton from './react-utils/MintButton'
 
 const Home = () => {
     const mainTitle = {
@@ -18,17 +19,20 @@ const Home = () => {
 
         return (
             <>
-                <FlipCard
+            <MintButton />
+                {/* <FlipCard
                     title={aboutUs.title}
                     text={aboutUs.text}
                     src={aboutUs.src}
-                />
+                /> */}
 
                 <div className='faq-container' style={{ height: '1000px' }}>
 
                     <Title
                         title='FAQ'
                     />
+
+
 
                     <div className='card-container'
                         style={{
