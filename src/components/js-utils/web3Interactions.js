@@ -4,7 +4,7 @@ import { contractAddress, NFT_URI } from '../../assets/CONSTANTS'
 import { createMetadataAndGiveMeCid } from '../../components/js-utils/metadataCreation'
 import abi from '../../assets/json/fanft.json'
 
-const { ethereum } = window;
+const { ethereum } = window
 
 export const getUserWallet = async () => {
     if (!ethereum) {

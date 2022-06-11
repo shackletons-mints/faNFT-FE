@@ -1,9 +1,5 @@
 // const fs = require("fs");
 // const axios = require("axios");
-import * as dotenv from "dotenv";
-const { 
-    PINATA_API_KEY,
-    PINATA_SECRET_API_KEY, } = dotenv
 import { gifPropsPopulator, pinJSONToIPFS } from './metadataHelpers.js'
 import { getUserWallet } from './web3Interactions'
 import { determineElement } from './elementCreation'
@@ -50,7 +46,7 @@ export const createMetadataAndGiveMeCid = () => {
         })
 
         nfts[i].minted = getUserWallet()
-        // console.log("key", PINATA_API_KEY)
+        // console.log("api_key", secret_key)
         pinJSONToIPFS("a039470bfc879d0aa163", "7c4be6982c1ed49bcbb5a3e2f7378fd19b305a8b0a32e2ea2b8068965a998171", nftMetadata)
         console.log(nftMetadata)
         break

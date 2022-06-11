@@ -16,6 +16,7 @@ const testNFT1 = {
     cid: 'QmTWGbmHRNgeAoX8T6mCh3N4v43ABnE1cL7ksH2d8qCFUY',
     minted: '',
     title: 'CommonLeaf_KanagawaLeafName_Common2Handle_CooperHandleMaterial_EpicParticle_HeartsparticleEffect_ID-#8096.mp4',
+    metadata: 'slkjfsdlkjfsdlkjf'
 }
 const testNFT2 = {
     cid: 'QmPBTczGhBDoKqNmXKPhyJQVgdnCTezfKdzy76XLCy1Qcy',
