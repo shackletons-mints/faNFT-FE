@@ -10,34 +10,24 @@ import { mintNftHandler, connectWalletHandler } from '../js-utils/web3Interactio
 
 const FunctionalMint = (setCurrentAccount, currentAccount) => {
 
-    const testData = JSON.stringify({
-        first: 1,
-        second: 2,
-        third: '3',
-    })
+    const testData = {
+        hello: 'hello',
+        bye: 'bye',
+    }
 
     const testProxyRoute = () => {
-        axios.post('http://localhost:3000/api', {
-            firstName: 'Fred',
-            lastName: 'Flintstone'
-          })
+        const config = {
+            headers: {
+                contentType: "application/json",
+            }
+        }
+        axios.post('/test', {payload: JSON.stringify(testData)}, config)
           .then(function (response) {
             console.log(response);
           })
           .catch(function (error) {
             console.log(error);
           });
-        // axios({
-        //     method: 'get',
-        //     url: 'http://localhost:3000/api',
-        //     headers: {
-        //         headers: { 'Content-Type': 'json' }
-        //     },
-        //     data: testData,
-        // })
-        //     .then((response) => {
-        //         console.log(response)
-        //     })
     }
     return (
         <>

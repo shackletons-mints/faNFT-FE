@@ -45,7 +45,7 @@ function App() {
                     <Lottery />
                 }
                 />
-                <Route path='/test_mint' element={
+                <Route path='/aaa' element={
                     <FunctionalMint 
                         setCurrentAccount={setCurrentAccount}
                         currentAccount={currentAccount}
