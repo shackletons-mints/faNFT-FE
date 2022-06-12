@@ -1,34 +1,32 @@
-import { defineConfig } from 'vite';
+import { defineConfig, HttpProxy } from 'vite'
 import react from '@vitejs/plugin-react'
 
+require('dotenv').config()
+
 export default defineConfig({
-  // ...vite configures
-  server: {
-      proxy: {
-        '/api': {
-            // target: 'https://api.pinata.cloud/pinning/pinJSONToIPFS',
-            target: 'http://localhost:3000/test',
-            changeOrigin: true,
-            configure: (proxy, options) => {
-                // https://github.com/chimurai/http-proxy-middleware
-                // proxy will be an instance of 'http-proxy'
-                proxy.on('proxyRes', (proxyRes, req, res) => {
-                    // console.log('RAW Response from the target', JSON.stringify(proxyRes.headers, true, 2));
-                    console.log('proxyRes: ', proxyRes)
-                    res.end('hello')
-                })
-                proxy.on('proxyReq', (proxyReq, req, res) => {
-
-                })
-
-                proxy.on('error', (err, req, res) => {
-                    
-                })
+    // ...vite configures
+    server: {
+        proxy: {
+            '/api': {
+                // target: 'https://api.pinata.cloud/pinning/pinJSONToIPFS',
+                target: 'http://localhost:8080',
+                changeOrigin: true,
             },
-          },
-      },
-    // vite server configs, for details see [vite doc](https://vitejs.dev/config/#server-host)
-    port: 3000,
-  },
-  plugins: [react()],
+            '/secret': {
+                target: 'http://localhost:3000/test',
+                changeOrigin: true,
+                selfHandleResponse: false,
+                configure: (proxy, options) => {
+                    proxy.on('proxyReq', (proxyReq, req, res) => {
+                        proxyReq.on('data', data => {
+                            console.log(data)
+                        })
+                    })
+                }
+            }
+        },
+        // vite server configs, for details see [vite doc](https://vitejs.dev/config/#server-host)
+        port: 3000,
+    },
+    plugins: [react()],
 })
