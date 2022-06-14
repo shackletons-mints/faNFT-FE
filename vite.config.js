@@ -1,8 +1,6 @@
 import { defineConfig, HttpProxy } from 'vite'
 import react from '@vitejs/plugin-react'
 
-require('dotenv').config()
-
 export default defineConfig({
     // ...vite configures
     server: {
