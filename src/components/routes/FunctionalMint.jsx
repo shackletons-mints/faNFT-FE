@@ -15,13 +15,17 @@ const FunctionalMint = (setCurrentAccount, currentAccount) => {
         bye: 'bye',
     }
 
+    // Let's send data like this
+
+    // { payload: JSON_STRING }
+    
     const testProxyRoute = () => {
         const config = {
             headers: {
                 contentType: "application/json",
             }
         }
-        axios.post('/test', {payload: JSON.stringify(testData)}, config)
+        axios.post('/test', { payload: JSON.stringify(testData) }, config)
           .then(function (response) {
             console.log(response);
           })
