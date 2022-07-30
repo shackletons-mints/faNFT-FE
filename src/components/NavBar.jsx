@@ -6,33 +6,24 @@ import money from '../assets/money.svg'
 import ether from '../assets/ether.svg'
 import fanft from '../assets/fanft_logo.svg'
 
-const NavBar = () => {
+const NavBar = ({ navigationName, setNavigationName }) => {
+
+    const handleClick = () => {
+        topFunction()
+        setNavigationName('Home')
+    }
+
+    const topFunction = () => {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
 
     return (
         <ul id='nav-bar'>
             <li>
                 <Link to='/' className='nav-link no-right'>
                     {/* <img className='image' src={ether}/> */}
-                    <span className='nav-text'>Home</span>
-                </Link>
-            </li>
-            <li>
-                <Link to='/lottery' className='nav-link no-right'>
-                    {/* <img className='image' src={ether}/> */}
-                    <span className='nav-text'>Lottery</span>
-                </Link>
-            </li>
-            {/* <img className='logo-nav' src={logo} /> */}
-            <li>
-                <Link to='/fanFT' className='nav-link no-right no-left'>
-                    {/* <img className='image' src={ether}/> */}
-                    <span className='nav-text'>fanFT</span>
-                </Link>
-            </li>
-            <li>
-                <Link to='/contract' className='nav-link'>
-                    {/* <img className='image' src={ether}/> */}
-                    <span className='nav-text'>Contract</span>
+                    <span className='nav-text' onClick={handleClick}>{navigationName}</span>
                 </Link>
             </li>
         </ul>

@@ -21,6 +21,7 @@ import revealText from './js-utils/reveal-text'
 
 function App() {
     const [currentAccount, setCurrentAccount] = useState('0x0')
+    const [navigationName, setNavigationName] = useState('Home')
 
     useEffect(() => {
         checkWalletIsConnected(setCurrentAccount)
@@ -30,35 +31,31 @@ function App() {
         window.addEventListener('scroll', reveal)
         window.addEventListener('scroll', revealRight)
         window.addEventListener('scroll', revealText)
+        window.addEventListener('scroll', determineNavigationName)
 
         reveal()
         revealRight()
         revealText()
+        determineNavigationName()
     }, [])
+
+    const determineNavigationName = () => {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            setNavigationName('Back to Top')
+        } else {
+           setNavigationName('Home')
+        }
+    }
 
     return (
         <div className="App">
-            <NavBar />
+            <NavBar
+                navigationName={navigationName}
+                setNavigationName={setNavigationName}
+            />
             <Routes>
-                <Route path="/fanFT" element={
-                    <FanFT
-                        setCurrentAccount={setCurrentAccount}
-                        currentAccount={currentAccount}
-                    />}
-                />
                 <Route path="/" element={
                     <Home
-                        setCurrentAccount={setCurrentAccount}
-                        currentAccount={currentAccount}
-                    />
-                }
-                />
-                <Route path='/contract' element={
-                    <FanContract />
-                }
-                />
-                <Route path='/lottery' element={
-                    <Lottery
                         setCurrentAccount={setCurrentAccount}
                         currentAccount={currentAccount}
                     />

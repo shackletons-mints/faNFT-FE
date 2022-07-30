@@ -48,10 +48,8 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
                 <div className='about-fanft-container'>
                     <div className='about-fanft-left'>
                         <div className='about-fanft-text'>
-                            A set of 100 three-dimensional fans featuring classic asian art pieces.
+                            A set of 1000 three-dimensional fans featuring classic asian art pieces.
                             Fans were generated using threeJS and javascript. <br></br>
-                            Owners of faNFTs will receive numerous perks from dApps released by Double Dragon Crypt and <br></br>
-                            will be whitelisted for any future nft releases by the DDC team.
                         </div>
                     </div>
                     <div className='about-fanft-right'>
@@ -74,19 +72,6 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
                         <p className='test-hello'>hello</p>
                     </div>
 
-                </div>
-
-                <div id='aboutUs' className='about-lottery-container'>
-                    <div className='about-lottery-left'>
-                        <h1 className='about-lottery-title'>Lottery</h1>
-                        <img className='about-lottery-logo reveal' src={logo} />
-                    </div>
-                    <div className='about-lottery-right'>
-                        <div className='about-lottery-text'>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus cumque tempora neque optio molestiae, rem eveniet vel ut ad explicabo reprehenderit culpa delectus perspiciatis laborum iusto esse adipisci?
-                             Eligendi officiis corrupti animi, alias ipsam, praesentium magni tenetur voluptas, consequatur enim porro magnam aut quas id repudiandae delectus! Soluta, libero odit.
-                        </div>
-                    </div>
                 </div>
 
                 <div className='faq-container' style={{ height: '1000px' }}>
