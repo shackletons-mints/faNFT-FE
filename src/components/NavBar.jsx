@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
 import './NavBar.css'
-
 import contract from '../assets/contract.svg'
 import home from '../assets/home.svg'
 import money from '../assets/money.svg'

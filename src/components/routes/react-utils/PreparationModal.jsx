@@ -9,12 +9,7 @@ import check from '../../../assets/check.svg'
 
 import './PreparationModal.css'
 
-interface PreparationModal {
-    hideModal: Function
-    isOpen: boolean
-}
-
-const PreparationModal: React.FC<PreparationModal> = ({ hideModal, isOpen }) => {
+const PreparationModal = ({ hideModal, isOpen }) => {
 
 //     <div className='filled-circle' id="circle-one">
 //     <img className='check-mark' src={check} />

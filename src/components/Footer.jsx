@@ -7,7 +7,7 @@ const Footer = () => {
 
     return (
         <div id="footer">
-            <div className='social-container'> 
+            <div className='social-container'>
                 <p className='follow-us'>Follow us on</p>
                 <img className="twitter" src={twitter} />
             </div>

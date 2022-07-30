@@ -41,7 +41,7 @@ function App() {
             <NavBar />
             <Routes>
                 <Route path="/fanFT" element={
-                    <FanFT 
+                    <FanFT
                         setCurrentAccount={setCurrentAccount}
                         currentAccount={currentAccount}
                     />}
@@ -58,7 +58,7 @@ function App() {
                 }
                 />
                 <Route path='/lottery' element={
-                    <Lottery 
+                    <Lottery
                         setCurrentAccount={setCurrentAccount}
                         currentAccount={currentAccount}
                     />

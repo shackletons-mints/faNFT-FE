@@ -4,25 +4,19 @@ import MintButton from './MintButton'
 import './Countdown.css'
 import PreparationModal from './PreparationModal'
 
-interface CountdownProps {
-    currentAccount: string
-    setCurrentAccount: Function
-    showModal: Function
-}
-
-const Countdown: React.FC<CountdownProps> = ({ currentAccount, setCurrentAccount, showModal }) => {
+const Countdown = ({ currentAccount, setCurrentAccount, showModal }) => {
 
     const calculateTimeLeft = () => {
         let year = new Date().getFullYear()
         /**
-         * The + before the new Date object is shorthand to tell JavaScript to cast the object as an integer, 
+         * The + before the new Date object is shorthand to tell JavaScript to cast the object as an integer,
          * which gives you the object’s Unix timestamp represented as microseconds since the epoch.
          */
 
         // here we put the date we want the lottery to end
         // this example it's set to end on may 31st
         const difference = +new Date(`${year}-5-31`) - +new Date()
-        let timeLeft: any = {}
+        let timeLeft = {}
 
         if (difference > 0) {
             timeLeft = {
@@ -45,7 +39,7 @@ const Countdown: React.FC<CountdownProps> = ({ currentAccount, setCurrentAccount
         }, 1000)
     })
 
-    const timerComponents: any = []
+    const timerComponents = []
 
     Object.keys(timeLeft).forEach((interval) => {
         timerComponents.push(
@@ -65,7 +59,7 @@ const Countdown: React.FC<CountdownProps> = ({ currentAccount, setCurrentAccount
             </div>
 
             <div className='buttons-container'>
-                <MintButton 
+                <MintButton
                     currentAccount={currentAccount}
                     setCurrentAccount={setCurrentAccount}
                     buttonText='Enter Lottery'

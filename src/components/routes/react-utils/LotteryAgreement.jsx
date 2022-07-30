@@ -1,18 +1,7 @@
 import react from 'react'
 import './LotteryAgreement.css'
 
-interface LotteryAgreementProps {
-    title: string
-    text: string
-    list: string[]
-    subtext: string
-    subList: string[]
-    href: string
-    linkText: string
-    listIndentions: number[]
-}
-
-const LotteryAgreement: React.FC<LotteryAgreementProps> = ({ title, text, list, subtext, subList, href, linkText, listIndentions }) => {
+const LotteryAgreement = ({ title, text, list, subtext, subList, href, linkText, listIndentions }) => {
 
     return (
         <div className='lotAgree-card-container'>
@@ -23,7 +12,7 @@ const LotteryAgreement: React.FC<LotteryAgreementProps> = ({ title, text, list, 
                 <ul id="agreement" className='list'>
                     {list?.map((item, idx) => (
                         <li className='agreement' key={idx}>
-                            {(idx === list?.length - 1 && href) 
+                            {(idx === list?.length - 1 && href)
                                 &&
                                 <>
                                 {item}

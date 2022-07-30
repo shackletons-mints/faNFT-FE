@@ -2,15 +2,7 @@ import react from 'react'
 
 import './Title.css'
 
-interface TitleProps {
-    title: string
-    subtitle?: string
-    details?: string
-    border?: boolean
-    staticBorder?: boolean
-}
-
-const Title: React.FC<TitleProps> = ({ title, subtitle, details, border, staticBorder }) => {
+const Title = ({ title, subtitle, details, border, staticBorder }) => {
 
         return (
             <div className='title-container'>
@@ -23,7 +15,7 @@ const Title: React.FC<TitleProps> = ({ title, subtitle, details, border, staticB
                 { staticBorder && <div className='static-bottom-border'>&nbsp;</div> }
             </div>
         )
-    } 
+    }
 
 
 export default Title

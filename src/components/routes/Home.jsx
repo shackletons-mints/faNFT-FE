@@ -15,14 +15,6 @@ import fan_mp4_three from './../../assets/THREE.mp4'
 
 import './Home.css'
 
-interface Text {
-    title?: string
-    text?: string
-    linkText?: string
-    href?: string
-    src?: string
-}
-
 const Home = ({ setCurrentAccount, currentAccount }) => {
 
     let nftMetadata = {}
@@ -37,7 +29,7 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
         subtitle: 'Bodacious subtitle',
     }
 
-    const renderText = (textFile: Text[]) => {
+    const renderText = (textFile) => {
 
         const [aboutUs] = textFile.filter(obj => obj.title === 'About Us')
 

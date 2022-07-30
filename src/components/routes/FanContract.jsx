@@ -42,7 +42,7 @@ const FanContract = () => {
 
     return (
         <div className='Code'>
-            <Title 
+            <Title
                 title='fanFT Contract Code'
                 border={true}
             />

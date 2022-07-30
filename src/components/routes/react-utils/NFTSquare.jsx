@@ -6,7 +6,7 @@ import MintButton from './MintButton'
 
 const colors = {
     Common: '#708090',
-    Uncommon: '#006400', 
+    Uncommon: '#006400',
     Rare: '#0000ff',
     Epic: '#800080',
     Legendary: '#ffd700',
