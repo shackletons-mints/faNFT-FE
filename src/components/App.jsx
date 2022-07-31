@@ -5,9 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 
 import NavBar from './NavBar'
 import Home from './routes/Home'
-import FanFT from './routes/FanFT'
 import FanContract from './routes/FanContract'
-import Lottery from './routes/Lottery'
 import Footer from './Footer'
 
 import { checkWalletIsConnected, connectWalletHandler, mintNftHandler, } from './js-utils/web3Interactions'
