@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom"
 import './NavBar.css'
-import contract from '../assets/contract.svg'
-import home from '../assets/home.svg'
-import money from '../assets/money.svg'
 import ether from '../assets/ether.svg'
-import fanft from '../assets/fanft_logo.svg'
 
 const NavBar = ({ navigationName, setNavigationName }) => {
 
