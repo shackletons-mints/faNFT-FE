@@ -4,6 +4,7 @@ import homeText from '../text/homeText.js'
 
 import FlipCard from './react-utils/FlipCard'
 import Title from './react-utils/Title'
+import FunctionalMint from './FunctionalMint'
 
 
 import logo from './../../assets/ddragonLogo.svg'
@@ -44,6 +45,11 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
                         <div className='about-us-text reveal-text'>{aboutUs.text}</div>
                     </div>
                 </div>
+
+                <FunctionalMint
+                    setCurrentAccount={setCurrentAccount}
+                    currentAccount={currentAccount}
+                />
 
                 <div className='about-fanft-container'>
                     <div className='about-fanft-left'>

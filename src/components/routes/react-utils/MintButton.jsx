@@ -1,6 +1,5 @@
 import React from 'react'
 
-import PreparationModal from './PreparationModal'
 import { connectWalletHandler, mintNftHandler, } from '../../js-utils/web3Interactions'
 import './MintButton.css'
 

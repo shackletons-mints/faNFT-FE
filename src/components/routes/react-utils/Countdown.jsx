@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 import MintButton from './MintButton'
 import './Countdown.css'
-import PreparationModal from './PreparationModal'
 
 const Countdown = ({ currentAccount, setCurrentAccount, showModal }) => {
 
