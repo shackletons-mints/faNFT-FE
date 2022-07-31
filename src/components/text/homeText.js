@@ -10,7 +10,7 @@ import _map from '../../assets/map.svg'
 
 const aboutUs = {
     text: `
-        fanSHUI is where order and balance intersect with web3
+        where balance and order intersect with web3
     `,
     title: 'About Us',
     src: _aboutus,
@@ -38,15 +38,9 @@ const whatIsMetamask = {
 const howCanIBuyNft = {
     text: `
         You need Ethereum and Metamask wallet to buy one of these amazing fans. The initial sell is available from our website. Then secondary sell would be possible by Opensea.
+        ***Put a link that scrolls to the mint button.***
     `,
     title: 'How can you buy a fanSHUI nft?',
-}
-
-const roadMap = {
-    text: `
-        Roadmap stuff that will impress some idiot on the internet.
-    `,
-    title: 'Roadmap',
 }
 
 const homeText = [
@@ -54,7 +48,6 @@ const homeText = [
     whatIsMetamask,
     whatIsNft,
     howCanIBuyNft,
-    roadMap,
 ]
 
 export default homeText

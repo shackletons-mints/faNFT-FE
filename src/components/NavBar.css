@@ -37,9 +37,11 @@ a.nav-link {
 
 #nav-bar {
     width: 100%;
+    height: 50px;
     margin: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -83,9 +85,11 @@ ul li {
 
 ul li a {
   position: relative;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 60px;
+  height: 40px;
   line-height: 63px;
   background: var(--lessBlack);
   font-size: 15px;

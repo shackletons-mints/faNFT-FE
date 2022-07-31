@@ -8,11 +8,11 @@ import FunctionalMint from './FunctionalMint'
 
 
 import logo from './../../assets/ddragonLogo.svg'
-import fanft from './../../assets/dragon-2.svg'
 import ether from './../../assets/ether.svg'
 import fan_mp4_one from './../../assets/ONE.mp4'
 import fan_mp4_two from './../../assets/display_mp4_two.mp4'
 import fan_mp4_three from './../../assets/THREE.mp4'
+import yingYang from './../../assets/yingyang.svg'
 
 import './Home.css'
 
@@ -25,7 +25,7 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
     }, [])
 
     const mainTitle = {
-        title: 'Double Dragon Crypto',
+        title: 'fanSHUI',
         caption: 'Awesome tagline about us here',
         subtitle: 'Bodacious subtitle',
     }
@@ -38,18 +38,13 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
             <>
                 <div id='aboutUs' className='about-us-container'>
                     <div className='about-us-left'>
-                        <h1 className='about-us-title reveal'>{aboutUs.title}</h1>
-                        <img className='about-us-logo reveal' src={logo} />
+
+                        <img className='about-us-logo reveal' src={yingYang} />
                     </div>
                     <div className='about-us-right'>
                         <div className='about-us-text reveal-text'>{aboutUs.text}</div>
                     </div>
                 </div>
-
-                <FunctionalMint
-                    setCurrentAccount={setCurrentAccount}
-                    currentAccount={currentAccount}
-                />
 
                 <div className='about-fanft-container'>
                     <div className='about-fanft-left'>
@@ -59,24 +54,30 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
                         </div>
                     </div>
                     <div className='about-fanft-right'>
-                        <h1 className='about-fanft-title'>faNFT</h1>
-                        <img className='about-fanft-logo reveal-right' src={fanft} />
+                        <video className='fan-img' src={fan_mp4_one} autoPlay muted loop></video>
+                        {/* <img className='about-fanft-logo reveal-right' src={fanft} /> */}
                     </div>
                 </div>
 
-                <div className='fan-display-container'>
-                    <div className='fan-card-container'>
+                <div className='faq-container' style={{ height: '1000px' }}>
+
+                    <div>
+                        <h1 className='faq-title'>
+                            Buy a Fan
+                        </h1>
+                    </div>
+
+                    <div>
+                        Here will be some fancy scroll so people can view multiple fans.
+                    </div>
+                        <div>Fan Name</div>
                         <video className='fan-img' src={fan_mp4_one} autoPlay muted loop></video>
-                        <p className='test-hello'>faNFT#001</p>
-                    </div>
-                    <div className='fan-card-container'>
-                        <video className='fan-img' src={fan_mp4_two} autoPlay muted loop></video>
-                        <p className='test-hello'>hello</p>
-                    </div>
-                    <div className='fan-card-container'>
-                        <video className='fan-img' src={fan_mp4_three} autoPlay muted loop></video>
-                        <p className='test-hello'>hello</p>
-                    </div>
+                        <button disabled={true}>Mint</button>
+
+                    {/* <FunctionalMint
+                            setCurrentAccount={setCurrentAccount}
+                            currentAccount={currentAccount}
+                        /> */}
 
                 </div>
 
@@ -119,7 +120,7 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
     return (
         <div>
             <div className='title-container'>
-                <h1 className='main-title'>Double Dragon <br></br>Crypto</h1>
+                <h1 className='main-title'>fanSHUI</h1>
                 <img className='title-logo' src={ether} />
             </div>
 

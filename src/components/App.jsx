@@ -21,7 +21,7 @@ import revealText from './js-utils/reveal-text'
 
 function App() {
     const [currentAccount, setCurrentAccount] = useState('0x0')
-    const [navigationName, setNavigationName] = useState('Home')
+    const [navigationName, setNavigationName] = useState('')
 
     useEffect(() => {
         checkWalletIsConnected(setCurrentAccount)
@@ -40,10 +40,10 @@ function App() {
     }, [])
 
     const determineNavigationName = () => {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
             setNavigationName('Back to Top')
         } else {
-           setNavigationName('Home')
+           setNavigationName('')
         }
     }
 

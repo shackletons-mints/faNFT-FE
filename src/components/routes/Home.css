@@ -6,6 +6,7 @@
     flex-basis: auto;
     /* flex-wrap: wrap; */
     gap: 20px 20px;
+    margin-top: 300px;
 }
 
 .about-us-left {
@@ -89,7 +90,7 @@
 }
 
 .reveal.active {
-    transform: translateX(-2vw);
+    transform: translateX(33vw);
     /* opacity: 0.25; */
     /* left: 70px; */
 }
@@ -102,7 +103,7 @@
 }
 
 .reveal-right.active {
-    transform: translateX(66vw);
+    transform: translateX(116vw);
     opacity: 0.15;
     left: 4vw;
 }
@@ -111,13 +112,15 @@
     position: absolute;
     transform: translateX(80vw);
     transition: 1.5s all ease;
+    font-size: xx-small;
     width: 65%;
     opacity: 0;
 }
 
 .reveal-text.active {
-    transform: translateX(8vw);
+    transform: translateX(-3vw);
     color: var(--black);
+    font-size: xx-large;
     opacity: 1;
     right: 13vw;
     width: 65%;
@@ -222,4 +225,8 @@
     margin-bottom: 20vh;
     border-top: 5px groove var(--black);
     border-bottom: 5px groove var(--black);
+}
+
+div {
+    color: var(--black);
 }
