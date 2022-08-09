@@ -12,6 +12,7 @@ import { checkWalletIsConnected, connectWalletHandler, mintNftHandler, } from '.
 import reveal from './js-utils/reveal'
 import revealRight from './js-utils/reveal-right'
 import revealText from './js-utils/reveal-text'
+import controlScroll from './js-utils/controlScroll'
 
 // const contractAddress = 'ADDRESS'
 // const abi = contract
@@ -60,7 +61,6 @@ function App() {
                 }
                 />
             </Routes>
-            <Footer />
         </div>
     )
 }

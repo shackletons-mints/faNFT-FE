@@ -12,14 +12,23 @@ const colors = {
     Legendary: '#ffd700',
 }
 
+const parseRarities = rarity => {
+    let lastCharIdx = rarity.length - 1
+    if (Number(rarity[lastCharIdx])) {
+        return rarity.slice(0, -1)
+    }
+    return rarity
+}
+
 const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount }) => {
+    console.log(nftMetadata)
     const [isLoading, setIsLoading] = useState(true)
     const [showMore, setShowMore] = useState(false)
 
-    const fanRarity = nftMetadata.properties.Leaf.display_type
+    const fanRarity = parseRarities(nftMetadata.properties.Leaf.display_type)
     const fanColor = colors[fanRarity]
 
-    const handleRarity = nftMetadata.properties.Handle.display_type
+    const handleRarity = parseRarities(nftMetadata.properties.Handle.display_type)
     const handleColor = colors[handleRarity]
 
     const particleRarity = nftMetadata.properties.Particle.display_type
@@ -30,10 +39,10 @@ const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount }) => {
     }, [])
 
     const loadingWatcher = () => {
-        const gif = document.getElementById(nftMetadata.name)
+        const mp4 = document.getElementById(nftMetadata.name)
 
-        gif?.addEventListener('load', (event) => {
-            gif.classList.remove('hidden')
+        mp4?.addEventListener('load', (event) => {
+            mp4.classList.remove('hidden')
             setIsLoading(false)
         })
     }
@@ -44,13 +53,54 @@ const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount }) => {
 
     const nastyFuckingTableComponent = () => (
         <>
-            <table className="prop-table" border="1">
-                <tr><th></th><th></th><th className='header'>Rarity</th><th></th><th className='header'>Name</th></tr>
-                <tr style={{backgroundColor: fanColor}}><td className='prop-header'>Fan</td><td></td><td>{nftMetadata.properties.Leaf.display_type}</td><td></td><td className='last-value'>{nftMetadata.properties.Leaf.value}</td></tr>
-                <tr style={{backgroundColor: handleColor}}><td className='prop-header'>Handle</td><td></td><td>{nftMetadata.properties.Handle.display_type}</td><td></td><td className='last-value'>{nftMetadata.properties.Handle.value}</td></tr>
-                <tr style={{backgroundColor: particleColor}}><td className='prop-header'>Particle</td><td></td><td>{nftMetadata.properties.Particle.display_type}</td><td></td><td className='last-value'>{nftMetadata.properties.Particle.value}</td></tr>
+            <table onClick={handleShowMore} className="prop-table" border="1">
+                <tr>
+                    <th className='no-border'></th>
+                    <th className='no-border'></th>
+                    <th className='header'>Rarity</th><th></th><th className='header'>Name</th>
+                </tr>
+                <tr style={{ backgroundColor: fanColor }}>
+                    <td className='prop-header'>
+                        <span>Fan</span>
+                    </td>
+                    <td className='no-border'></td>
+                    <td className='mid-value'>
+                        <span>{nftMetadata.properties.Leaf.display_type.split('Leaf')[0]}</span>
+                    </td>
+                    <td className='no-border'></td>
+                    <td className='last-value'>
+                        <span>{nftMetadata.properties.Leaf.value}</span>
+                    </td>
+                </tr>
+                <tr style={{ backgroundColor: handleColor }}>
+                    <td className='prop-header'>
+                        <span>Handle</span>
+                    </td>
+                    <td className='no-border'></td>
+                    <td className='mid-value'>
+                        <span>{nftMetadata.properties.Handle.display_type.split('Handle')[0]}</span>
+                    </td>
+                    <td className='no-border'></td>
+                    <td className='last-value'>
+                        <span>{nftMetadata.properties.Handle.value}</span>
+                    </td>
+                </tr>
+                <tr style={{ backgroundColor: particleColor }}>
+                    <td className='prop-header'>
+                        <span>Particle</span>
+                    </td>
+                    <td className='no-border'></td>
+                    <td className='mid-value'>
+                        <span>{nftMetadata.properties.Particle.display_type}</span>
+                    </td>
+                    <td className='no-border'></td>
+                    <td className='last-value'>
+                        <span>{nftMetadata.properties.Particle.value}</span>
+                    </td>
+                </tr>
             </table>
-            <button id='mint' className='hover-effect' onClick={handleShowMore}>Show Less Info</button>
+            {/* <button id='mint' className='hover-effect' onClick={handleShowMore}>Show Less Info</button> */}
+            {/* <div id='mint' className='hover-effect' onClick={handleShowMore}>Show Less Info</div> */}
             <MintButton
                 currentAccount={currentAccount}
                 setCurrentAccount={setCurrentAccount}
@@ -60,7 +110,8 @@ const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount }) => {
 
     const buttons = () => (
         <>
-            <button id='mint' className='hover-effect' onClick={handleShowMore}>Show More Info</button>
+            <div id='mint' className='hover-effect' onClick={handleShowMore}>Show More Info</div>
+            {/* <button id='mint' className='hover-effect' onClick={handleShowMore}>Show More Info</button> */}
             <MintButton
                 currentAccount={currentAccount}
                 setCurrentAccount={setCurrentAccount}
@@ -72,13 +123,14 @@ const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount }) => {
 
     return (
         <div className='nft'>
-            <h5>{nftMetadata.name}</h5>
+            <h4 className='nft-name'>{nftMetadata.name}</h4>
             {/* is there a tag that might help? */}
-            {isLoading &&
+            {/* {isLoading &&
                 <div id='loading'>
                     <Watch />
-                </div>}
-            <img id={nftMetadata.name} className='hidden' src={nftMetadata.image} alt="gif" decoding='sync' loading='eager' />
+                </div>
+            } */}
+            <video id={nftMetadata.name} controls width="250" autoPlay={true} muted={true} src={nftMetadata.image} decoding='sync' loading='eager' />
             {!showMore
                 ? buttons()
                 : nastyFuckingTableComponent()

@@ -32,7 +32,7 @@
 
 .text,
 .flip-list {
-    background: var(--secondary);
+    background: var(--silver);
     /* background: linear-gradient(180deg, var(--primary) 3%, var(--secondary) 74%); */
     padding: 30px;
     height: 100%;
@@ -56,8 +56,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    background-color: var(--secondary) !important;
-    border: 5px groove var(--black);
+    background-color: var(--silver) !important;
+    border: 1px solid var(--white);
     cursor: pointer;
 }
     /* // NEED TO FIX THE POSITION OF THE LOGO */
@@ -77,7 +77,7 @@
 .back {
     color: var(--black);
     transform: rotateY(180deg);
-    border: 5px groove var(--black);
+    border: 1px solid var(--white);
 }
 
 a:hover {
