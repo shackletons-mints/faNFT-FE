@@ -46,53 +46,60 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
 
         let nftMetadataForDisplay = []
 
-        for (let i = metadataId; i < (metadataId + 3); i++) {
-            let paddedHex = (hexBase + i.toString(16)).substr("-64")
-            let nftMetadata
+        for (let i = metadataId; i < (metadataId + 333); i += 111) {
+            let id = i
+            if (id > 1000) {
+                id -= 1000
+            } else if (id < 0) {
+                id = 1 % 1000
+            }
+
+            let paddedHex = (hexBase + id.toString(10)).substr("-64")
 
             const config = {
                 method: 'get',
                 url: `https://bafybeia72cm2r3nu22vuyypaptkjcn7q25mtkglk65g4rfbecygzot6q3y.ipfs.nftstorage.link/${paddedHex}.json`,
             }
 
-            axios(config)
-                .then(response => {
-                    nftMetadata = JSON.stringify(response.data)
-                    nftMetadataForDisplay.push(JSON.parse(nftMetadata))
-                })
-                .catch(error => {
-                    console.error(error)
-                })
+            let nftMetadata = axios(config)
+            nftMetadataForDisplay.push(nftMetadata)
         }
 
-        return nftMetadataForDisplay
+        Promise.all(nftMetadataForDisplay)
+            .then(response => {
+                setDisplayedNfts(response.map(res => res.data))
+            }).catch(err => console.error(err))
+
     }
 
-
-    useEffect(() => {
+    useEffect(async () => {
         window.scrollTo(0, 0)
-        setDisplayedNfts(getNftsMetadata())
+        getNftsMetadata()
     }, [])
 
-    useEffect(async () => {
-        setDisplayedNfts(getNftsMetadata())
+    useEffect(() => {
+        getNftsMetadata()
 
     }, [metadataId])
 
     const handleClickNext = () => {
-        if (metadataId + 3 > 1000) {
-            setMetadataId((metadataId + 3) % 1000)
+        console.log(metadataId)
+        if (metadataId + 1 > 1000) {
+            setMetadataId((metadataId + 1) % 1000)
             return
         }
-        setMetadataId(metadataId + 3)
+
+        setMetadataId(metadataId + 1)
     }
 
     const handleClickPrevious = () => {
-        if (metadataId - 3 < 1) {
-            setMetadataId((metadataId - 3) + 1000)
+        if ((metadataId - 1) < 1) {
+            let result = (metadataId - 1) + 1000
+            setMetadataId(result)
             return
         }
-        setMetadataId(metadataId - 3)
+
+        setMetadataId(metadataId - 1)
     }
 
     const renderText = (textFile) => {
@@ -116,7 +123,7 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
                 <div className='faq-container' style={{ height: '1200px' }}>
                     <div className='nft-display-container'>
                         <img className='previous-button' src={previous} onClick={handleClickPrevious} />
-                        {
+                        {displayedNfts.length > 0 &&
                             displayedNfts.map((nft, idx) =>
                                 <NFTSquare
                                     key={idx}

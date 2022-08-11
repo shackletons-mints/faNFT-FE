@@ -21,15 +21,14 @@ const parseRarities = rarity => {
 }
 
 const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount }) => {
-    console.log(nftMetadata)
     const [isLoading, setIsLoading] = useState(true)
     const [showMore, setShowMore] = useState(false)
 
     const fanRarity = parseRarities(nftMetadata.properties.Leaf.display_type)
-    const fanColor = colors[fanRarity]
+    const fanColor = colors[fanRarity.split('Leaf')[0]]
 
     const handleRarity = parseRarities(nftMetadata.properties.Handle.display_type)
-    const handleColor = colors[handleRarity]
+    const handleColor = colors[handleRarity.split('Handle')[0]]
 
     const particleRarity = nftMetadata.properties.Particle.display_type
     const particleColor = colors[particleRarity]
