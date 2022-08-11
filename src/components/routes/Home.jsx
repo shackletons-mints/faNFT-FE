@@ -12,12 +12,9 @@ import Title from './react-utils/Title'
 import NFTSquare from './react-utils/NFTSquare'
 
 //assets
-import logo from './../../assets/ddragonLogo.svg'
 import ether from './../../assets/ether.svg'
 import next from './../../assets/next.svg'
 import previous from './../../assets/previous.svg'
-import fan_mp4_three from './../../assets/THREE.mp4'
-import yingYang from './../../assets/yingyang.svg'
 
 import './Home.css'
 

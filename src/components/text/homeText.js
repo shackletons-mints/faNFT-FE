@@ -2,18 +2,11 @@
     // for sake of organization and to lessen confusion
     // all icons I'll prepend with _
 
-import _aboutus from '../../assets/about-us.svg'
-import _nft from '../../assets/nft.svg'
-import _metamask from '../../assets/metamask.svg'
-import _ether from '../../assets/ether.svg'
-import _map from '../../assets/map.svg'
-
 const aboutUs = {
     text: `
         where balance and order intersect with web3
     `,
     title: 'About Us',
-    src: _aboutus,
 }
 
 const whatIsNft = {
@@ -32,7 +25,6 @@ const whatIsMetamask = {
     title: 'What is Metamask?',
     href: 'https://metamask.io/',
     linkText: 'Learn more about Metamask here!',
-    src: _metamask,
 }
 
 const howCanIBuyNft = {
