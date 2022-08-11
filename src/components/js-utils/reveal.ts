@@ -3,7 +3,7 @@ export default function reveal() {
     for (var i = 0; i < reveals.length; i++) {
         var windowHeight = window.innerHeight;
         var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 250;
+        var elementVisible = 100;
         if (elementTop < windowHeight - elementVisible) {
             reveals[i].classList.add("active");
         } else {

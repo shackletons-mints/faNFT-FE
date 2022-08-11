@@ -18,7 +18,6 @@ const NavBar = ({ navigationName, setNavigationName }) => {
         <ul id='nav-bar'>
             <li>
                 <Link to='/' className='nav-link no-right'>
-                    {/* <img className='image' src={ether}/> */}
                     <span className='nav-text' onClick={handleClick}>{navigationName}</span>
                 </Link>
             </li>

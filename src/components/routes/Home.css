@@ -1,6 +1,6 @@
 .about-us-container {
     color: var(--black);
-    height: 700px;
+    height: 70vh;
     display: flex;
     flex-flow: row;
     flex-basis: auto;
@@ -126,7 +126,7 @@
     opacity: 1;
     right: 13vw;
     width: 65%;
-    padding-top: 450px;
+    padding-top: 15vh;
 }
 
 .test-hello {
@@ -153,13 +153,14 @@
 
 .main-title {
     font-size: 8rem;
-    margin-top: 10vh;
+    margin-bottom: 10vh;
     color: var(--black);
     font-weight: 600;
 }
 
 .title-container {
-    margin-top: 20vh;
+    height: 100vh;
+    /* margin-top: 20vh; */
     background-color: transparent;
     display: flex;
     align-items: center;
@@ -217,6 +218,7 @@
 
 .faq-container-bottom {
     background-color: var(--secondWhite);
+    height: 150vh;
 }
 
 .faq-title {
@@ -229,6 +231,7 @@
 }
 
 .nft-display-container {
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -241,7 +244,8 @@
 
 .previous-button {
     position: absolute;
-    left: 150px;
+    left: 4vw;
+    margin-top: 2vh;
     height: 100px;
     opacity: .15;
 }
@@ -254,7 +258,8 @@
 
 .next-button {
     position: absolute;
-    right: 150px;
+    right: 4vw;
+    margin-top: 2vh;
     height: 100px;
     opacity: .15;
 }

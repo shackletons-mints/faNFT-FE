@@ -52,6 +52,7 @@ const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount }) => {
 
     const nastyFuckingTableComponent = () => (
         <>
+        <div id='mint' className='hover-effect' onClick={handleShowMore}>Show Less Info</div>
             <table onClick={handleShowMore} className="prop-table" border="1">
                 <tr>
                     <th className='no-border'></th>
@@ -109,6 +110,7 @@ const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount }) => {
 
     const buttons = () => (
         <>
+
             <div id='mint' className='hover-effect' onClick={handleShowMore}>Show More Info</div>
             {/* <button id='mint' className='hover-effect' onClick={handleShowMore}>Show More Info</button> */}
             <MintButton

@@ -21,17 +21,6 @@ import yingYang from './../../assets/yingyang.svg'
 
 import './Home.css'
 
-// [1000 cids]
-
-// 'directorCid.../{title}'
-
-// TODO
-// FIND FALLBACK IMAGE AND APPLY THAT BELOW
-
-// https://bafybeia72cm2r3nu22vuyypaptkjcn7q25mtkglk65g4rfbecygzot6q3y.ipfs.nftstorage.link/0000000000000000000000000000000000000000000000000000000000000985.json
-
-// let paddedHex = ("0000000000000000000000000000000000000000000000000000000000000000" + nftId.toString(16)).substr("-64");
-
 const Home = ({ setCurrentAccount, currentAccount }) => {
     let startDisplayIdx = 0
     let endDisplayIdx = 3
@@ -108,18 +97,11 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
 
         return (
             <>
-                <div id='aboutUs' className='about-us-container'>
-                    <div className='about-us-left'>
-
-
-                    </div>
                     <div className='about-us-right'>
                         <div className='about-us-text reveal-text'>
                             Buy A Fan
                         </div>
                     </div>
-                </div>
-
                 <div className='faq-container' style={{ height: '1200px' }}>
                     <div className='nft-display-container'>
                         <img className='previous-button' src={previous} onClick={handleClickPrevious} />
@@ -139,7 +121,7 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
 
                 </div>
 
-                <div className='faq-container-bottom' style={{ height: '1500px' }}>
+                <div className='faq-container-bottom'>
 
                     <div>
                         <h1 className='faq-title'>
