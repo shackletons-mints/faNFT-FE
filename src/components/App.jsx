@@ -6,13 +6,9 @@ import { Route, Routes } from 'react-router-dom'
 import NavBar from './NavBar'
 import Home from './routes/Home'
 import FanContract from './routes/FanContract'
-import Footer from './Footer'
 
 import { checkWalletIsConnected, connectWalletHandler, mintNftHandler, } from './js-utils/web3Interactions'
-import reveal from './js-utils/reveal'
-import revealRight from './js-utils/reveal-right'
 import revealText from './js-utils/reveal-text'
-import controlScroll from './js-utils/controlScroll'
 
 // const contractAddress = 'ADDRESS'
 // const abi = contract
@@ -27,15 +23,9 @@ function App() {
     }, [])
 
     useEffect(() => {
-        window.addEventListener('scroll', reveal)
-        window.addEventListener('scroll', revealRight)
         window.addEventListener('scroll', revealText)
-        window.addEventListener('scroll', determineNavigationName)
 
-        reveal()
-        revealRight()
         revealText()
-        determineNavigationName()
     }, [])
 
     const determineNavigationName = () => {
