@@ -32,19 +32,19 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
 
         let nftMetadataForDisplay = []
 
-        for (let i = metadataId; i < (metadataId + 333); i += 111) {
+        for (let i = metadataId; i < (metadataId + 102); i += 34) {
             let id = i
-            if (id > 1000) {
-                id -= 1000
+            if (id > 500) {
+                id -= 500
             } else if (id < 0) {
-                id = 1 % 1000
+                id = 1 % 500
             }
 
             let paddedHex = (hexBase + id.toString(10)).substr("-64")
 
             const config = {
                 method: 'get',
-                url: `https://bafybeia72cm2r3nu22vuyypaptkjcn7q25mtkglk65g4rfbecygzot6q3y.ipfs.nftstorage.link/${paddedHex}.json`,
+                url: `https://bafybeiad4cjnorjvotfqx737c2aha2fuvg2rfo6bznio22vbw6iyuyqs7y.ipfs.nftstorage.link/${paddedHex}.json`,
             }
 
             let nftMetadata = axios(config)
@@ -70,8 +70,8 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
 
     const handleClickNext = () => {
         console.log(metadataId)
-        if (metadataId + 1 > 1000) {
-            setMetadataId((metadataId + 1) % 1000)
+        if (metadataId + 1 > 500) {
+            setMetadataId((metadataId + 1) % 500)
             return
         }
 
@@ -80,7 +80,7 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
 
     const handleClickPrevious = () => {
         if ((metadataId - 1) < 1) {
-            let result = (metadataId - 1) + 1000
+            let result = (metadataId - 1) + 500
             setMetadataId(result)
             return
         }
