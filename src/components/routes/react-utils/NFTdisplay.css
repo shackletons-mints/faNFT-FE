@@ -1,5 +1,5 @@
 .nft {
-    min-height: 50vh;
+    min-height: 55vh;
     max-height: 75vh;
     height: fit-content;
     width: 25vw;
@@ -59,7 +59,7 @@
 }
 
 .prop-table {
-    width: 85%;
+    width: 95%;
     margin: auto;
     padding: 10px;
 }
