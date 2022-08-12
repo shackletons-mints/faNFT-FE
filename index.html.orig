@@ -12,7 +12,15 @@
     <title>Vite App</title>
   </head>
   <body>
+<<<<<<< HEAD
     <div id="app"></div>
+    <script type="module" src="/src/main.tsx"></script>
+||||||| 5b8407e
+    <div id="app"></div>    
+    <script type="module" src="/src/main.tsx"></script>
+=======
+    <div id="app"></div>    
     <script type="module" src="/src/main.jsx"></script>
+>>>>>>> master
   </body>
 </html>

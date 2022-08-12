@@ -1,8 +1,18 @@
 .nft {
-    height: 400px;
-    width: 360px;
-    margin: auto;
+    min-height: 50vh;
+    max-height: 75vh;
+    height: fit-content;
+    width: 25vw;
+    /* margin: auto; */
     margin-bottom: 30px;
+    border: 1px solid var(--silver);
+    background-color: var(--secondWhite);
+    padding: 10px;
+}
+
+.nft img {
+    width: 250px;
+    height: 472px;
 }
 
 #nft-container {
@@ -21,6 +31,11 @@
     padding: 20px;
     height: 680px;
     width: 412px;
+}
+
+.nft-name {
+    font-size: x-large;
+    padding-top: 20px;
 }
 
 .hidden {
@@ -44,27 +59,70 @@
 }
 
 .prop-table {
-    width: inherit;
+    width: 85%;
     margin: auto;
     padding: 10px;
 }
 
-.prop-header {
-    display: flex;
-    padding: 5px;
+.prop-table:hover {
+    cursor: pointer;
+}
+
+.prop-table th {
+    background-color: var(--secondWhite);
+    border-right: 1px solid black;
+}
+
+.prop-table td {
+    border-right: 1px solid black;
+}
+
+.prop-table tr {
+    height: 3em;
+    border-bottom: 1px solid black;
+}
+
+.prop-table tr td:first-child {
+    background-color: var(--secondWhite);
+}
+
+.prop-header span {
+    width: fit-content;
+    height: fit-content;
+    padding: 0 5px;
+    margin: 0 5px;
+    background-color: var(--secondWhite);
+    font-weight: bold;
 }
 
 .last-value {
-    display: flex;
-    justify-content: end;
+    text-align: center;
+}
+
+.mid-value {
+    text-align: center;
+}
+
+.mid-value span {
     padding: 5px;
+    margin: 0 5px;
+    background-color: var(--secondWhite);
+    border: 1px outset var(--black);
+    font-size: small;
+}
+
+.last-value span {
+    padding: 5px;
+    margin: 0 5px;
+    background-color: var(--secondWhite);
+    border: 1px outset var(--black);
+    font-size: small;
 }
 
 .header {
     padding: 5px;
 }
 
-.header:last-child {
-    display: flex;
-    justify-content: end;
+.no-border {
+    border: none;
 }

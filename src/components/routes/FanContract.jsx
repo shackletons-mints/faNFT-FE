@@ -37,11 +37,12 @@ contract FaNFT is ERC721URIStorage, Ownable {
 const FanContract = () => {
     useEffect(() => {
         Prism.highlightAll()
+        window.scrollTo(0,0)
     }, [])
 
     return (
         <div className='Code'>
-            <Title 
+            <Title
                 title='fanFT Contract Code'
                 border={true}
             />

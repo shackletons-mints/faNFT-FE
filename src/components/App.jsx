@@ -5,11 +5,10 @@ import { Route, Routes } from 'react-router-dom'
 
 import NavBar from './NavBar'
 import Home from './routes/Home'
-import FanFT from './routes/FanFT'
 import FanContract from './routes/FanContract'
-import Lottery from './routes/Lottery'
 
 import { checkWalletIsConnected, connectWalletHandler, mintNftHandler, } from './js-utils/web3Interactions'
+import revealText from './js-utils/reveal-text'
 
 // const contractAddress = 'ADDRESS'
 // const abi = contract
@@ -17,31 +16,37 @@ import { checkWalletIsConnected, connectWalletHandler, mintNftHandler, } from '.
 
 function App() {
     const [currentAccount, setCurrentAccount] = useState('0x0')
+    const [navigationName, setNavigationName] = useState('')
 
     useEffect(() => {
         checkWalletIsConnected(setCurrentAccount)
+        window.addEventListener('scroll', revealText)
+        window.addEventListener('scroll', determineNavigationName)
+
+        determineNavigationName()
+        revealText()
     }, [])
+
+    const determineNavigationName = () => {
+        if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+            setNavigationName('Back to Top')
+        } else {
+           setNavigationName('')
+        }
+    }
 
     return (
         <div className="App">
-            <NavBar />
+            <NavBar
+                navigationName={navigationName}
+                setNavigationName={setNavigationName}
+            />
             <Routes>
-                <Route path="/fanFT" element={
-                    <FanFT 
+                <Route path="/" element={
+                    <Home
                         setCurrentAccount={setCurrentAccount}
                         currentAccount={currentAccount}
-                    />}
-                />
-                <Route path="/" element={
-                    <Home />
-                }
-                />
-                <Route path='/contract' element={
-                    <FanContract />
-                }
-                />
-                <Route path='/lottery' element={
-                    <Lottery />
+                    />
                 }
                 />
             </Routes>

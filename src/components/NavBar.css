@@ -1,26 +1,51 @@
-:root {
-    --primary: rgba(224,210,26,1);
-    --secondary: rgba(255,16,16,1);
-    --white: rgb(255,250,240);
-    --black: rgb(8,8,8);
-    --lessBlack: rgb(21,21,21);
+.nav-link {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--white);
+    padding-bottom: 0;
+
 }
 
-.nav-link {
-    padding: 10px;
-    color: var(--white);
-    transition: 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.no-right {
+    border-right: none;
+}
+
+.no-left {
+    border-left: none;
+}
+
+a.nav-link {
+    background: var(--white);
+    max-width: 15vw;
+    z-index: 10;
 }
 
 #nav-title {
     padding-right: 20px;
 }
 
+.nav-text {
+    font-weight: 800;
+    width: fit-content;
+    color: var(--black);
+}
+
 #nav-bar {
     width: 100%;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--white);
 }
 
 a {
@@ -29,8 +54,18 @@ a {
 
 .nav-link:hover {
     cursor: pointer;
-    color: var(--black) !important;
-    transform: scale(1.5);
+    color: var(--lessBlack) !important;
+    transform: scale(1.2);
+    transition: ease-in 0.35s;
+    transition: ease-out 0.35s;
+    border: none;
+    z-index: 20;
+}
+
+.logo-nav {
+    max-width: 7vw;
+    /* max-height: 6.2vh; */
+    z-index: 25;
 }
 
 ul {
@@ -45,15 +80,16 @@ ul {
 
 ul li {
   list-style: none;
-  margin: 0 20px;
-  width: 5%;
+  /* margin: 0 20px; */
 }
 
 ul li a {
-  position: relative; 
-  display: block;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 60px;
+  height: 40px;
   line-height: 63px;
   background: var(--lessBlack);
   font-size: 15px;
@@ -72,38 +108,35 @@ ul li a img {
 }
 
 ul li a img:hover::before {
-    transform: scale(1.5);
+    transform: scale(1.2);
     box-shadow: 0 0 15px var(--primary);
-  }
-
-  ul li a img:hover {
-    color: var(--primary);
-    box-shadow: 0 0 20px var(--secondary);
-    text-shadow: 0 0 10px var(--primary);
-    opacity: 0.4;
+    z-index: 10;
   }
 
 ul li a::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--primary);
-  transition: .3s ease;
-  transform: scale(.9);
-  z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    transition: .3s ease;
+    transform: scale(.9);
+    z-index: -1;
 }
 
 ul li a:hover::before {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px var(--primary);
+  transform: scale(1.0);
+  border-bottom: 5px solid inherit;
 }
 
 ul li a:hover {
   color: var(--primary);
-  box-shadow: 0 0 20px var(--secondary);
-  text-shadow: 0 0 10px var(--primary);
+  z-index: 1;
 }
 
+.image {
+    opacity: 0.1;
+    width: 60%;
+}

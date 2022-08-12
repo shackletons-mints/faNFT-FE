@@ -1,41 +1,65 @@
-:root {
-    --primary: rgba(224,210,26,1);
-    --secondary: rgba(255,16,16,1);
-    --white: rgb(255,250,240);
-    --black: rgb(8,8,8);
-    --lessBlack: rgb(21,21,21);
-}
-
 .title-container {
-    color: var(--white);
-    background: radial-gradient(circle, var(--primary) 3%, var(--secondary) 74%);
-    margin: 50px auto;
-    width: 91%;
+    /* color: var(--white);
+    /* background: radial-gradient(circle, var(--primary) 3%, var(--secondary) 74%); */
+    /* background-color: var(--secondary); */
+    /* margin: 18vh auto 200px auto;
+    width: 101%;
+    height: 40vh; */
 }
 
 .display-1 {
+    margin-top: 40px;
     padding: 30px;
+    font-weight: 800;
+    font-size: 60px;
+    color: var(--black);
+    background-color: transparent;
 }
 
 .details {
     padding: 15px;
+    font-weight: 500;
+    font-size: large;
+    color: var(--black);
 }
 
 .top-border {
-    height: 50px;
+    height: 20vh;
     width: 100%;
     background-image: url('../../../assets/dragonFA.svg');
-    background-repeat: repeat-x;
-    animation: animatedBackgroundMoveRight 8s linear infinite;
+    /* background-repeat: repeat-x; */
+    /* animation: animatedBackgroundMoveRight .01s linear infinite; */
     overflow:hidden;
 }
 
 .bottom-border {
+    height: 20vh;
+    width: 100%;
+    /* margin-top: 50px; */
+    background-image: url('../../../assets/dragonFA.svg');
+    /* background-repeat: repeat-x; */
+    /* animation: animatedBackgroundMoveRight 1s linear infinite; */
+    overflow:hidden;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.static-top-border {
     height: 50px;
     width: 100%;
     background-image: url('../../../assets/dragonFA.svg');
     background-repeat: repeat-x;
-    animation: animatedBackgroundMoveRight 8s linear infinite;
+}
+
+.static-bottom-border {
+    height: 50px;
+    width: 100%;
+    background-image: url('../../../assets/dragonFA.svg');
+    background-repeat: repeat-x;
     overflow:hidden;
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);

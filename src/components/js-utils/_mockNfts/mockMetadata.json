@@ -1,0 +1,22 @@
+{
+    "image": "https://ipfs.io/ipfs/bafybeigyyba5jz7jpendutd5rqnazwsbtew6c45s2sosma242vqx7v55ii",
+    "name": "RareFan3",
+    "description": "1 of 1000 fanSHUIs generated using THREE.js",
+    "properties": {
+        "Leaf": {
+            "name": "Fan",
+            "value": "Kanagawa",
+            "display_type": "Common1"
+        },
+        "Handle": {
+            "name": "Handle Material",
+            "value": "Painted_Wood",
+            "display_type": "Common1"
+        },
+        "Particle": {
+            "name": "Particle Effect",
+            "value": "EightPointStar",
+            "display_type": "Rare"
+        }
+    }
+}
