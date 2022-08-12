@@ -20,16 +20,15 @@ function App() {
 
     useEffect(() => {
         checkWalletIsConnected(setCurrentAccount)
-    }, [])
-
-    useEffect(() => {
         window.addEventListener('scroll', revealText)
+        window.addEventListener('scroll', determineNavigationName)
 
+        determineNavigationName()
         revealText()
     }, [])
 
     const determineNavigationName = () => {
-        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
             setNavigationName('Back to Top')
         } else {
            setNavigationName('')

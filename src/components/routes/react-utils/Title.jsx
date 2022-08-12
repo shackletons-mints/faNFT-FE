@@ -2,7 +2,7 @@ import react from 'react'
 
 import './Title.css'
 
-const Title = ({ title, subtitle, details, border, staticBorder }) => {
+const Title = ({ title, subtitle, details, border }) => {
 
         return (
             <div className='title-container'>
