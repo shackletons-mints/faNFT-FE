@@ -6,7 +6,6 @@ export default defineConfig({
     server: {
         proxy: {
             '/get-fans': {
-                // target: 'https://api.pinata.cloud/pinning/pinJSONToIPFS',
                 target: 'http://localhost:8080',
                 changeOrigin: true,
             },
