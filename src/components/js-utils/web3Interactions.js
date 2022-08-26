@@ -1,8 +1,12 @@
-import { ethers } from "ethers";
+import { ethers } from "ethers"
+import fanShuiContractABI from './fanShuiAbi.json'
+
+const FAN_SHUI_CONTRACT_ADDRESS = "0xe5E727B6dDFa31080a1cF04C95b2c37C2D50E2a2"
 
 const { ethereum } = window;
 
 export const checkWalletIsConnected = async (setCurrentAccount) => {
+    console.log(fanShuiContract)
   if (!ethereum) {
     console.log("Make sure you have Metamask installed!");
     return;
@@ -38,14 +42,27 @@ export const connectWalletHandler = async (setCurrentAccount) => {
 export const mintNftHandler = async () => {
   try {
     if (ethereum) {
-      const provider = new ethers.providers.Web3Provider(ethereum);
-      const signer = provider.getSigner();
-      const nftContract = new ethers.Contract(contractAdress, abi, signer);
+      const provider = new ethers.providers.Web3Provider(ethereum)
+      const signer = provider.getSigner()
+      const nftContract = new ethers.Contract(FAN_SHUI_CONTRACT_ADDRESS, fanShuiContractABI, signer)
 
+      // how can we get this?
+      const metadataURI = "https://bafybeiad4cjnorjvotfqx737c2aha2fuvg2rfo6bznio22vbw6iyuyqs7y.ipfs.nftstorage.link/0000000000000000000000000000000000000000000000000000000000000001.json"
       console.log("Initialize payment");
-      let nftTxn = await nftContract.mintNFT(1, {
-        value: ethers.utils.parseEther("0.01"),
-      });
+        let nftTxn = await nftContract.mintNFT(
+            signer,
+             metadataURI,
+            {
+                from: "ADDRESS",
+                value: "1000000000000000",
+            }
+        )
+
+
+
+    //   let nftTxn = await nftContract.mintNFT(1, {
+    //     value: ethers.utils.parseEther("0.01"),
+    //   });
 
       console.log("Mining... please wait");
       await nftTxn.wait();
