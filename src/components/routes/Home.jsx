@@ -23,6 +23,7 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
     let endDisplayIdx = 3
 
     const [displayedNfts, setDisplayedNfts] = useState([])
+    const [derivedURLs, setDerivedURLs] = useState([])
 
     let nftMetadata = {}
     const hexBase = "0000000000000000000000000000000000000000000000000000000000000000"
@@ -31,6 +32,7 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
     const getNftsMetadata = () => {
 
         let nftMetadataForDisplay = []
+        let urlCollection = []
 
         for (let i = metadataId; i < (metadataId + 102); i += 34) {
             let id = i
@@ -40,15 +42,18 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
                 id = 1 % 500
             }
 
-            let paddedHex = (hexBase + id.toString(10)).substr("-64")
+            const paddedHex = (hexBase + id.toString(10)).substr("-64")
+            const derivedURL = `https://bafybeiad4cjnorjvotfqx737c2aha2fuvg2rfo6bznio22vbw6iyuyqs7y.ipfs.nftstorage.link/${paddedHex}.json`
+
 
             const config = {
                 method: 'get',
-                url: `https://bafybeiad4cjnorjvotfqx737c2aha2fuvg2rfo6bznio22vbw6iyuyqs7y.ipfs.nftstorage.link/${paddedHex}.json`,
+                url: derivedURL,
             }
 
             let nftMetadata = axios(config)
             nftMetadataForDisplay.push(nftMetadata)
+            urlCollection.push(derivedURL)
         }
 
         Promise.all(nftMetadataForDisplay)
@@ -56,6 +61,7 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
                 setDisplayedNfts(response.map(res => res.data))
             }).catch(err => console.error(err))
 
+        setDerivedURLs(urlCollection)
     }
 
     useEffect(async () => {
@@ -106,6 +112,7 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
                             displayedNfts.map((nft, idx) =>
                                 <NFTSquare
                                     key={idx}
+                                    derivedURL={derivedURLs[idx]}
                                     nftMetadata={nft}
                                     currentAccount={currentAccount}
                                     setCurrentAccount={setCurrentAccount}

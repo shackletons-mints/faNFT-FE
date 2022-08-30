@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import axios from 'axios'
 import { Watch } from 'react-loader-spinner'
 import './NFTdisplay.css'
 
@@ -20,9 +21,11 @@ const parseRarities = rarity => {
     return rarity
 }
 
-const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount }) => {
+const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount, derivedURL }) => {
     const [isLoading, setIsLoading] = useState(true)
     const [showMore, setShowMore] = useState(false)
+    const [fanOwnership, setFanOwnership] = useState(null)
+    const [isOwned, setIsOwned] = useState(false)
 
     const fanRarity = parseRarities(nftMetadata.properties.Leaf.display_type)
     const fanColor = colors[fanRarity.split('Leaf')[0]]
@@ -35,7 +38,28 @@ const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount }) => {
 
     useEffect(() => {
         loadingWatcher()
+        getFan(derivedURL)
     }, [])
+
+    useEffect(() => {
+        
+        console.log('changed')
+    }, [fanOwnership])
+
+    const getFan = async (uri) => {
+        const config = {
+            method: 'get',
+            headers: {
+                contentType: 'application/json',
+            },
+            params: {
+                uri,
+            },
+        }
+
+        const res = await axios('/get-fan', config)
+        setIsOwned(!!res.data.owner)
+    }
 
     const loadingWatcher = () => {
         const mp4 = document.getElementById(nftMetadata.name)
@@ -116,6 +140,7 @@ const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount }) => {
             <MintButton
                 currentAccount={currentAccount}
                 setCurrentAccount={setCurrentAccount}
+                isOwned={isOwned}
             />
         </>
     )

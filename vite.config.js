@@ -5,15 +5,11 @@ export default defineConfig({
     // ...vite configures
     server: {
         proxy: {
-            '/get-fans': {
+            '/get-fan': {
                 target: 'http://localhost:8080',
                 changeOrigin: true,
             },
             '/fan': {
-                target: 'http://localhost:8080',
-                changeOrigin: true,
-            },
-            '/get-fan': {
                 target: 'http://localhost:8080',
                 changeOrigin: true,
             },
