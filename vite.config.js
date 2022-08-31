@@ -13,7 +13,7 @@ export default defineConfig({
                 target: 'https://fanft-api.herokuapp.com',
                 changeOrigin: true,
             },
-            '/test': {
+            '/put-fan': {
                 target: 'https://fanft-api.herokuapp.com',
                 changeOrigin: true,
             },

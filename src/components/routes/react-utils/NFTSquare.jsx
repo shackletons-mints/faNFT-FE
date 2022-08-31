@@ -41,19 +41,28 @@ const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount, derivedURL 
         getFan(derivedURL)
     }, [])
 
-    const getFan = async (uri) => {
-        const config = {
-            method: 'get',
-            headers: {
-                contentType: 'application/json',
-            },
-            params: {
-                uri,
-            },
-        }
+    useEffect(() => {
+        loadingWatcher()
+        getFan(derivedURL)
+    }, [derivedURL])
 
-        const res = await axios('/get-fan', config)
-        setIsOwned(!!res.data.owner)
+    const getFan = async (uri) => {
+        try {
+            const config = {
+                method: 'get',
+                headers: {
+                    contentType: 'application/json',
+                },
+                params: {
+                    uri,
+                },
+            }
+    
+            const res = await axios('/get-fan', config)
+            setIsOwned(!!res.data.owner)
+        } catch (error) {
+            console.error(error)
+        }
     }
 
     const loadingWatcher = () => {
@@ -70,8 +79,8 @@ const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount, derivedURL 
     }
 
     const nastyFuckingTableComponent = () => (
-        <> 
-        <div id='mint' className='hover-effect' onClick={handleShowMore}>Show Less Info</div>
+        <>
+            <div id='mint' className='hover-effect' onClick={handleShowMore}>Show Less Info</div>
             <table onClick={handleShowMore} className="prop-table" border="1">
                 <tr>
                     <th className='no-border'></th>
@@ -125,6 +134,7 @@ const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount, derivedURL 
                 setCurrentAccount={setCurrentAccount}
                 isOwned={isOwned}
                 uri={derivedURL}
+                setIsOwned={setIsOwned}
             />
         </>
     )
@@ -139,6 +149,7 @@ const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount, derivedURL 
                 setCurrentAccount={setCurrentAccount}
                 isOwned={isOwned}
                 uri={derivedURL}
+                setIsOwned={setIsOwned}
             />
         </>
     )

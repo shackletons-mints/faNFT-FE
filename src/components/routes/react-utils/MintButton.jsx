@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 
 import { connectWalletHandler, mintNftHandler, } from '../../js-utils/web3Interactions'
 import './MintButton.css'
@@ -9,10 +10,36 @@ const MintButton = ({
     setCurrentAccount,
     isOwned,
     uri,
+    setIsOwned,
 }) => {
 
-    const handleMintClick = (uri, currentAccount) => {
-        mintNftHandler(uri, currentAccount)
+    const handleMintClick = async (uri, currentAccount) => {
+        try {
+            await mintNftHandler(uri, currentAccount)
+
+            const data = JSON.stringify({
+                payload: {
+                  uri,
+                  owner: currentAccount,
+                }
+              })
+              
+              const config = {
+                method: 'put',
+                url: '/put-fan',
+                headers: { 
+                  'Content-Type': 'application/json'
+                },
+                data,
+              }
+              
+              const response = await axios(config)
+
+              setIsOwned(true)
+
+        } catch (error) {
+            console.error(error)
+        }
     }
 
     // onClick={() => mintNftHandler()}

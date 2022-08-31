@@ -19,22 +19,18 @@ import previous from './../../assets/previous.svg'
 import './Home.css'
 
 const Home = ({ setCurrentAccount, currentAccount }) => {
-    let startDisplayIdx = 0
-    let endDisplayIdx = 3
-
     const [displayedNfts, setDisplayedNfts] = useState([])
     const [metadataURLs, setMetadataURLs] = useState([])
 
-    let nftMetadata = {}
     const hexBase = "0000000000000000000000000000000000000000000000000000000000000000"
     const [metadataId, setMetadataId] = useState(1)
 
-    const getNftsMetadata = () => {
+    const getNftsMetadata = async (start) => {
 
         let nftMetadataForDisplay = []
         let urlCollection = []
 
-        for (let i = metadataId; i < (metadataId + 102); i += 34) {
+        for (let i = start; i < (start + 102); i += 34) {
             let id = i
             if (id > 500) {
                 id -= 500
@@ -58,20 +54,20 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
 
         Promise.all(nftMetadataForDisplay)
             .then(response => {
-                setDisplayedNfts(response.map(res => res.data))
+                setDisplayedNfts([...response.map(res => res.data)])
             }).catch(err => console.error(err))
 
-        setMetadataURLs(urlCollection)
+        setMetadataURLs([...urlCollection])
     }
 
     useEffect(async () => {
         window.scrollTo(0, 0)
-        getNftsMetadata()
+        await getNftsMetadata(metadataId)
     }, [])
 
-    useEffect(() => {
-        getNftsMetadata()
-
+    useEffect(async () => {
+        console.log('here!')
+        await getNftsMetadata(metadataId)
     }, [metadataId])
 
     const handleClickNext = () => {
