@@ -41,11 +41,6 @@ const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount, derivedURL 
         getFan(derivedURL)
     }, [])
 
-    useEffect(() => {
-        
-        console.log('changed')
-    }, [fanOwnership])
-
     const getFan = async (uri) => {
         const config = {
             method: 'get',
@@ -75,7 +70,7 @@ const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount, derivedURL 
     }
 
     const nastyFuckingTableComponent = () => (
-        <>
+        <> 
         <div id='mint' className='hover-effect' onClick={handleShowMore}>Show Less Info</div>
             <table onClick={handleShowMore} className="prop-table" border="1">
                 <tr>
