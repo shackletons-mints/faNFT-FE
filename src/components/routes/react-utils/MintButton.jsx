@@ -4,12 +4,16 @@ import { connectWalletHandler, mintNftHandler, } from '../../js-utils/web3Intera
 import './MintButton.css'
 
 
-const MintButton = ({ 
-    currentAccount, 
-    setCurrentAccount, 
-    showModal, 
-    isOwned 
+const MintButton = ({
+    currentAccount,
+    setCurrentAccount,
+    isOwned,
+    uri,
 }) => {
+
+    const handleMintClick = (uri, currentAccount) => {
+        mintNftHandler(uri, currentAccount)
+    }
 
     // onClick={() => mintNftHandler()}
     const connectWalletButton = (setCurrentAccount) => {
@@ -20,7 +24,7 @@ const MintButton = ({
         )
     }
 
-    const mintNftButton = () => 
+    const mintNftButton = () =>
         isOwned
             ?
             (<div>
@@ -29,18 +33,18 @@ const MintButton = ({
                 </button>
             </div>)
             :
-        (<div>
-            <button type="button" id='mint' onClick={showModal}>
-                Mint
-            </button>
-        </div>)
-    
+            (<div>
+                <button type="button" id='mint' onClick={() => handleMintClick(uri, currentAccount)}>
+                    Mint
+                </button>
+            </div>)
 
-return (
-    <div>
-        {currentAccount ? mintNftButton() : connectWalletButton(setCurrentAccount)}
-    </div>
-)
+
+    return (
+        <div>
+            {currentAccount ? mintNftButton() : connectWalletButton(setCurrentAccount)}
+        </div>
+    )
 }
 
 export default MintButton

@@ -23,7 +23,7 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
     let endDisplayIdx = 3
 
     const [displayedNfts, setDisplayedNfts] = useState([])
-    const [derivedURLs, setDerivedURLs] = useState([])
+    const [metadataURLs, setMetadataURLs] = useState([])
 
     let nftMetadata = {}
     const hexBase = "0000000000000000000000000000000000000000000000000000000000000000"
@@ -61,7 +61,7 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
                 setDisplayedNfts(response.map(res => res.data))
             }).catch(err => console.error(err))
 
-        setDerivedURLs(urlCollection)
+        setMetadataURLs(urlCollection)
     }
 
     useEffect(async () => {
@@ -112,7 +112,7 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
                             displayedNfts.map((nft, idx) =>
                                 <NFTSquare
                                     key={idx}
-                                    derivedURL={derivedURLs[idx]}
+                                    derivedURL={metadataURLs[idx]}
                                     nftMetadata={nft}
                                     currentAccount={currentAccount}
                                     setCurrentAccount={setCurrentAccount}

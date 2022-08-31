@@ -123,6 +123,8 @@ const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount, derivedURL 
             <MintButton
                 currentAccount={currentAccount}
                 setCurrentAccount={setCurrentAccount}
+                isOwned={isOwned}
+                uri={derivedURL}
             />
         </>
     )
@@ -136,6 +138,7 @@ const NFTSquare = ({ nftMetadata, currentAccount, setCurrentAccount, derivedURL 
                 currentAccount={currentAccount}
                 setCurrentAccount={setCurrentAccount}
                 isOwned={isOwned}
+                uri={derivedURL}
             />
         </>
     )
