@@ -6,15 +6,15 @@ export default defineConfig({
     server: {
         proxy: {
             '/get-fan': {
-                target: 'http://localhost:8080',
+                target: 'https://fanft-api.herokuapp.com',
                 changeOrigin: true,
             },
             '/fan': {
-                target: 'http://localhost:8080',
+                target: 'https://fanft-api.herokuapp.com',
                 changeOrigin: true,
             },
             '/test': {
-                target: 'http://localhost:8080',
+                target: 'https://fanft-api.herokuapp.com',
                 changeOrigin: true,
             },
         },
