@@ -21,7 +21,6 @@ export default function controlScroll() {
             let targetYPosition = 0
 
             if (this.scrollY % 925 !== 0) {
-                console.log('here!')
                 debounce(() => {
                     console.log('inside debounce')
                     for (const position of yPositions) {

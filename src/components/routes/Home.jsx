@@ -3,7 +3,6 @@ import axios from 'axios'
 
 // data
 import homeText from '../text/homeText.js'
-import mockNfts from '../js-utils/_mockNfts'
 
 // components
 import FlipCard from './react-utils/FlipCard'
@@ -66,7 +65,6 @@ const Home = ({ setCurrentAccount, currentAccount }) => {
     }, [])
 
     useEffect(async () => {
-        console.log('here!')
         await getNftsMetadata(metadataId)
     }, [metadataId])
 

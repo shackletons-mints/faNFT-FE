@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { toast } from 'react-toastify';
 
 import { connectWalletHandler, mintNftHandler, } from '../../js-utils/web3Interactions'
 import './MintButton.css'
@@ -15,7 +16,8 @@ const MintButton = ({
 
     const handleMintClick = async (uri, currentAccount) => {
         try {
-            await mintNftHandler(uri, currentAccount)
+            // console.log("Initialize payment")
+            await mintNftHandler(uri, currentAccount, toast)
 
             const data = JSON.stringify({
                 payload: {
@@ -33,7 +35,11 @@ const MintButton = ({
                 data,
               }
               
+            //   console.log("Mining... please wait")
               const response = await axios(config)
+            //   console.log(
+            //     `Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`
+            //   )
 
               setIsOwned(true)
 

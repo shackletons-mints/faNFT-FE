@@ -5,7 +5,8 @@ import { Route, Routes } from 'react-router-dom'
 
 import NavBar from './NavBar'
 import Home from './routes/Home'
-import FanContract from './routes/FanContract'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import { checkWalletIsConnected, connectWalletHandler, mintNftHandler, } from './js-utils/web3Interactions'
 import revealText from './js-utils/reveal-text'
@@ -50,6 +51,10 @@ function App() {
                 }
                 />
             </Routes>
+            <ToastContainer 
+                style={{ width: "1150px" }}
+                position='top-center'
+            />
         </div>
     )
 }

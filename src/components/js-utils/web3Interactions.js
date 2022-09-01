@@ -5,6 +5,8 @@ const FAN_SHUI_CONTRACT_ADDRESS = "0xe5E727B6dDFa31080a1cF04C95b2c37C2D50E2a2"
 
 const { ethereum } = window;
 
+const parseError = (err) => err.message.split(':\"execution reverted:')[1].split('"')[0]
+
 export const checkWalletIsConnected = async (setCurrentAccount) => {
     if (!ethereum) {
         console.log("Make sure you have Metamask installed!");
@@ -26,7 +28,10 @@ export const checkWalletIsConnected = async (setCurrentAccount) => {
 
 export const connectWalletHandler = async (setCurrentAccount) => {
     if (!ethereum) {
-        alert("Please install Metamask!");
+        toast.info('Please install Metamask!', {
+            closeOnClick: true,
+            autoClose: false,
+        })
     }
 
     try {
@@ -38,14 +43,14 @@ export const connectWalletHandler = async (setCurrentAccount) => {
     }
 };
 
-export const mintNftHandler = async (uri, currentAccount) => {
+export const mintNftHandler = async (uri, currentAccount, toast) => {
+    const mintNftToast = toast.loading('Initializing Payment')
     try {
         if (ethereum) {
             const provider = new ethers.providers.Web3Provider(ethereum)
             const signer = provider.getSigner()
             const nftContract = new ethers.Contract(FAN_SHUI_CONTRACT_ADDRESS, fanShuiContractABI, signer)
 
-            console.log("Initialize payment");
             let nftTxn = await nftContract.mintNFT(
                 currentAccount,
                 uri,
@@ -55,16 +60,31 @@ export const mintNftHandler = async (uri, currentAccount) => {
                 }
             )
 
-            console.log("Mining... please wait");
+            toast.update(mintNftToast, {
+                render: "Mining... please wait",
+                type: 'loading',
+            })
+
             await nftTxn.wait();
 
-            console.log(
-                `Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`
-            );
+            toast.update(mintNftToast, {
+                render: `Mined! See your transaction on etherscan! https://rinkeby.etherscan.io/tx/${nftTxn.hash}`,
+                type: 'success',
+                closeOnClick: false,
+                autoClose: false,
+                isLoading: false
+            })
         } else {
-            console.log("Ethereum object does not exist");
+            toast.error('Ethereum object does not exist')
+            console.log("Ethereum object does not exist")
         }
     } catch (error) {
-        console.error(error);
+        toast.update(mintNftToast, {
+            render: 'Oh No! Your transaction was reverted. Here\'s the solidity error: ' + parseError(error),
+            type: 'error',
+            isLoading: false,
+            closeOnClick: true,
+        })
+        
     }
 };
