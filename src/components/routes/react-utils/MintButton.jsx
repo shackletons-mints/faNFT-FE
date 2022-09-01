@@ -45,6 +45,7 @@ const MintButton = ({
 
         } catch (error) {
             console.error(error)
+            setIsOwned(false)
         }
     }
 

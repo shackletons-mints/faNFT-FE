@@ -5,7 +5,7 @@ const FAN_SHUI_CONTRACT_ADDRESS = "0xe5E727B6dDFa31080a1cF04C95b2c37C2D50E2a2"
 
 const { ethereum } = window;
 
-const parseError = (err) => err.message.split(':\"execution reverted:')[1].split('"')[0]
+const parseError = (err) => err.split(',')[1]
 
 export const checkWalletIsConnected = async (setCurrentAccount) => {
     if (!ethereum) {
@@ -65,7 +65,7 @@ export const mintNftHandler = async (uri, currentAccount, toast) => {
                 type: 'loading',
             })
 
-            await nftTxn.wait();
+            await nftTxn.wait()
 
             toast.update(mintNftToast, {
                 render: `Mined! See your transaction on etherscan! https://rinkeby.etherscan.io/tx/${nftTxn.hash}`,
@@ -79,8 +79,9 @@ export const mintNftHandler = async (uri, currentAccount, toast) => {
             console.log("Ethereum object does not exist")
         }
     } catch (error) {
+        console.log()
         toast.update(mintNftToast, {
-            render: 'Oh No! Your transaction was reverted. Here\'s the solidity error: ' + parseError(error),
+            render: 'Error processing transaction... ' + parseError(error.message),
             type: 'error',
             isLoading: false,
             closeOnClick: true,
